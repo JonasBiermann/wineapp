@@ -77,10 +77,9 @@ class IntroductionScreen1 extends StatelessWidget {
             top: 771,
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const IntroductionScreen4(),
+                Navigator.of(context).push(
+                  createRoute(
+                    const IntroductionScreen4(),
                   ),
                 );
               },
