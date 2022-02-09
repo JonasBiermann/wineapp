@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_3.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_4.dart';
@@ -71,12 +72,11 @@ class IntroductionScreen2 extends StatelessWidget {
           Positioned(
             left: 98,
             top: 771,
-            child: GestureDetector(
+            child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const IntroductionScreen4(),
+                Navigator.of(context).push(
+                  createRoute(
+                    const IntroductionScreen3(),
                   ),
                 );
               },
