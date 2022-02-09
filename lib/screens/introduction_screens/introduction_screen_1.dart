@@ -104,12 +104,6 @@ class IntroductionScreen1 extends StatelessWidget {
                 Navigator.of(context).push(
                   createRoute(),
                 );
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const IntroductionScreen2(),
-                //   ),
-                // );
               },
               child: Stack(
                 children: [
@@ -159,6 +153,9 @@ class IntroductionScreen1 extends StatelessWidget {
 
 Route createRoute() {
   return PageRouteBuilder(
+    transitionDuration: const Duration(
+      milliseconds: 200,
+    ),
     pageBuilder: (context, animation, secondaryAnimation) =>
         const IntroductionScreen2(),
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
