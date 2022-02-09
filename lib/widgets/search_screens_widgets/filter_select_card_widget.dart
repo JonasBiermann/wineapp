@@ -1,0 +1,220 @@
+import 'package:flutter/material.dart';
+import 'package:wineapp/constants.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
+class FilterSelectCard extends StatefulWidget {
+  FilterSelectCard({
+    Key? key,
+    required this.filterCategory,
+    required this.filterSvg,
+    required this.filterIndex,
+    required this.appliedFilters,
+  }) : super(key: key);
+  List<String> filterCategory;
+  List<String> filterSvg;
+  int filterIndex;
+  ValueNotifier<int> appliedFilters;
+  @override
+  FilterSelectCardState createState() => FilterSelectCardState();
+}
+
+class FilterSelectCardState extends State<FilterSelectCard> {
+  Color filterColor = primaryColor;
+  Color borderColor = secondaryTextColor;
+  Color svgColor = secondaryTextColor;
+  bool filterStat = false;
+  TextStyle textStyle = unTextStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        right: 12,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (filterStat == false) {
+              filterColor = secondaryTextColor;
+              textStyle = selTextStyle;
+              borderColor = backgroundColor;
+              svgColor = mainTextColor;
+              widget.appliedFilters.value += 1;
+              print(widget.appliedFilters);
+            }
+            if (filterStat == true) {
+              filterColor = primaryColor;
+              textStyle = unTextStyle;
+              borderColor = secondaryTextColor;
+              svgColor = secondaryTextColor;
+              widget.appliedFilters.value -= 1;
+              print(widget.appliedFilters);
+            }
+            if (filterColor == primaryColor) {
+              filterStat = false;
+            }
+            if (filterColor == secondaryTextColor) {
+              filterStat = true;
+            }
+          });
+        },
+        child: Column(
+          children: [
+            AnimatedContainer(
+              duration: const Duration(
+                milliseconds: 250,
+              ),
+              height: 47,
+              width: 47,
+              decoration: BoxDecoration(
+                color: filterColor,
+                borderRadius: BorderRadius.circular(
+                  10,
+                ),
+                border: Border.all(
+                  color: borderColor,
+                ),
+              ),
+              child: Center(
+                child: SvgPicture.asset(
+                  widget.filterSvg[widget.filterIndex],
+                  color: svgColor,
+                  height: 20,
+                  width: 20,
+                ),
+              ),
+            ),
+            Text(
+              widget.filterCategory[widget.filterIndex],
+              style: GoogleFonts.poppins(
+                textStyle: textStyle,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class BigFilterSelectCard extends StatefulWidget {
+  BigFilterSelectCard({
+    Key? key,
+    required this.filterCategory,
+    required this.filterSvg,
+    required this.filterIndex,
+    required this.appliedFilters,
+  }) : super(key: key);
+  List<String> filterCategory;
+  List<String> filterSvg;
+  int filterIndex;
+  ValueNotifier<int> appliedFilters;
+  @override
+  _BigFilterSelectCardState createState() => _BigFilterSelectCardState();
+}
+
+class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
+  Color filterColor = primaryColor;
+  Color borderColor = secondaryTextColor;
+
+  bool filterStat = false;
+  TextStyle textStyle = unTextStyle;
+  List<String> selectedSvg = [
+    'assets/icons/cooking_bc.svg',
+    'assets/icons/wine_tasting_bc.svg',
+    'assets/icons/eating_together_bc.svg',
+  ];
+  List<String> unselectedSvg = [
+    'assets/icons/cooking.svg',
+    'assets/icons/wine_tasting.svg',
+    'assets/icons/eating together.svg'
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        right: 30,
+      ),
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            if (filterStat == false) {
+              filterColor = secondaryTextColor;
+              textStyle = selTextStyle;
+              borderColor = backgroundColor;
+              widget.filterSvg[widget.filterIndex] =
+                  selectedSvg[widget.filterIndex];
+              widget.appliedFilters.value += 1;
+              print(widget.appliedFilters);
+            }
+            if (filterStat == true) {
+              filterColor = primaryColor;
+              textStyle = unTextStyle;
+              borderColor = secondaryTextColor;
+              widget.filterSvg[widget.filterIndex] =
+                  unselectedSvg[widget.filterIndex];
+              widget.appliedFilters.value -= 1;
+              print(widget.appliedFilters);
+            }
+            if (filterColor == primaryColor) {
+              filterStat = false;
+            }
+            if (filterColor == secondaryTextColor) {
+              filterStat = true;
+            }
+          });
+        },
+        child: Stack(
+          children: [
+            AnimatedContainer(
+              duration: const Duration(
+                milliseconds: 250,
+              ),
+              height: 90,
+              width: 85,
+              decoration: BoxDecoration(
+                color: filterColor,
+                borderRadius: BorderRadius.circular(20),
+                border: Border.all(
+                  color: borderColor,
+                ),
+              ),
+            ),
+            Positioned(
+              top: 9,
+              left: 14,
+              child: SizedBox(
+                height: 50,
+                width: 60,
+                child: Align(
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(
+                    widget.filterSvg[widget.filterIndex],
+                    height: 50,
+                    width: 51,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 64,
+              left: 23,
+              child: SizedBox(
+                width: 39,
+                height: 18,
+                child: Text(
+                  widget.filterCategory[widget.filterIndex],
+                  style: GoogleFonts.poppins(
+                    textStyle: textStyle,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
