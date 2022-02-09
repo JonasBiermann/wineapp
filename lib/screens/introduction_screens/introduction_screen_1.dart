@@ -5,6 +5,8 @@ import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_4.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_2.dart';
 
+import '../../animation/page_route_transition.dart';
+
 class IntroductionScreen1 extends StatelessWidget {
   const IntroductionScreen1({Key? key}) : super(key: key);
 
@@ -102,7 +104,7 @@ class IntroductionScreen1 extends StatelessWidget {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(
-                  createRoute(),
+                  createRoute(const IntroductionScreen2()),
                 );
               },
               child: Stack(
@@ -151,24 +153,24 @@ class IntroductionScreen1 extends StatelessWidget {
   }
 }
 
-Route createRoute() {
-  return PageRouteBuilder(
-    transitionDuration: const Duration(
-      milliseconds: 200,
-    ),
-    pageBuilder: (context, animation, secondaryAnimation) =>
-        const IntroductionScreen2(),
-    transitionsBuilder: (context, animation, secondaryAnimation, child) {
-      const begin = Offset(1.0, 0.0);
-      const end = Offset.zero;
-      const curve = Curves.easeInToLinear;
+// Route createRoute() {
+//   return PageRouteBuilder(
+//     transitionDuration: const Duration(
+//       milliseconds: 200,
+//     ),
+//     pageBuilder: (context, animation, secondaryAnimation) =>
+//         const IntroductionScreen2(),
+//     transitionsBuilder: (context, animation, secondaryAnimation, child) {
+//       const begin = Offset(1.0, 0.0);
+//       const end = Offset.zero;
+//       const curve = Curves.easeInToLinear;
 
-      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+//       var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
 
-      return SlideTransition(
-        position: animation.drive(tween),
-        child: child,
-      );
-    },
-  );
-}
+//       return SlideTransition(
+//         position: animation.drive(tween),
+//         child: child,
+//       );
+//     },
+//   );
+// }
