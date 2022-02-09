@@ -95,7 +95,7 @@ class IntroductionScreen2 extends StatelessWidget {
           Positioned(
             left: 202,
             top: 755,
-            child: GestureDetector(
+            child: InkWell(
               onTap: () {
                 Navigator.push(
                   context,
