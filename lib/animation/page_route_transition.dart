@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Route createRoute(Widget Screen) {
   return PageRouteBuilder(
     transitionDuration: const Duration(
-      milliseconds: 200,
+      milliseconds: 300,
     ),
     pageBuilder: (context, animation, secondaryAnimation) => Screen,
     transitionsBuilder: (context, animation, secondaryAnimation, child) {
