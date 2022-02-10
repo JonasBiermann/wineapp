@@ -7,12 +7,12 @@ const tertiaryTextColor = Color(0xff6F00CF);
 const quartiaryTextColor = Color(0xffC3B3EA);
 const backgroundColor = Color(0xff6F00CF);
 
-TextStyle unTextStyle = TextStyle(
+TextStyle unTextStyle = const TextStyle(
   color: secondaryTextColor,
   fontSize: 11,
   fontWeight: FontWeight.w600,
 );
-TextStyle selTextStyle = TextStyle(
+TextStyle selTextStyle = const TextStyle(
   color: mainTextColor,
   fontSize: 12,
   fontWeight: FontWeight.bold,

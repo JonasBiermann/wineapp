@@ -9,7 +9,7 @@ import 'package:wineapp/screens/sign_in_register_screen/registration_verificatio
 import 'package:wineapp/services/auth_services.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -79,11 +79,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Center(
                     child: TextField(
                       cursorColor: mainTextColor,
-                      cursorRadius: Radius.circular(90),
+                      cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: mainTextColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
@@ -119,11 +119,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Center(
                     child: TextField(
                       cursorColor: mainTextColor,
-                      cursorRadius: Radius.circular(90),
+                      cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: mainTextColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
@@ -160,11 +160,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: TextField(
                       obscureText: true,
                       cursorColor: mainTextColor,
-                      cursorRadius: Radius.circular(90),
+                      cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: mainTextColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
@@ -310,7 +310,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       Navigator.pushAndRemoveUntil(
                           context,
                           createRoute(
-                            RegVerificationScreen(),
+                            const RegVerificationScreen(),
                           ),
                           (route) => false);
                     }
@@ -408,7 +408,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     Navigator.push(
                       context,
                       createRoute(
-                        RegVerificationScreen(),
+                        const RegVerificationScreen(),
                       ),
                     );
                   }
@@ -421,7 +421,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 50,
                   width: 55,
                   child: loading
-                      ? CircularProgressIndicator(color: Colors.white)
+                      ? const CircularProgressIndicator(color: Colors.white)
                       : SvgPicture.asset('assets/icons/google.svg'),
                 ),
               ),
@@ -466,7 +466,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 onTap: () {
                   Navigator.of(context).push(
                     createRoute(
-                      LoginScreen(),
+                      const LoginScreen(),
                     ),
                   );
                 },

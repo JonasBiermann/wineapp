@@ -5,16 +5,16 @@ import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 
 class SettingCard extends StatelessWidget {
-  SettingCard(
+  const SettingCard(
       {Key? key,
       required this.settingName,
       required this.settingIcon,
       required this.pageRoute})
       : super(key: key);
 
-  String settingName;
-  String settingIcon;
-  Widget pageRoute;
+  final String settingName;
+  final String settingIcon;
+  final Widget pageRoute;
   @override
   Widget build(BuildContext context) {
     return InkWell(

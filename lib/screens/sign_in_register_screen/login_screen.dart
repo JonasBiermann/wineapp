@@ -10,7 +10,7 @@ import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';
 import 'package:wineapp/services/auth_services.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -78,13 +78,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(left: 10),
                   child: TextField(
                     style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
+                      textStyle: const TextStyle(
                           color: mainTextColor,
                           fontSize: 12,
                           fontWeight: FontWeight.bold),
                     ),
                     cursorColor: mainTextColor,
-                    cursorRadius: Radius.circular(90),
+                    cursorRadius: const Radius.circular(90),
                     cursorWidth: 2.5,
                     cursorHeight: 20,
                     controller: emailPhoneController,
@@ -117,13 +117,13 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Center(
                     child: TextField(
                       style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
+                        textStyle: const TextStyle(
                             color: mainTextColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
                       ),
                       cursorColor: mainTextColor,
-                      cursorRadius: Radius.circular(90),
+                      cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       obscureText: true,
@@ -232,7 +232,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: loading
-                          ? Center(
+                          ? const Center(
                               child: CircularProgressIndicator(
                                 color: mainTextColor,
                               ),
@@ -363,7 +363,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 onTap: () {
                   Navigator.of(context).push(
                     createRoute(
-                      RegisterScreen(),
+                      const RegisterScreen(),
                     ),
                   );
                 },

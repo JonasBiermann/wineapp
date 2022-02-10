@@ -5,9 +5,9 @@ import 'package:wineapp/widgets/setting_screens_widgets/design/design_overview_i
 import 'package:wineapp/widgets/uprade_plan.dart';
 
 class DesignOverview extends StatefulWidget {
-  DesignOverview({Key? key, required this.designName}) : super(key: key);
+  const DesignOverview({Key? key, required this.designName}) : super(key: key);
 
-  String designName;
+  final String designName;
   @override
   State<DesignOverview> createState() => _DesignOverviewState();
 }

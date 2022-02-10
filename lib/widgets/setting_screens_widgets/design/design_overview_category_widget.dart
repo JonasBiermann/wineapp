@@ -3,13 +3,13 @@ import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DesignOverviewCategoryWidget extends StatelessWidget {
-  DesignOverviewCategoryWidget({
+  const DesignOverviewCategoryWidget({
     Key? key,
     required this.designCategory,
     required this.topPadding,
   }) : super(key: key);
-  String designCategory;
-  double topPadding;
+  final String designCategory;
+  final double topPadding;
   @override
   Widget build(BuildContext context) {
     return Padding(

@@ -41,7 +41,7 @@ class GeneralOverview extends StatelessWidget {
             userGneder: userGneder,
             accountAge: accountAge),
         Padding(
-          padding: EdgeInsets.only(top: 25.0),
+          padding: const EdgeInsets.only(top: 25.0),
           child: UpgradePlan(
             upgradePhrase: 'Upgrade your Plan',
           ),
