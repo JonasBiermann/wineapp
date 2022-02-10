@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/forgot_password_screen.dart';
@@ -76,6 +77,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextField(
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                          color: mainTextColor,
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    cursorColor: mainTextColor,
+                    cursorRadius: Radius.circular(90),
+                    cursorWidth: 2.5,
+                    cursorHeight: 20,
                     controller: emailPhoneController,
                     decoration: InputDecoration(
                       hintText: 'Username',
@@ -105,8 +116,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   padding: const EdgeInsets.only(left: 10.0),
                   child: Center(
                     child: TextField(
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                            color: mainTextColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      cursorColor: mainTextColor,
+                      cursorRadius: Radius.circular(90),
+                      cursorWidth: 2.5,
+                      cursorHeight: 20,
                       obscureText: true,
-                      obscuringCharacter: '*',
                       controller: passwordController,
                       decoration: InputDecoration(
                           hintText: 'Password',
@@ -137,10 +157,9 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 394,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const ForgotPasswordScreen(),
+                  Navigator.of(context).push(
+                    createRoute(
+                      const ForgotPasswordScreen(),
                     ),
                   );
                 },
@@ -193,8 +212,9 @@ class _LoginScreenState extends State<LoginScreen> {
                     if (result != null) {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(
-                              builder: (context) => MainScreen(pageIndex: 0)),
+                          createRoute(
+                            MainScreen(pageIndex: 0),
+                          ),
                           (route) => false);
                     }
                   }
@@ -290,10 +310,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   if (result != null) {
                     Navigator.pushAndRemoveUntil(
                         context,
-                        MaterialPageRoute(
-                          builder: (context) => MainScreen(
-                            pageIndex: 0,
-                          ),
+                        createRoute(
+                          MainScreen(pageIndex: 0),
                         ),
                         (route) => false);
                   }
@@ -343,10 +361,9 @@ class _LoginScreenState extends State<LoginScreen> {
               top: 773,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => RegisterScreen(),
+                  Navigator.of(context).push(
+                    createRoute(
+                      RegisterScreen(),
                     ),
                   );
                 },
