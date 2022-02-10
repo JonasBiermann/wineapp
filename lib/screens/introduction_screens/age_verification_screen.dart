@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
@@ -111,10 +112,9 @@ class AgeVerificationScreen extends StatelessWidget {
             top: 690,
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
+                Navigator.of(context).push(
+                  createRoute(
+                    LoginScreen(),
                   ),
                 );
               },
@@ -137,12 +137,11 @@ class AgeVerificationScreen extends StatelessWidget {
           Positioned(
             left: 38,
             top: 755,
-            child: GestureDetector(
+            child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => RegisterScreen(),
+                Navigator.of(context).push(
+                  createRoute(
+                    RegisterScreen(),
                   ),
                 );
               },
