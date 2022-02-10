@@ -2,13 +2,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/registration_verification_screen.dart';
 import 'package:wineapp/services/auth_services.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({Key? key}) : super(key: key);
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -21,6 +22,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   TextEditingController userNameController = TextEditingController();
   bool loading = false;
+  bool agreed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,6 +78,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: const EdgeInsets.only(left: 10),
                   child: Center(
                     child: TextField(
+                      cursorColor: mainTextColor,
+                      cursorRadius: const Radius.circular(90),
+                      cursorWidth: 2.5,
+                      cursorHeight: 20,
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            color: mainTextColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
                       controller: userNameController,
                       decoration: InputDecoration(
                         hintText: 'Username',
@@ -106,6 +118,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: const EdgeInsets.only(left: 10),
                   child: Center(
                     child: TextField(
+                      cursorColor: mainTextColor,
+                      cursorRadius: const Radius.circular(90),
+                      cursorWidth: 2.5,
+                      cursorHeight: 20,
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            color: mainTextColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
                       controller: emailPhoneController,
                       decoration: InputDecoration(
                         hintText: 'Phone/Email',
@@ -136,6 +158,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: const EdgeInsets.only(left: 10.0),
                   child: Center(
                     child: TextField(
+                      obscureText: true,
+                      cursorColor: mainTextColor,
+                      cursorRadius: const Radius.circular(90),
+                      cursorWidth: 2.5,
+                      cursorHeight: 20,
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                            color: mainTextColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold),
+                      ),
                       controller: passwordController,
                       decoration: InputDecoration(
                           hintText: 'Password',
@@ -165,11 +198,28 @@ class _RegisterScreenState extends State<RegisterScreen> {
               left: 40,
               top: 439,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  if (agreed == false) {
+                    setState(() {
+                      agreed = true;
+                    });
+                  } else {
+                    setState(() {
+                      agreed = false;
+                    });
+                  }
+                },
                 child: SizedBox(
                   height: 15,
                   width: 15,
-                  child: SvgPicture.asset('assets/icons/accept_icon.svg'),
+                  child: agreed
+                      ? SvgPicture.asset(
+                          'assets/icons/accept_icon.svg',
+                        )
+                      : SvgPicture.asset(
+                          'assets/icons/accept_icon.svg',
+                          color: mainTextColor,
+                        ),
                 ),
               ),
             ),
@@ -259,8 +309,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     if (result != null) {
                       Navigator.pushAndRemoveUntil(
                           context,
-                          MaterialPageRoute(
-                            builder: (context) => RegVerificationScreen(),
+                          createRoute(
+                            const RegVerificationScreen(),
                           ),
                           (route) => false);
                     }
@@ -356,9 +406,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   User? result = await AuthService().signInWithGoogle();
                   if (result != null) {
                     Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: ((context) => RegVerificationScreen())));
+                      context,
+                      createRoute(
+                        const RegVerificationScreen(),
+                      ),
+                    );
                   }
 
                   setState(() {
@@ -369,7 +421,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 50,
                   width: 55,
                   child: loading
-                      ? CircularProgressIndicator(color: Colors.white)
+                      ? const CircularProgressIndicator(color: Colors.white)
                       : SvgPicture.asset('assets/icons/google.svg'),
                 ),
               ),
@@ -412,10 +464,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
               top: 773,
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => LoginScreen(),
+                  Navigator.of(context).push(
+                    createRoute(
+                      const LoginScreen(),
                     ),
                   );
                 },

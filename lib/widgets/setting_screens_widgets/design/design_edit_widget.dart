@@ -42,27 +42,27 @@ class DesignEdit extends StatelessWidget {
                 ),
               ),
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Design Name',
               topPadding: 52,
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Primary Color',
               topPadding: 80,
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Background Color',
               topPadding: 108,
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Main-Text-Color',
               topPadding: 136,
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Secondary-Text-Color',
               topPadding: 164,
             ),
-            DesignOverviewCategoryWidget(
+            const DesignOverviewCategoryWidget(
               designCategory: 'Tertiary-Text-Color',
               topPadding: 192,
             ),
@@ -110,7 +110,7 @@ class DesignEdit extends StatelessWidget {
             ),
           ],
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.only(
             top: 256,
           ),

@@ -76,7 +76,7 @@ class IntroductionScreen2 extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   createRoute(
-                    const IntroductionScreen3(),
+                    const IntroductionScreen4(),
                   ),
                 );
               },
@@ -97,10 +97,9 @@ class IntroductionScreen2 extends StatelessWidget {
             top: 755,
             child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const IntroductionScreen3(),
+                Navigator.of(context).push(
+                  createRoute(
+                    const IntroductionScreen3(),
                   ),
                 );
               },

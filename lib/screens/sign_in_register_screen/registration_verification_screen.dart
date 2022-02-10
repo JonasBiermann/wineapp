@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/registration_done_screen.dart';
 
@@ -67,7 +66,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                 ),
               ),
             ),
-            Positioned(
+            const Positioned(
               left: 71,
               top: 600,
               child: SizedBox(

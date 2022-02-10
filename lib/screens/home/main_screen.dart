@@ -15,8 +15,8 @@ class MainScreen extends StatefulWidget {
 
 class _MainScreenState extends State<MainScreen> {
   List<Widget> pageList = <Widget>[
-    HomeScreen(),
-    SearchScreen(),
+    const HomeScreen(),
+    const SearchScreen(),
     SettingsScreen(),
   ];
   List<IconData> data = [

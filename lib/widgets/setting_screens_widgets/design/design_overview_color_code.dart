@@ -9,7 +9,7 @@ class DesignOverviewColorCode extends StatelessWidget {
     required this.topPadding,
   }) : super(key: key);
   String colorCode;
-  double topPadding;
+  final double topPadding;
   @override
   Widget build(BuildContext context) {
     return Padding(

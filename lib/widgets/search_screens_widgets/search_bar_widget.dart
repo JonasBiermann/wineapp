@@ -208,7 +208,7 @@ class _SearchBarState extends State<SearchBar> {
                 ),
               ),
             ),
-            SliderWidget(),
+            const SliderWidget(),
             Positioned(
               top: 117,
               left: 35,

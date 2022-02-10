@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/introduction_screens/age_verification_screen.dart';
@@ -153,12 +154,11 @@ class PickLanguageScreen extends StatelessWidget {
           Positioned(
             left: 38,
             top: 755,
-            child: GestureDetector(
+            child: InkWell(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AgeVerificationScreen(),
+                Navigator.of(context).push(
+                  createRoute(
+                    AgeVerificationScreen(),
                   ),
                 );
               },

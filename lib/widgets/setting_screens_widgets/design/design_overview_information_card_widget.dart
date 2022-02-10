@@ -8,12 +8,12 @@ import 'package:wineapp/widgets/setting_screens_widgets/design/design_overview_c
 import 'design_overview_widget.dart';
 
 class DesignOverviewInformationCardWidget extends StatelessWidget {
-  DesignOverviewInformationCardWidget({
+  const DesignOverviewInformationCardWidget({
     Key? key,
     required this.widget,
   }) : super(key: key);
 
-  DesignOverview widget;
+  final DesignOverview widget;
 
   @override
   Widget build(BuildContext context) {
@@ -47,27 +47,27 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
             ),
           ),
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Design Name',
           topPadding: 52,
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Primary Color',
           topPadding: 80,
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Background Color',
           topPadding: 108,
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Main-Text-Color',
           topPadding: 136,
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Secondary-Text-Color',
           topPadding: 164,
         ),
-        DesignOverviewCategoryWidget(
+        const DesignOverviewCategoryWidget(
           designCategory: 'Tertiary-Text-Color',
           topPadding: 192,
         ),

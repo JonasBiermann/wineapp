@@ -74,10 +74,9 @@ class IntroductionScreen3 extends StatelessWidget {
             top: 771,
             child: GestureDetector(
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const IntroductionScreen4(),
+                Navigator.of(context).push(
+                  createRoute(
+                    const IntroductionScreen4(),
                   ),
                 );
               },

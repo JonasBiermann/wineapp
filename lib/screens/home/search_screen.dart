@@ -175,7 +175,7 @@ class _FilterCardState extends State<FilterCard> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: EdgeInsets.only(
+        padding: const EdgeInsets.only(
           right: 10,
         ),
         child: GestureDetector(

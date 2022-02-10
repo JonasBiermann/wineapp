@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:wineapp/constants.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class DesignOverviewColorContainer extends StatelessWidget {
   DesignOverviewColorContainer({
@@ -9,7 +8,7 @@ class DesignOverviewColorContainer extends StatelessWidget {
     required this.topPadding,
   }) : super(key: key);
   Color color;
-  double topPadding;
+  final double topPadding;
   @override
   Widget build(BuildContext context) {
     return Padding(
