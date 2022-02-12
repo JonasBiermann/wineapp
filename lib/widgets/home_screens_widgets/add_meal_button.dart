@@ -16,7 +16,7 @@ class AddMealButton extends StatelessWidget {
       top: 685,
       child: GestureDetector(
         onTap: () async {
-          await AuthService().signOut();
+          await AuthService().googleSignOut();
         },
         child: Stack(
           children: [
