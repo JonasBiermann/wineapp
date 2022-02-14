@@ -1,6 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:twitter_login/twitter_login.dart';
@@ -103,11 +102,11 @@ class AuthService {
     await firebaseAuth.signOut();
   }
 
-  void twitterLogin() async {
+  Future twitterLogin() async {
     try {
       final twitterLogin = TwitterLogin(
-          apiKey: '0j8FZRhF9qHkkS2u9Zt7COoJm',
-          apiSecretKey: 'Vc6yeYcK3xB4Vd0lRHD5kvrq0a5srEnk8r5liLrU3WRHhmg2Dc',
+          apiKey: '2TISYuRMEXVoINqcU4wvGhNb8',
+          apiSecretKey: 'LZk2SJpff1gwAo3bwM3XuTfx77Z0M09lhwjNSgQBUOUCjJqwUq',
           redirectURI: 'flutter-twitter-login://');
       await twitterLogin.login().then((value) async {
         if (value.authToken != null || value.authTokenSecret != null) {

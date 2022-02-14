@@ -440,7 +440,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               top: 639,
               child: GestureDetector(
                 onTap: () async {
-                  AuthService().twitterLogin();
+                  await AuthService().twitterLogin();
                 },
                 child: SizedBox(
                   height: 50,
