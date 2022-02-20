@@ -102,24 +102,23 @@ class AuthService {
     await firebaseAuth.signOut();
   }
 
-  Future twitterLogin() async {
-    try {
-      final twitterLogin = TwitterLogin(
-          apiKey: '2TISYuRMEXVoINqcU4wvGhNb8',
-          apiSecretKey: 'LZk2SJpff1gwAo3bwM3XuTfx77Z0M09lhwjNSgQBUOUCjJqwUq',
-          redirectURI: 'flutter-twitter-login://');
-      await twitterLogin.login().then((value) async {
-        if (value.authToken != null || value.authTokenSecret != null) {
-          final twitterAuthCredentials = TwitterAuthProvider.credential(
-            accessToken: value.authToken!,
-            secret: value.authTokenSecret!,
-          );
-
-          await firebaseAuth.signInWithCredential(twitterAuthCredentials);
-        }
-      });
-    } catch (e) {
-      print(e);
-    }
+  //Login with Twitter
+  void loginTwitter() async {
+    final twitterLogin = TwitterLogin(
+        apiKey: 'ogkwhwbIdGJJhbssN8b20Z0qI',
+        apiSecretKey: 'BUJspYpbE4Z7YEtDblxddlnQrIQy0U1dMU37ami33frZW8GiNg',
+        redirectURI: 'wineapp-twitter-login://');
+    await twitterLogin.login().then((value) async {
+      final authToken = value.authToken;
+      final authTokenSecret = value.authTokenSecret;
+      if (authToken != null && authTokenSecret != null) {
+        final twitterAuthCredentials = TwitterAuthProvider.credential(
+          accessToken: authToken,
+          secret: authTokenSecret,
+        );
+        await FirebaseAuth.instance
+            .signInWithCredential(twitterAuthCredentials);
+      }
+    });
   }
 }

@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:twitter_login/twitter_login.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
@@ -16,6 +17,26 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  void loginTwitter() async {
+    final twitterLogin = TwitterLogin(
+        apiKey: 'ogkwhwbIdGJJhbssN8b20Z0qI',
+        apiSecretKey: 'BUJspYpbE4Z7YEtDblxddlnQrIQy0U1dMU37ami33frZW8GiNg',
+        redirectURI: 'wineapp-twitter-login://');
+    await twitterLogin.login().then((value) async {
+      final authToken = value.authToken;
+      final authTokenSecret = value.authTokenSecret;
+      if (authToken != null && authTokenSecret != null) {
+        final twitterAuthCredentials = TwitterAuthProvider.credential(
+          accessToken: authToken,
+          secret: authTokenSecret,
+        );
+        await FirebaseAuth.instance
+            .signInWithCredential(twitterAuthCredentials);
+        print('random');
+      }
+    });
+  }
+
   TextEditingController emailPhoneController = TextEditingController();
 
   TextEditingController passwordController = TextEditingController();
@@ -439,8 +460,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               left: 248,
               top: 639,
               child: GestureDetector(
-                onTap: () async {
-                  await AuthService().twitterLogin();
+                onTap: () {
+                  loginTwitter();
                 },
                 child: SizedBox(
                   height: 50,

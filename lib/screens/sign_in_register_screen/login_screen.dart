@@ -336,9 +336,7 @@ class _LoginScreenState extends State<LoginScreen> {
               left: 248,
               top: 639,
               child: GestureDetector(
-                onTap: () {
-                  AuthService().twitterLogin();
-                },
+                onTap: () {},
                 child: SizedBox(
                   height: 50,
                   width: 55,
