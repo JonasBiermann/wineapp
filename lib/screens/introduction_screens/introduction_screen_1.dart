@@ -56,7 +56,7 @@ class IntroductionScreen1 extends StatelessWidget {
                   textStyle: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                   ),
                 ),
                 textAlign: TextAlign.center,

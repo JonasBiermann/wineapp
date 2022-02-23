@@ -78,7 +78,7 @@ class _MainScreenState extends State<MainScreen> {
                           size: 17,
                           color: value == widget.pageIndex
                               ? mainTextColor
-                              : secondaryTextColor,
+                              : quartiaryTextColor,
                         ),
                       ),
                     ),
@@ -97,7 +97,7 @@ class _MainScreenState extends State<MainScreen> {
                                 )
                               : GoogleFonts.poppins(
                                   textStyle: const TextStyle(
-                                    color: secondaryTextColor,
+                                    color: quartiaryTextColor,
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                   ),

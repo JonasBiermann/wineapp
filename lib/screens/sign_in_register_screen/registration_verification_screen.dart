@@ -57,7 +57,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                   'A 4 digit Code has been sent to +49 1577 1677 857',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),

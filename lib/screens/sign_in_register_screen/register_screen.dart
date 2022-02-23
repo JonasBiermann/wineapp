@@ -57,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   'Create an Account so you can make use of your personal Somellier',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
-                        color: secondaryTextColor,
+                        color: quartiaryTextColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
@@ -236,7 +236,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       textStyle: const TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
-                        color: secondaryTextColor,
+                        color: quartiaryTextColor,
                       ),
                     ),
                     children: <TextSpan>[
@@ -253,7 +253,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             text: 'and ',
                             style: GoogleFonts.poppins(
                               textStyle: const TextStyle(
-                                  color: secondaryTextColor,
+                                  color: quartiaryTextColor,
                                   fontSize: 11,
                                   fontWeight: FontWeight.w600),
                             ),
@@ -375,7 +375,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           'OR',
                           style: GoogleFonts.poppins(
                             textStyle: const TextStyle(
-                                color: secondaryTextColor,
+                                color: quartiaryTextColor,
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -453,7 +453,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Text(
                   'Already have an Account?',
                   style: GoogleFonts.poppins(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 11,
                       fontWeight: FontWeight.w600),
                 ),

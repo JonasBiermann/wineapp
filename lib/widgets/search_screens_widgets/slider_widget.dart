@@ -23,12 +23,12 @@ class _SliderWidgetState extends State<SliderWidget> {
         child: SliderTheme(
           data: SliderTheme.of(context).copyWith(
             trackHeight: 3,
-            trackShape: RoundedRectSliderTrackShape(),
-            thumbColor: secondaryTextColor,
-            activeTrackColor: secondaryTextColor,
+            trackShape: const RoundedRectSliderTrackShape(),
+            thumbColor: quartiaryTextColor,
+            activeTrackColor: quartiaryTextColor,
             inactiveTrackColor: backgroundColor,
             overlayColor: Colors.transparent,
-            activeTickMarkColor: secondaryTextColor,
+            activeTickMarkColor: quartiaryTextColor,
             inactiveTickMarkColor: backgroundColor,
             valueIndicatorColor: backgroundColor,
             valueIndicatorTextStyle: GoogleFonts.poppins(
@@ -40,7 +40,7 @@ class _SliderWidgetState extends State<SliderWidget> {
             ),
           ),
           child: RangeSlider(
-              activeColor: secondaryTextColor,
+              activeColor: quartiaryTextColor,
               inactiveColor: backgroundColor,
               min: 5.0,
               max: 120.0,

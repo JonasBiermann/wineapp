@@ -37,7 +37,7 @@ class GeneralEdit extends StatelessWidget {
               'Change Profile Picture',
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
-                  color: secondaryTextColor,
+                  color: quartiaryTextColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

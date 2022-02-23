@@ -54,7 +54,7 @@ class AgeVerificationScreen extends StatelessWidget {
                 'Deepnding on your region, you will have to fulfill the minimum age to consume alcohol',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),

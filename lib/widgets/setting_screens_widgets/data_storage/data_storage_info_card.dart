@@ -98,7 +98,7 @@ class DataStorageInfoCard extends StatelessWidget {
                   height: 30,
                   width: cDataAmount / dataAmount * 290,
                   decoration: BoxDecoration(
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                     borderRadius: BorderRadius.circular(
                       35,
                     ),
@@ -177,7 +177,7 @@ class DataStorageInfoCard extends StatelessWidget {
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: secondaryTextColor,
+          color: quartiaryTextColor,
           topPadding: 192,
         ),
         DataCategoryAmountWidget(

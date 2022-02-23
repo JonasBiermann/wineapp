@@ -150,7 +150,7 @@ class _SearchBarState extends State<SearchBar> {
                 height: 65,
                 width: 390,
                 decoration: const BoxDecoration(
-                  color: secondaryTextColor,
+                  color: quartiaryTextColor,
                 ),
               ),
             ),
@@ -296,7 +296,7 @@ class _SearchBarState extends State<SearchBar> {
                   height: 40,
                   width: 145,
                   decoration: BoxDecoration(
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
                       color: backgroundColor,

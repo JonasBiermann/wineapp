@@ -28,7 +28,7 @@ class HomeScreenHeader extends StatelessWidget {
               subText,
               style: GoogleFonts.poppins(
                 textStyle: const TextStyle(
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),

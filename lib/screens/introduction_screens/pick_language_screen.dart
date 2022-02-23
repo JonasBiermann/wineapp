@@ -53,7 +53,7 @@ class PickLanguageScreen extends StatelessWidget {
                 'Pick your native/preferred language to use the App',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                    color: secondaryTextColor,
+                    color: quartiaryTextColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),

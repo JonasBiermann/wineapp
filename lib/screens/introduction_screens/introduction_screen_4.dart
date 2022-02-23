@@ -52,7 +52,7 @@ class IntroductionScreen4 extends StatelessWidget {
                 'Making an account lets you track and access your wine histroy anywhere',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),

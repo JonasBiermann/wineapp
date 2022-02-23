@@ -105,7 +105,7 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           topPadding: 136,
         ),
         DesignOverviewColorContainer(
-          color: secondaryTextColor,
+          color: quartiaryTextColor,
           topPadding: 164,
         ),
         DesignOverviewColorContainer(

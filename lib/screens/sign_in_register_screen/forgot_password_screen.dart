@@ -54,7 +54,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Text(
                   'Don\'t worry! It happens. Please enter the address assosciated with your account',
                   style: GoogleFonts.poppins(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                   textAlign: TextAlign.center),

@@ -56,7 +56,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   'We\'re so happy to see you back. Login to continue where you left off.',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -278,7 +278,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           'OR',
                           style: GoogleFonts.poppins(
                             textStyle: const TextStyle(
-                                color: secondaryTextColor,
+                                color: quartiaryTextColor,
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -350,7 +350,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text(
                   'Dont have an account yet?',
                   style: GoogleFonts.poppins(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 11,
                       fontWeight: FontWeight.w600),
                 ),

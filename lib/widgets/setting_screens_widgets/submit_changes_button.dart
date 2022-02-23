@@ -24,7 +24,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                 color: backgroundColor,
                 borderRadius: BorderRadius.circular(35),
                 border: Border.all(
-                  color: secondaryTextColor,
+                  color: quartiaryTextColor,
                   width: 1,
                 ),
               ),
@@ -33,7 +33,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                   'Delete Changes',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),

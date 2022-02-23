@@ -52,7 +52,7 @@ class IntroductionScreen3 extends StatelessWidget {
                 'Your personal Somellier adapts to your personal preference in wine.',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),

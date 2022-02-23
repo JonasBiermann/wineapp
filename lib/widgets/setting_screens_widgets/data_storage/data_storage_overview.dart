@@ -25,7 +25,7 @@ class DataStorageOverview extends StatelessWidget {
   Widget build(BuildContext context) {
     List<ChartData> chartData = [
       ChartData(x: 'Accurate', y: somellierAccuracy, color: primaryColor),
-      ChartData(x: 'not Accurate', y: 20, color: secondaryTextColor),
+      ChartData(x: 'not Accurate', y: 20, color: quartiaryTextColor),
     ];
     return Column(
       children: [

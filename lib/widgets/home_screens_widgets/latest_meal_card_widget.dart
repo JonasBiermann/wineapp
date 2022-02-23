@@ -151,7 +151,7 @@ class _LatestMealCardState extends State<LatestMealCard> {
                           child: SvgPicture.asset(icondata[value],
                               color: value == tasteIndex
                                   ? mainTextColor
-                                  : secondaryTextColor),
+                                  : quartiaryTextColor),
                         ),
                       ),
                     ),
@@ -201,7 +201,7 @@ class _LatestMealCardState extends State<LatestMealCard> {
                                       fontSize: 9)
                                   : const TextStyle(
                                       fontWeight: FontWeight.w600,
-                                      color: secondaryTextColor,
+                                      color: quartiaryTextColor,
                                       fontSize: 9),
                             ),
                           ),

@@ -21,8 +21,8 @@ class FilterSelectCard extends StatefulWidget {
 
 class FilterSelectCardState extends State<FilterSelectCard> {
   Color filterColor = primaryColor;
-  Color borderColor = secondaryTextColor;
-  Color svgColor = secondaryTextColor;
+  Color borderColor = quartiaryTextColor;
+  Color svgColor = quartiaryTextColor;
   bool filterStat = false;
   TextStyle textStyle = unTextStyle;
 
@@ -36,7 +36,7 @@ class FilterSelectCardState extends State<FilterSelectCard> {
         onTap: () {
           setState(() {
             if (filterStat == false) {
-              filterColor = secondaryTextColor;
+              filterColor = quartiaryTextColor;
               textStyle = selTextStyle;
               borderColor = backgroundColor;
               svgColor = mainTextColor;
@@ -46,15 +46,15 @@ class FilterSelectCardState extends State<FilterSelectCard> {
             if (filterStat == true) {
               filterColor = primaryColor;
               textStyle = unTextStyle;
-              borderColor = secondaryTextColor;
-              svgColor = secondaryTextColor;
+              borderColor = quartiaryTextColor;
+              svgColor = quartiaryTextColor;
               widget.appliedFilters.value -= 1;
               print(widget.appliedFilters);
             }
             if (filterColor == primaryColor) {
               filterStat = false;
             }
-            if (filterColor == secondaryTextColor) {
+            if (filterColor == quartiaryTextColor) {
               filterStat = true;
             }
           });
@@ -116,7 +116,7 @@ class BigFilterSelectCard extends StatefulWidget {
 
 class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
   Color filterColor = primaryColor;
-  Color borderColor = secondaryTextColor;
+  Color borderColor = quartiaryTextColor;
 
   bool filterStat = false;
   TextStyle textStyle = unTextStyle;
@@ -140,7 +140,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
         onTap: () {
           setState(() {
             if (filterStat == false) {
-              filterColor = secondaryTextColor;
+              filterColor = quartiaryTextColor;
               textStyle = selTextStyle;
               borderColor = backgroundColor;
               widget.filterSvg[widget.filterIndex] =
@@ -151,7 +151,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
             if (filterStat == true) {
               filterColor = primaryColor;
               textStyle = unTextStyle;
-              borderColor = secondaryTextColor;
+              borderColor = quartiaryTextColor;
               widget.filterSvg[widget.filterIndex] =
                   unselectedSvg[widget.filterIndex];
               widget.appliedFilters.value -= 1;
@@ -160,7 +160,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
             if (filterColor == primaryColor) {
               filterStat = false;
             }
-            if (filterColor == secondaryTextColor) {
+            if (filterColor == quartiaryTextColor) {
               filterStat = true;
             }
           });

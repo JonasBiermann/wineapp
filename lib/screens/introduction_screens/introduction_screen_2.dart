@@ -52,7 +52,7 @@ class IntroductionScreen2 extends StatelessWidget {
                 'No matter where you are, your personal somellier will always give you a suggestion.',
                 style: GoogleFonts.poppins(
                   textStyle: const TextStyle(
-                      color: secondaryTextColor,
+                      color: quartiaryTextColor,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),

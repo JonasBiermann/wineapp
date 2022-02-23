@@ -51,7 +51,7 @@ class RegDoneScreen extends StatelessWidget {
                   'Great, you set up your account. Let\'s continue to your homescreen.',
                   style: GoogleFonts.poppins(
                     textStyle: const TextStyle(
-                        color: secondaryTextColor,
+                        color: quartiaryTextColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
