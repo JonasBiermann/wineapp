@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:twitter_login/twitter_login.dart';
 import 'package:wineapp/constants.dart';
 
 class AuthService {
@@ -42,7 +43,14 @@ class AuthService {
   //User login
   Future<User?> emailLogin(
       String email, String password, BuildContext context) async {
-    try {} on FirebaseAuthException catch (e) {
+    try {
+      UserCredential userCredential =
+          await firebaseAuth.signInWithEmailAndPassword(
+        email: email,
+        password: password,
+      );
+      return userCredential.user;
+    } on FirebaseAuthException catch (e) {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text(
@@ -59,13 +67,6 @@ class AuthService {
         ),
       );
     }
-
-    UserCredential userCredential =
-        await firebaseAuth.signInWithEmailAndPassword(
-      email: email,
-      password: password,
-    );
-    return userCredential.user;
   }
 
   //User SignIn with Google
@@ -87,16 +88,37 @@ class AuthService {
             await firebaseAuth.signInWithCredential(credential);
         return userCredential.user;
       }
-    } catch (e) {
+    } on FirebaseAuthException catch (e) {
       print(
         e.toString(),
       );
     }
+    return null;
   }
 
   //Sign Out function
-  Future signOut() async {
+  Future googleSignOut() async {
     await GoogleSignIn().signOut();
     await firebaseAuth.signOut();
+  }
+
+  //Login with Twitter
+  void loginTwitter() async {
+    final twitterLogin = TwitterLogin(
+        apiKey: 'ogkwhwbIdGJJhbssN8b20Z0qI',
+        apiSecretKey: 'BUJspYpbE4Z7YEtDblxddlnQrIQy0U1dMU37ami33frZW8GiNg',
+        redirectURI: 'wineapp-twitter-login://');
+    await twitterLogin.login().then((value) async {
+      final authToken = value.authToken;
+      final authTokenSecret = value.authTokenSecret;
+      if (authToken != null && authTokenSecret != null) {
+        final twitterAuthCredentials = TwitterAuthProvider.credential(
+          accessToken: authToken,
+          secret: authTokenSecret,
+        );
+        await FirebaseAuth.instance
+            .signInWithCredential(twitterAuthCredentials);
+      }
+    });
   }
 }

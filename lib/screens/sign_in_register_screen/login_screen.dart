@@ -335,10 +335,13 @@ class _LoginScreenState extends State<LoginScreen> {
             Positioned(
               left: 248,
               top: 639,
-              child: SizedBox(
-                height: 50,
-                width: 55,
-                child: SvgPicture.asset('assets/icons/twitter_signup.svg'),
+              child: GestureDetector(
+                onTap: () {},
+                child: SizedBox(
+                  height: 50,
+                  width: 55,
+                  child: SvgPicture.asset('assets/icons/twitter_signup.svg'),
+                ),
               ),
             ),
             Positioned(
