@@ -61,12 +61,36 @@ class _SearchScreenState extends State<SearchScreen> {
                     child: ListView(
                       scrollDirection: Axis.horizontal,
                       children: [
-                        FilterCard(prefSearch: prefSearch, prefIndex: 0),
-                        FilterCard(prefSearch: prefSearch, prefIndex: 1),
-                        FilterCard(prefSearch: prefSearch, prefIndex: 2),
-                        FilterCard(prefSearch: prefSearch, prefIndex: 3),
-                        FilterCard(prefSearch: prefSearch, prefIndex: 4),
-                        FilterCard(prefSearch: prefSearch, prefIndex: 5),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 0,
+                          textStyle: unTextStyle(context),
+                        ),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 1,
+                          textStyle: unTextStyle(context),
+                        ),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 2,
+                          textStyle: unTextStyle(context),
+                        ),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 3,
+                          textStyle: unTextStyle(context),
+                        ),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 4,
+                          textStyle: unTextStyle(context),
+                        ),
+                        FilterCard(
+                          prefSearch: prefSearch,
+                          prefIndex: 5,
+                          textStyle: unTextStyle(context),
+                        ),
                       ],
                     ),
                   ),
@@ -160,9 +184,11 @@ class FilterCard extends StatefulWidget {
     Key? key,
     required this.prefSearch,
     required this.prefIndex,
+    required this.textStyle,
   }) : super(key: key);
   List<String> prefSearch;
   int prefIndex;
+  TextStyle textStyle;
   @override
   _FilterCardState createState() => _FilterCardState();
 }
@@ -171,7 +197,6 @@ class _FilterCardState extends State<FilterCard> {
   Color filterColor = backgroundColor;
   bool filterStat = false;
 
-  TextStyle textStyle = unTextStyle;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -183,11 +208,11 @@ class _FilterCardState extends State<FilterCard> {
             setState(() {
               if (filterStat == false) {
                 filterColor = primaryColor;
-                textStyle = selTextStyle;
+                widget.textStyle = selTextStyle(context);
               }
               if (filterStat == true) {
                 filterColor = backgroundColor;
-                textStyle = unTextStyle;
+                widget.textStyle = unTextStyle(context);
               }
               if (filterColor == backgroundColor) {
                 filterStat = false;
@@ -211,7 +236,7 @@ class _FilterCardState extends State<FilterCard> {
             child: Center(
               child: Text(
                 widget.prefSearch[widget.prefIndex],
-                style: GoogleFonts.poppins(textStyle: textStyle),
+                style: GoogleFonts.poppins(textStyle: widget.textStyle),
               ),
             ),
           ),

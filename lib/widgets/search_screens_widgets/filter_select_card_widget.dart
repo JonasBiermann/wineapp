@@ -4,17 +4,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FilterSelectCard extends StatefulWidget {
-  FilterSelectCard({
-    Key? key,
-    required this.filterCategory,
-    required this.filterSvg,
-    required this.filterIndex,
-    required this.appliedFilters,
-  }) : super(key: key);
+  FilterSelectCard(
+      {Key? key,
+      required this.filterCategory,
+      required this.filterSvg,
+      required this.filterIndex,
+      required this.appliedFilters,
+      required this.textStyle})
+      : super(key: key);
   List<String> filterCategory;
   List<String> filterSvg;
   int filterIndex;
   ValueNotifier<int> appliedFilters;
+  TextStyle textStyle;
   @override
   FilterSelectCardState createState() => FilterSelectCardState();
 }
@@ -24,7 +26,6 @@ class FilterSelectCardState extends State<FilterSelectCard> {
   Color borderColor = quartiaryTextColor;
   Color svgColor = quartiaryTextColor;
   bool filterStat = false;
-  TextStyle textStyle = unTextStyle;
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +38,7 @@ class FilterSelectCardState extends State<FilterSelectCard> {
           setState(() {
             if (filterStat == false) {
               filterColor = quartiaryTextColor;
-              textStyle = selTextStyle;
+              widget.textStyle = selTextStyle(context);
               borderColor = backgroundColor;
               svgColor = mainTextColor;
               widget.appliedFilters.value += 1;
@@ -45,7 +46,7 @@ class FilterSelectCardState extends State<FilterSelectCard> {
             }
             if (filterStat == true) {
               filterColor = primaryColor;
-              textStyle = unTextStyle;
+              widget.textStyle = unTextStyle(context);
               borderColor = quartiaryTextColor;
               svgColor = quartiaryTextColor;
               widget.appliedFilters.value -= 1;
@@ -88,7 +89,7 @@ class FilterSelectCardState extends State<FilterSelectCard> {
             Text(
               widget.filterCategory[widget.filterIndex],
               style: GoogleFonts.poppins(
-                textStyle: textStyle,
+                textStyle: widget.textStyle,
               ),
             ),
           ],
@@ -105,11 +106,13 @@ class BigFilterSelectCard extends StatefulWidget {
     required this.filterSvg,
     required this.filterIndex,
     required this.appliedFilters,
+    required this.textStyle,
   }) : super(key: key);
   List<String> filterCategory;
   List<String> filterSvg;
   int filterIndex;
   ValueNotifier<int> appliedFilters;
+  TextStyle textStyle;
   @override
   _BigFilterSelectCardState createState() => _BigFilterSelectCardState();
 }
@@ -119,7 +122,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
   Color borderColor = quartiaryTextColor;
 
   bool filterStat = false;
-  TextStyle textStyle = unTextStyle;
+
   List<String> selectedSvg = [
     'assets/icons/cooking_bc.svg',
     'assets/icons/wine_tasting_bc.svg',
@@ -141,7 +144,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
           setState(() {
             if (filterStat == false) {
               filterColor = quartiaryTextColor;
-              textStyle = selTextStyle;
+              widget.textStyle = selTextStyle(context);
               borderColor = backgroundColor;
               widget.filterSvg[widget.filterIndex] =
                   selectedSvg[widget.filterIndex];
@@ -150,7 +153,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
             }
             if (filterStat == true) {
               filterColor = primaryColor;
-              textStyle = unTextStyle;
+              widget.textStyle = unTextStyle(context);
               borderColor = quartiaryTextColor;
               widget.filterSvg[widget.filterIndex] =
                   unselectedSvg[widget.filterIndex];
@@ -206,7 +209,7 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
                 child: Text(
                   widget.filterCategory[widget.filterIndex],
                   style: GoogleFonts.poppins(
-                    textStyle: textStyle,
+                    textStyle: widget.textStyle,
                   ),
                   textAlign: TextAlign.center,
                 ),

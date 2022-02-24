@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:theme_manager/theme_manager.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_1.dart';
 import 'package:wineapp/services/auth_services.dart';
@@ -15,16 +16,23 @@ class WineApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Wine App',
-        home: StreamBuilder(
-          stream: AuthService().firebaseAuth.authStateChanges(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              return MainScreen(pageIndex: 0);
-            }
-            return const IntroductionScreen1();
-          },
-        ));
+    return ThemeManager(
+      defaultBrightnessPreference: BrightnessPreference.system,
+      data: (Brightness brightness) => ThemeData(brightness: brightness),
+      loadBrightnessOnStart: true,
+      themedWidgetBuilder: (BuildContext context, ThemeData theme) {
+        return MaterialApp(
+            title: 'Wine App',
+            home: StreamBuilder(
+              stream: AuthService().firebaseAuth.authStateChanges(),
+              builder: (context, snapshot) {
+                if (snapshot.hasData) {
+                  return MainScreen(pageIndex: 0);
+                }
+                return const IntroductionScreen1();
+              },
+            ));
+      },
+    );
   }
 }
