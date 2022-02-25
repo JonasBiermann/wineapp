@@ -66,47 +66,96 @@ class DesignEdit extends StatelessWidget {
               designCategory: 'Tertiary-Text-Color',
               topPadding: 192,
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 15,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {
+                  showDialog(
+                      context: context,
+                      builder: (BuildContext context) {
+                        return Dialog(
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(25)),
+                          elevation: 1,
+                          backgroundColor:
+                              Theme.of(context).scaffoldBackgroundColor,
+                          insetAnimationCurve: Curves.decelerate,
+                          child: Container(
+                              height: 200,
+                              child: Column(
+                                children: [
+                                  Text(
+                                    'Theme',
+                                    style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                        color:
+                                            Theme.of(context).selectedRowColor,
+                                      ),
+                                    ),
+                                  ),
+                                  FloatingActionButton(
+                                    onPressed: () {
+                                      setAsDarkPurple(context);
+                                      print('Done');
+                                    },
+                                  ),
+                                  FloatingActionButton(onPressed: () {
+                                    setAsLightRed(context);
+                                  })
+                                ],
+                              )),
+                        );
+                      });
+                },
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 49,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {},
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 83,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {},
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 117,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {},
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 151,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {},
+              ),
             ),
-            const Padding(
-              padding: EdgeInsets.only(
+            Padding(
+              padding: const EdgeInsets.only(
                 left: 250,
                 top: 185,
               ),
-              child: SettingsEditButton(),
+              child: SettingsEditButton(
+                onTap: () {},
+              ),
             ),
           ],
         ),

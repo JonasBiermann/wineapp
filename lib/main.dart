@@ -23,6 +23,12 @@ class WineApp extends StatelessWidget {
       themedWidgetBuilder: (BuildContext context, ThemeData theme) {
         return MaterialApp(
             title: 'Wine App',
+            theme: theme.copyWith(
+              colorScheme: theme.colorScheme.copyWith(
+                primary: Colors.blue,
+                secondary: Colors.lightBlue,
+              ),
+            ),
             home: StreamBuilder(
               stream: AuthService().firebaseAuth.authStateChanges(),
               builder: (context, snapshot) {

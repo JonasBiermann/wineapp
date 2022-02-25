@@ -162,54 +162,68 @@ class UserInfoEditWidget extends StatelessWidget {
             ),
           ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 15,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 49,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 83,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 117,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 151,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 185,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 219,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
       ],
     );

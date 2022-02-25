@@ -6,12 +6,13 @@ import 'package:wineapp/constants.dart';
 class SettingsEditButton extends StatelessWidget {
   const SettingsEditButton({
     Key? key,
+    required this.onTap,
   }) : super(key: key);
-
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: onTap,
       child: Stack(
         children: [
           Container(

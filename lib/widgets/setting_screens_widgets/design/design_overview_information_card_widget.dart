@@ -93,23 +93,23 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           ),
         ),
         DesignOverviewColorContainer(
-          color: primaryColor,
+          color: Theme.of(context).primaryColor,
           topPadding: 80,
         ),
         DesignOverviewColorContainer(
-          color: backgroundColor,
+          color: Theme.of(context).scaffoldBackgroundColor,
           topPadding: 108,
         ),
         DesignOverviewColorContainer(
-          color: mainTextColor,
+          color: Theme.of(context).selectedRowColor,
           topPadding: 136,
         ),
         DesignOverviewColorContainer(
-          color: quartiaryTextColor,
+          color: Theme.of(context).unselectedWidgetColor,
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: tertiaryTextColor,
+          color: Theme.of(context).unselectedWidgetColor,
           topPadding: 192,
         ),
         DesignOverviewColorCode(

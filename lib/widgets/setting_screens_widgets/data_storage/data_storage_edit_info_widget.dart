@@ -60,40 +60,50 @@ class DataStorageEditInfoWidget extends StatelessWidget {
           categoryName: 'Cache',
           topPadding: 118,
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 15,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 49,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 83,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 117,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             left: 250,
             top: 15,
           ),
-          child: SettingsEditButton(),
+          child: SettingsEditButton(
+            onTap: () {},
+          ),
         ),
       ],
     );

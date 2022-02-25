@@ -58,7 +58,7 @@ TextStyle selTextStyle(BuildContext context) {
 void setAsLightPurple(BuildContext context) {
   ThemeManager.of(context).setThemeData(ThemeData(
     brightness: Brightness.light,
-    primaryColor: purpleDesign[300],
+    primaryColor: purpleDesign[100],
     scaffoldBackgroundColor: purpleDesign[400],
     unselectedWidgetColor: purpleDesign[300],
     selectedRowColor: purpleDesign[50],
@@ -68,7 +68,7 @@ void setAsLightPurple(BuildContext context) {
 void setAsLightRed(BuildContext context) {
   ThemeManager.of(context).setThemeData(ThemeData(
     brightness: Brightness.light,
-    primaryColor: redDesign[300],
+    primaryColor: redDesign[100],
     scaffoldBackgroundColor: redDesign[400],
     unselectedWidgetColor: redDesign[300],
     selectedRowColor: redDesign[50],
@@ -78,7 +78,7 @@ void setAsLightRed(BuildContext context) {
 void setAsDarkPurple(BuildContext context) {
   ThemeManager.of(context).setThemeData(ThemeData(
     brightness: Brightness.dark,
-    primaryColor: purpleDesign[300],
+    primaryColor: purpleDesign[100],
     scaffoldBackgroundColor: purpleDesign[400],
     unselectedWidgetColor: purpleDesign[300],
     selectedRowColor: purpleDesign[50],
@@ -88,7 +88,7 @@ void setAsDarkPurple(BuildContext context) {
 void setAsDarkRed(BuildContext context) {
   ThemeManager.of(context).setThemeData(ThemeData(
     brightness: Brightness.dark,
-    primaryColor: redDesign[300],
+    primaryColor: redDesign[100],
     scaffoldBackgroundColor: redDesign[400],
     unselectedWidgetColor: redDesign[300],
     selectedRowColor: redDesign[50],
