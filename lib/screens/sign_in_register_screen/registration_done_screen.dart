@@ -20,7 +20,8 @@ class RegDoneScreen extends StatelessWidget {
               child: SizedBox(
                 height: 302.51,
                 width: 300,
-                child: SvgPicture.asset('assets/icons/reg_done.svg'),
+                child:
+                    SvgPicture.asset('assets/icons/icons_purple/reg_done.svg'),
               ),
             ),
             Positioned(

@@ -63,7 +63,7 @@ class AddMealButton extends StatelessWidget {
               child: SizedBox(
                 height: 20,
                 width: 20,
-                child: SvgPicture.asset('assets/icons/add-2.svg',
+                child: SvgPicture.asset('assets/icons/general/add-2.svg',
                     color: mainTextColor),
               ),
             ),

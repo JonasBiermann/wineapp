@@ -31,17 +31,17 @@ class _SearchBarState extends State<SearchBar> {
   ];
 
   List<String> mainFilterSvg = [
-    'assets/icons/cooking.svg',
-    'assets/icons/wine_tasting.svg',
-    'assets/icons/eating together.svg'
+    'assets/icons/icons_purple/cooking.svg',
+    'assets/icons/icons_purple/wine_tasting.svg',
+    'assets/icons/icons_purple/eating together.svg'
   ];
   List<String> filterSvg = [
-    'assets/icons/restaurant.svg',
-    'assets/icons/turkey-2.svg',
-    'assets/icons/glass-cheers.svg',
-    'assets/icons/lettuce.svg',
-    'assets/icons/candy.svg',
-    'assets/icons/pepper.svg',
+    'assets/icons/general/restaurant.svg',
+    'assets/icons/general/turkey-2.svg',
+    'assets/icons/icons_purple/glass-cheers.svg',
+    'assets/icons/general/lettuce.svg',
+    'assets/icons/general/candy.svg',
+    'assets/icons/general/pepper.svg',
   ];
 
   @override
@@ -85,7 +85,7 @@ class _SearchBarState extends State<SearchBar> {
             child: SizedBox(
               height: 17,
               width: 17,
-              child: SvgPicture.asset('assets/icons/search.svg',
+              child: SvgPicture.asset('assets/icons/general/search.svg',
                   color: mainTextColor),
             ),
           ),
@@ -100,7 +100,7 @@ class _SearchBarState extends State<SearchBar> {
                 height: 20,
                 width: 20,
                 child: SvgPicture.asset(
-                  'assets/icons/settings-sliders.svg',
+                  'assets/icons/general/settings-sliders.svg',
                   color: Colors.white,
                 ),
               ),
@@ -170,7 +170,7 @@ class _SearchBarState extends State<SearchBar> {
                   ),
                   child: Center(
                     child: SvgPicture.asset(
-                      'assets/icons/cross-circle.svg',
+                      'assets/icons/general/cross-circle.svg',
                       color: mainTextColor,
                       height: 15,
                       width: 15,
@@ -360,7 +360,7 @@ class _SearchBarState extends State<SearchBar> {
                       left: 15,
                       top: 13,
                       child: SvgPicture.asset(
-                        'assets/icons/settings-sliders.svg',
+                        'assets/icons/general/settings-sliders.svg',
                         height: 14,
                         width: 14,
                         color: mainTextColor,

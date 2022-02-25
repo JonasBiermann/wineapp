@@ -25,7 +25,8 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
               child: SizedBox(
                 width: 300,
                 height: 246.26,
-                child: SvgPicture.asset('assets/icons/code_sent.svg'),
+                child:
+                    SvgPicture.asset('assets/icons/icons_purple/code_sent.svg'),
               ),
             ),
             Positioned(

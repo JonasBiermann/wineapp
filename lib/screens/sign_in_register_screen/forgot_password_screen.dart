@@ -24,7 +24,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: SizedBox(
               width: 300,
               height: 199.37,
-              child: SvgPicture.asset('assets/icons/forgot_password.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/forgot_password.svg'),
             ),
           ),
           Positioned(

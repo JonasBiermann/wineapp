@@ -149,7 +149,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SizedBox(
                 height: 50,
                 width: 50,
-                child: SvgPicture.asset('assets/icons/fingerprint_icon.svg'),
+                child: SvgPicture.asset(
+                    'assets/icons/general/fingerprint_icon.svg'),
               ),
             ),
             Positioned(
@@ -319,7 +320,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: SizedBox(
                   height: 50,
                   width: 55,
-                  child: SvgPicture.asset('assets/icons/google.svg'),
+                  child:
+                      SvgPicture.asset('assets/icons/icons_purple/google.svg'),
                 ),
               ),
             ),
@@ -329,7 +331,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/apple.svg'),
+                child: SvgPicture.asset('assets/icons/icons_purple/apple.svg'),
               ),
             ),
             Positioned(
@@ -338,7 +340,8 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/twitter_signup.svg'),
+                child: SvgPicture.asset(
+                    'assets/icons/icons_purple/twitter_signup.svg'),
               ),
             ),
             Positioned(

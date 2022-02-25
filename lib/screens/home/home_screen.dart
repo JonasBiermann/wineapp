@@ -15,9 +15,9 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int tasteIndex = 2;
   List<String> icondata = [
-    'assets/icons/sad.svg',
-    'assets/icons/smile.svg',
-    'assets/icons/grin-stars.svg',
+    'assets/icons/general/sad.svg',
+    'assets/icons/general/smile.svg',
+    'assets/icons/general/grin-stars.svg',
   ];
   List<String> labeldata = [
     'Not really...',

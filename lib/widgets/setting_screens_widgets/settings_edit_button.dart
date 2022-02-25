@@ -47,7 +47,7 @@ class SettingsEditButton extends StatelessWidget {
               top: 8,
             ),
             child: SvgPicture.asset(
-              'assets/icons/pencil.svg',
+              'assets/icons/general/pencil.svg',
               width: 9,
               height: 9,
               color: quartiaryTextColor,

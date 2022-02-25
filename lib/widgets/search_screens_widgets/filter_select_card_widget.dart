@@ -124,14 +124,14 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
   bool filterStat = false;
 
   List<String> selectedSvg = [
-    'assets/icons/cooking_bc.svg',
-    'assets/icons/wine_tasting_bc.svg',
-    'assets/icons/eating_together_bc.svg',
+    'assets/icons/icons_purple/cooking_bc.svg',
+    'assets/icons/icons_purple/wine_tasting_bc.svg',
+    'assets/icons/icons_purple/eating_together_bc.svg',
   ];
   List<String> unselectedSvg = [
-    'assets/icons/cooking.svg',
-    'assets/icons/wine_tasting.svg',
-    'assets/icons/eating together.svg'
+    'assets/icons/icons_purple/cooking.svg',
+    'assets/icons/icons_purple/wine_tasting.svg',
+    'assets/icons/icons_purple/eating together.svg'
   ];
   @override
   Widget build(BuildContext context) {

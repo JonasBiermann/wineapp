@@ -73,7 +73,7 @@ class TrainSomellierWidget extends StatelessWidget {
               height: 30,
               width: 30,
               child: SvgPicture.asset(
-                'assets/icons/thumbs-up.svg',
+                'assets/icons/general/thumbs-up.svg',
                 color: mainTextColor,
               ),
             ),
@@ -90,7 +90,7 @@ class TrainSomellierWidget extends StatelessWidget {
               height: 30,
               width: 30,
               child: SvgPicture.asset(
-                'assets/icons/thumbs-down.svg',
+                'assets/icons/general/thumbs-down.svg',
                 color: mainTextColor,
               ),
             ),

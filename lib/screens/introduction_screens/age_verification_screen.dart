@@ -22,7 +22,7 @@ class AgeVerificationScreen extends StatelessWidget {
             child: SizedBox(
               height: 241.29,
               width: 300,
-              child: SvgPicture.asset('assets/icons/birthday.svg'),
+              child: SvgPicture.asset('assets/icons/icons_purple/birthday.svg'),
             ),
           ),
           Positioned(

@@ -21,7 +21,7 @@ class IntroductionScreen4 extends StatelessWidget {
             child: SizedBox(
               width: 300,
               height: 254.47,
-              child: SvgPicture.asset('assets/icons/histroy.svg'),
+              child: SvgPicture.asset('assets/icons/icons_purple/history.svg'),
             ),
           ),
           Positioned(
@@ -66,7 +66,8 @@ class IntroductionScreen4 extends StatelessWidget {
             child: SizedBox(
               width: 70,
               height: 10,
-              child: SvgPicture.asset('assets/icons/Dot Indicator_4.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/Dot Indicator_4.svg'),
             ),
           ),
           Positioned(

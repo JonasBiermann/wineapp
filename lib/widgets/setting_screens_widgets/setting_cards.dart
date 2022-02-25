@@ -23,56 +23,56 @@ class SettingCards extends StatelessWidget {
           children: [
             SettingCard(
               settingName: 'General',
-              settingIcon: 'assets/icons/settings.svg',
+              settingIcon: 'assets/icons/general/settings.svg',
               pageRoute: GeneralSettingScreen(
                 settingName: 'General',
               ),
             ),
             SettingCard(
               settingName: 'Notifications',
-              settingIcon: 'assets/icons/bell.svg',
+              settingIcon: 'assets/icons/general/bell.svg',
               pageRoute: NotificationSettingScreen(
                 settingName: 'Notifications',
               ),
             ),
             SettingCard(
               settingName: 'Design',
-              settingIcon: 'assets/icons/palette.svg',
+              settingIcon: 'assets/icons/general/palette.svg',
               pageRoute: DesignSettingScreen(
                 settingName: 'Design',
               ),
             ),
             SettingCard(
               settingName: 'Data & Storage',
-              settingIcon: 'assets/icons/folder.svg',
+              settingIcon: 'assets/icons/general/folder.svg',
               pageRoute: DataStorageSettingsScreen(
                 settingName: 'Data & Storage',
               ),
             ),
             SettingCard(
               settingName: 'Translate',
-              settingIcon: 'assets/icons/subtitles.svg',
+              settingIcon: 'assets/icons/general/subtitles.svg',
               pageRoute: GeneralSettingScreen(
                 settingName: 'General',
               ),
             ),
             SettingCard(
               settingName: 'Write a Review',
-              settingIcon: 'assets/icons/comment.svg',
+              settingIcon: 'assets/icons/general/comment.svg',
               pageRoute: GeneralSettingScreen(
                 settingName: 'General',
               ),
             ),
             SettingCard(
               settingName: 'Contact Us',
-              settingIcon: 'assets/icons/envelope.svg',
+              settingIcon: 'assets/icons/general/envelope.svg',
               pageRoute: GeneralSettingScreen(
                 settingName: 'General',
               ),
             ),
             SettingCard(
               settingName: 'About Us',
-              settingIcon: 'assets/icons/info.svg',
+              settingIcon: 'assets/icons/general/info.svg',
               pageRoute: GeneralSettingScreen(
                 settingName: 'General',
               ),

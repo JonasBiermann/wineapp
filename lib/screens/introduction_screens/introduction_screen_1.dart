@@ -23,7 +23,8 @@ class IntroductionScreen1 extends StatelessWidget {
             child: SizedBox(
               height: 218.29,
               width: 300,
-              child: SvgPicture.asset('assets/icons/wine_tasting.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/wine_tasting.svg'),
             ),
           ),
           Positioned(
@@ -69,7 +70,8 @@ class IntroductionScreen1 extends StatelessWidget {
             child: SizedBox(
               height: 10,
               width: 70,
-              child: SvgPicture.asset('assets/icons/dot_indicator_1.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/dot_indicator_1.svg'),
             ),
           ),
           Positioned(
@@ -137,7 +139,7 @@ class IntroductionScreen1 extends StatelessWidget {
                       height: 11.37,
                       width: 18,
                       child: SvgPicture.asset(
-                        'assets/icons/arrow_right.svg',
+                        'assets/icons/general/arrow_right.svg',
                         color: mainTextColor,
                       ),
                     ),

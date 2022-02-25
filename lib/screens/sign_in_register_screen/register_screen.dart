@@ -191,7 +191,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SizedBox(
                 height: 50,
                 width: 50,
-                child: SvgPicture.asset('assets/icons/fingerprint_icon.svg'),
+                child: SvgPicture.asset(
+                    'assets/icons/general/fingerprint_icon.svg'),
               ),
             ),
             Positioned(
@@ -214,10 +215,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: 15,
                   child: agreed
                       ? SvgPicture.asset(
-                          'assets/icons/accept_icon.svg',
+                          'assets/icons/general/accept_icon.svg',
                         )
                       : SvgPicture.asset(
-                          'assets/icons/accept_icon.svg',
+                          'assets/icons/general/accept_icon.svg',
                           color: mainTextColor,
                         ),
                 ),
@@ -422,7 +423,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: 55,
                   child: loading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : SvgPicture.asset('assets/icons/google.svg'),
+                      : SvgPicture.asset(
+                          'assets/icons/icons_purple/google.svg'),
                 ),
               ),
             ),
@@ -432,7 +434,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/apple.svg'),
+                child: SvgPicture.asset('assets/icons/icons_purple/apple.svg'),
               ),
             ),
             Positioned(
@@ -441,7 +443,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/twitter_signup.svg'),
+                child: SvgPicture.asset(
+                    'assets/icons/icons_purple/twitter_signup.svg'),
               ),
             ),
             Positioned(

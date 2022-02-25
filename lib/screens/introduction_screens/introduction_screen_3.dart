@@ -20,7 +20,8 @@ class IntroductionScreen3 extends StatelessWidget {
             child: SizedBox(
               width: 300,
               height: 180.91,
-              child: SvgPicture.asset('assets/icons/preference.svg'),
+              child:
+                  SvgPicture.asset('assets/icons/icons_purple/preference.svg'),
             ),
           ),
           Positioned(
@@ -66,7 +67,8 @@ class IntroductionScreen3 extends StatelessWidget {
             child: SizedBox(
               height: 10,
               width: 70,
-              child: SvgPicture.asset('assets/icons/Dot Indicastor_3.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/Dot Indicastor_3.svg'),
             ),
           ),
           Positioned(
@@ -134,7 +136,7 @@ class IntroductionScreen3 extends StatelessWidget {
                       height: 11.37,
                       width: 18,
                       child: SvgPicture.asset(
-                        'assets/icons/arrow_right.svg',
+                        'assets/icons/general/arrow_right.svg',
                         color: mainTextColor,
                       ),
                     ),

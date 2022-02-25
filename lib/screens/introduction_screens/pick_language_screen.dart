@@ -21,7 +21,8 @@ class PickLanguageScreen extends StatelessWidget {
             child: SizedBox(
               height: 215,
               width: 300,
-              child: SvgPicture.asset('assets/icons/globe_languages.svg'),
+              child: SvgPicture.asset(
+                  'assets/icons/icons_purple/globe_languages.svg'),
             ),
           ),
           Positioned(
@@ -115,7 +116,7 @@ class PickLanguageScreen extends StatelessWidget {
                     height: 21,
                     width: 21,
                     child: SvgPicture.asset(
-                      'assets/icons/arrow-down-2.svg',
+                      'assets/icons/general/arrow-down-2.svg',
                       color: mainTextColor,
                     ),
                   ),

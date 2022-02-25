@@ -34,7 +34,7 @@ class UpgradePlan extends StatelessWidget {
             height: 20,
             width: 20,
             child: SvgPicture.asset(
-              'assets/icons/info.svg',
+              'assets/icons/general/info.svg',
               color: mainTextColor,
             ),
           ),
@@ -61,7 +61,7 @@ class UpgradePlan extends StatelessWidget {
                   height: 40,
                   width: 40,
                   child: SvgPicture.asset(
-                    'assets/icons/check-2.svg',
+                    'assets/icons/general/check-2.svg',
                     color: mainTextColor,
                   ),
                 ),
@@ -166,17 +166,20 @@ class UpgradePlan extends StatelessWidget {
                       SizedBox(
                         height: 4,
                         width: 4,
-                        child: SvgPicture.asset('assets/icons/Ellipse 2.svg'),
+                        child: SvgPicture.asset(
+                            'assets/icons/general/Ellipse 2.svg'),
                       ),
                       SizedBox(
                         height: 4,
                         width: 4,
-                        child: SvgPicture.asset('assets/icons/Ellipse 2.svg'),
+                        child: SvgPicture.asset(
+                            'assets/icons/general/Ellipse 2.svg'),
                       ),
                       SizedBox(
                         height: 4,
                         width: 4,
-                        child: SvgPicture.asset('assets/icons/Ellipse 2.svg'),
+                        child: SvgPicture.asset(
+                            'assets/icons/general/Ellipse 2.svg'),
                       ),
                     ],
                   ),
@@ -208,7 +211,7 @@ class UpgradePlan extends StatelessWidget {
                   height: 40,
                   width: 40,
                   child: SvgPicture.asset(
-                    'assets/icons/diamond.svg',
+                    'assets/icons/general/diamond.svg',
                     color: primaryColor,
                   ),
                 ),
@@ -314,7 +317,7 @@ class UpgradePlan extends StatelessWidget {
                         height: 4,
                         width: 4,
                         child: SvgPicture.asset(
-                          'assets/icons/Ellipse 2.svg',
+                          'assets/icons/general/Ellipse 2.svg',
                           color: primaryColor,
                         ),
                       ),
@@ -322,7 +325,7 @@ class UpgradePlan extends StatelessWidget {
                         height: 4,
                         width: 4,
                         child: SvgPicture.asset(
-                          'assets/icons/Ellipse 2.svg',
+                          'assets/icons/general/Ellipse 2.svg',
                           color: primaryColor,
                         ),
                       ),
@@ -330,7 +333,7 @@ class UpgradePlan extends StatelessWidget {
                         height: 4,
                         width: 4,
                         child: SvgPicture.asset(
-                          'assets/icons/Ellipse 2.svg',
+                          'assets/icons/general/Ellipse 2.svg',
                           color: primaryColor,
                         ),
                       ),
