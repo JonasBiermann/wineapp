@@ -34,9 +34,10 @@ class RegDoneScreen extends StatelessWidget {
                   'Done!',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 28,
-                        color: Theme.of(context).colorScheme.primary),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 28,
+                      color: Theme.of(context).indicatorColor,
+                    ),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -52,7 +53,7 @@ class RegDoneScreen extends StatelessWidget {
                   'Great, you set up your account. Let\'s continue to your homescreen.',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).primaryColorLight,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
@@ -94,7 +95,7 @@ class RegDoneScreen extends StatelessWidget {
                           'Continue to Home',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).indicatorColor,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),

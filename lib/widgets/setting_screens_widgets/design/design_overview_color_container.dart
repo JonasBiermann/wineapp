@@ -23,7 +23,7 @@ class DesignOverviewColorContainer extends StatelessWidget {
           color: color,
           border: Border.all(
             width: 1,
-            color: Theme.of(context).colorScheme.primary,
+            color: Theme.of(context).indicatorColor,
           ),
           borderRadius: BorderRadius.circular(4),
         ),

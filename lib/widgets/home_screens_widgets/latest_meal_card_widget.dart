@@ -57,7 +57,7 @@ class _LatestMealCardState extends State<LatestMealCard> {
                 'Latest Meal',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
@@ -104,7 +104,7 @@ class _LatestMealCardState extends State<LatestMealCard> {
                 'Your most recent meal was psaghetti and your personal somellier suggested red wine.\nDid it matche the taste?',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w600),
                 ),
@@ -148,10 +148,12 @@ class _LatestMealCardState extends State<LatestMealCard> {
                           padding: const EdgeInsets.symmetric(
                             vertical: 1,
                           ),
-                          child: SvgPicture.asset(icondata[value],
-                              color: value == tasteIndex
-                                  ? Theme.of(context).colorScheme.primary
-                                  : Theme.of(context).colorScheme.secondary),
+                          child: SvgPicture.asset(
+                            icondata[value],
+                            color: value == tasteIndex
+                                ? Theme.of(context).indicatorColor
+                                : Theme.of(context).primaryColorLight,
+                          ),
                         ),
                       ),
                     ),
@@ -197,14 +199,12 @@ class _LatestMealCardState extends State<LatestMealCard> {
                               textStyle: value == tasteIndex
                                   ? TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
+                                      color: Theme.of(context).indicatorColor,
                                       fontSize: 9)
                                   : TextStyle(
                                       fontWeight: FontWeight.w600,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
+                                      color:
+                                          Theme.of(context).primaryColorLight,
                                       fontSize: 9),
                             ),
                           ),

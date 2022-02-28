@@ -20,7 +20,7 @@ class UpgradePlan extends StatelessWidget {
             upgradePhrase,
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
@@ -35,7 +35,7 @@ class UpgradePlan extends StatelessWidget {
             width: 20,
             child: SvgPicture.asset(
               'assets/icons/general/info.svg',
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).indicatorColor,
             ),
           ),
         ),
@@ -49,7 +49,7 @@ class UpgradePlan extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     width: 2.0,
                   ),
                 ),
@@ -62,7 +62,7 @@ class UpgradePlan extends StatelessWidget {
                   width: 40,
                   child: SvgPicture.asset(
                     'assets/icons/general/check-2.svg',
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                   ),
                 ),
               ),
@@ -76,7 +76,7 @@ class UpgradePlan extends StatelessWidget {
                     'Basic Plan',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                       ),
@@ -94,7 +94,7 @@ class UpgradePlan extends StatelessWidget {
                     'Free',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontWeight: FontWeight.w400,
                           fontSize: 7),
                     ),
@@ -114,7 +114,7 @@ class UpgradePlan extends StatelessWidget {
                         'Limited Somellier',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).indicatorColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -128,8 +128,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'Search Wines',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: mainTextColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).indicatorColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -144,7 +144,7 @@ class UpgradePlan extends StatelessWidget {
                         'See Wine-Stats',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).indicatorColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -370,7 +370,7 @@ class UpgradePlan extends StatelessWidget {
                       'Upgrade now - €3.29',
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
                         ),

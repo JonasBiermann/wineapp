@@ -49,7 +49,6 @@ class _DataStorageSettingsScreenState extends State<DataStorageSettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           HomeScreenHeader(
@@ -100,8 +99,7 @@ class _DataStorageSettingsScreenState extends State<DataStorageSettingsScreen> {
                           style: value == changeIndex
                               ? GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
+                                    color: Theme.of(context).indicatorColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),

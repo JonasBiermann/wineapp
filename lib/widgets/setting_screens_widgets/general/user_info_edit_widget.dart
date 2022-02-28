@@ -35,7 +35,7 @@ class UserInfoEditWidget extends StatelessWidget {
             'Aurelie Hertrampf',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -54,7 +54,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Username',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -74,7 +74,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Email',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -94,7 +94,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Phone',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -114,7 +114,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Age',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -134,7 +134,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Country',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -154,7 +154,7 @@ class UserInfoEditWidget extends StatelessWidget {
               'Gender',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

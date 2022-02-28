@@ -74,11 +74,13 @@ class _MainScreenState extends State<MainScreen> {
                                 color:
                                     Theme.of(context).scaffoldBackgroundColor,
                                 borderRadius: BorderRadius.circular(90)),
-                        child: Icon(data[value],
-                            size: 17,
-                            color: value == widget.pageIndex
-                                ? Theme.of(context).colorScheme.primary
-                                : Theme.of(context).colorScheme.secondary),
+                        child: Icon(
+                          data[value],
+                          size: 17,
+                          color: value == widget.pageIndex
+                              ? Theme.of(context).indicatorColor
+                              : Theme.of(context).primaryColorLight,
+                        ),
                       ),
                     ),
                     Row(
@@ -89,16 +91,14 @@ class _MainScreenState extends State<MainScreen> {
                           style: value == widget.pageIndex
                               ? GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
+                                    color: Theme.of(context).indicatorColor,
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
                               : GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.secondary,
+                                    color: Theme.of(context).primaryColorLight,
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                   ),

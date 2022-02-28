@@ -86,7 +86,7 @@ class _CodeFieldState extends State<CodeField> {
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),

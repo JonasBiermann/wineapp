@@ -16,36 +16,16 @@ const MaterialColor redDesign = MaterialColor(0xff810707, <int, Color>{
   400: Color(0xff810707),
 });
 
-ThemeData lightRed = ThemeData(
-  brightness: Brightness.light,
-  primarySwatch: redDesign,
-  scaffoldBackgroundColor: redDesign[400],
-  primaryColor: redDesign[100],
-  colorScheme: lightRed.colorScheme.copyWith(
-      primary: redDesign[50],
-      secondary: redDesign[300],
-      tertiary: redDesign[400]),
-);
-ThemeData lightPurple = ThemeData(
-  brightness: Brightness.light,
-  primarySwatch: redDesign,
-  scaffoldBackgroundColor: purpleDesign[400],
-  primaryColor: purpleDesign[100],
-  colorScheme: lightPurple.colorScheme.copyWith(
-      primary: purpleDesign[50],
-      secondary: purpleDesign[300],
-      tertiary: purpleDesign[400]),
-);
-
 const primaryColor = Color(0xff9A81D5);
 const mainTextColor = Color(0xffFFFFFF);
+const secondaryTextColor = Color(0xffD3C1FF);
 const tertiaryTextColor = Color(0xff6F00CF);
 const quartiaryTextColor = Color(0xffC3B3EA);
 const backgroundColor = Color(0xff6F00CF);
 
 TextStyle unTextStyle(BuildContext context) {
   return TextStyle(
-    color: Theme.of(context).unselectedWidgetColor,
+    color: Theme.of(context).primaryColorLight,
     fontSize: 11,
     fontWeight: FontWeight.w600,
   );
@@ -53,7 +33,7 @@ TextStyle unTextStyle(BuildContext context) {
 
 TextStyle selTextStyle(BuildContext context) {
   return TextStyle(
-    color: Theme.of(context).selectedRowColor,
+    color: Theme.of(context).indicatorColor,
     fontSize: 12,
     fontWeight: FontWeight.bold,
   );
@@ -64,12 +44,9 @@ void setAsLightPurple(BuildContext context) {
       brightness: Brightness.light,
       primaryColor: purpleDesign[100],
       scaffoldBackgroundColor: purpleDesign[400],
-      unselectedWidgetColor: purpleDesign[300],
-      selectedRowColor: purpleDesign[50],
-      colorScheme: lightPurple.colorScheme.copyWith(
-          primary: purpleDesign[50],
-          secondary: purpleDesign[300],
-          tertiary: purpleDesign[400])));
+      indicatorColor: purpleDesign[50],
+      primaryColorLight: purpleDesign[300],
+      hintColor: purpleDesign[400]));
 }
 
 void setAsLightRed(BuildContext context) {
@@ -77,30 +54,27 @@ void setAsLightRed(BuildContext context) {
       brightness: Brightness.light,
       primaryColor: redDesign[100],
       scaffoldBackgroundColor: redDesign[400],
-      unselectedWidgetColor: redDesign[300],
-      selectedRowColor: redDesign[50],
-      colorScheme: lightRed.colorScheme.copyWith(
-          primary: redDesign[50],
-          secondary: redDesign[300],
-          tertiary: purpleDesign[400])));
+      indicatorColor: redDesign[50],
+      primaryColorLight: redDesign[300],
+      hintColor: redDesign[400]));
 }
 
-void setAsDarkPurple(BuildContext context) {
-  ThemeManager.of(context).setThemeData(ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: purpleDesign[100],
-    scaffoldBackgroundColor: purpleDesign[400],
-    unselectedWidgetColor: purpleDesign[300],
-    selectedRowColor: purpleDesign[50],
-  ));
-}
+// void setAsDarkPurple(BuildContext context) {
+//   ThemeManager.of(context).setThemeData(ThemeData(
+//     brightness: Brightness.dark,
+//     primaryColor: purpleDesign[100],
+//     scaffoldBackgroundColor: purpleDesign[400],
+//     unselectedWidgetColor: purpleDesign[300],
+//     selectedRowColor: purpleDesign[50],
+//   ));
+// }
 
-void setAsDarkRed(BuildContext context) {
-  ThemeManager.of(context).setThemeData(ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: redDesign[100],
-    scaffoldBackgroundColor: redDesign[400],
-    unselectedWidgetColor: redDesign[300],
-    selectedRowColor: redDesign[50],
-  ));
-}
+// void setAsDarkRed(BuildContext context) {
+//   ThemeManager.of(context).setThemeData(ThemeData(
+//     brightness: Brightness.dark,
+//     primaryColor: redDesign[100],
+//     scaffoldBackgroundColor: redDesign[400],
+//     unselectedWidgetColor: redDesign[300],
+//     selectedRowColor: redDesign[50],
+//   ));
+// }

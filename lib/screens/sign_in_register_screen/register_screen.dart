@@ -40,7 +40,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   'Create a new Account',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 23,
                         fontWeight: FontWeight.bold),
                   ),
@@ -57,7 +57,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   'Create an Account so you can make use of your personal Somellier',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).primaryColorLight,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
@@ -78,13 +78,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: const EdgeInsets.only(left: 10),
                   child: Center(
                     child: TextField(
-                      cursorColor: Theme.of(context).colorScheme.primary,
+                      cursorColor: Theme.of(context).indicatorColor,
                       cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).indicatorColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
                       ),
@@ -93,7 +93,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hintText: 'Username',
                         hintStyle: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.tertiary,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
@@ -118,13 +118,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   padding: const EdgeInsets.only(left: 10),
                   child: Center(
                     child: TextField(
-                      cursorColor: Theme.of(context).colorScheme.primary,
+                      cursorColor: Theme.of(context).indicatorColor,
                       cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).indicatorColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
                       ),
@@ -133,7 +133,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         hintText: 'Phone/Email',
                         hintStyle: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.tertiary,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
@@ -159,13 +159,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Center(
                     child: TextField(
                       obscureText: true,
-                      cursorColor: Theme.of(context).colorScheme.primary,
+                      cursorColor: Theme.of(context).indicatorColor,
                       cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.primary,
+                            color: Theme.of(context).indicatorColor,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
                       ),
@@ -174,7 +174,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           hintText: 'Password',
                           hintStyle: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.tertiary,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -219,7 +219,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         )
                       : SvgPicture.asset(
                           'assets/icons/general/accept_icon.svg',
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                         ),
                 ),
               ),
@@ -237,7 +237,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       textStyle: TextStyle(
                         fontSize: 11,
                         fontWeight: FontWeight.w600,
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).primaryColorLight,
                       ),
                     ),
                     children: <TextSpan>[
@@ -245,16 +245,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         text: 'Terms of Service ',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              fontSize: 11,
-                              fontWeight: FontWeight.bold,
-                              color: Theme.of(context).colorScheme.primary),
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).indicatorColor,
+                          ),
                         ),
                         children: <TextSpan>[
                           TextSpan(
                             text: 'and ',
                             style: GoogleFonts.poppins(
-                              textStyle: const TextStyle(
-                                  color: quartiaryTextColor,
+                              textStyle: TextStyle(
+                                  color: Theme.of(context).primaryColorLight,
                                   fontSize: 11,
                                   fontWeight: FontWeight.w600),
                             ),
@@ -263,8 +264,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                 text: 'Privacy Policy',
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
+                                      color: Theme.of(context).indicatorColor,
                                       fontSize: 11,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -294,7 +294,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           'All fields are required!',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).indicatorColor,
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                             ),
@@ -331,7 +331,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: loading
                       ? Center(
                           child: CircularProgressIndicator(
-                              color: Theme.of(context).colorScheme.primary),
+                            color: Theme.of(context).indicatorColor,
+                          ),
                         )
                       : Center(
                           child: SizedBox(
@@ -341,8 +342,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               'Create Account',
                               style: GoogleFonts.poppins(
                                 textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
+                                    color: Theme.of(context).indicatorColor,
                                     fontSize: 15,
                                     fontWeight: FontWeight.bold),
                               ),
@@ -365,7 +365,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Container(
                         margin: const EdgeInsets.only(right: 5.0),
                         child: Divider(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           height: 10,
                         ),
                       ),
@@ -378,7 +378,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           'OR',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                                color: Theme.of(context).colorScheme.secondary,
+                                color: Theme.of(context).primaryColorLight,
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -389,7 +389,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       child: Container(
                         margin: const EdgeInsets.only(left: 5.0),
                         child: Divider(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           height: 10,
                         ),
                       ),
@@ -458,7 +458,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 child: Text(
                   'Already have an Account?',
                   style: GoogleFonts.poppins(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 11,
                       fontWeight: FontWeight.w600),
                 ),
@@ -481,7 +481,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   child: Text(
                     'Login',
                     style: GoogleFonts.poppins(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

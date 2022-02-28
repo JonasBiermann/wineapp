@@ -90,8 +90,7 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
                           style: value == changeIndex
                               ? GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
+                                    color: Theme.of(context).indicatorColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),

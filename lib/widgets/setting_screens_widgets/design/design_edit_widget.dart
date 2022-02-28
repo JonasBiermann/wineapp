@@ -35,7 +35,7 @@ class DesignEdit extends StatelessWidget {
                 'Design',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                   ),
@@ -80,8 +80,7 @@ class DesignEdit extends StatelessWidget {
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(25)),
                           elevation: 1,
-                          backgroundColor:
-                              Theme.of(context).scaffoldBackgroundColor,
+                          backgroundColor: Theme.of(context).primaryColor,
                           insetAnimationCurve: Curves.decelerate,
                           child: Container(
                               height: 200,
@@ -91,20 +90,26 @@ class DesignEdit extends StatelessWidget {
                                     'Theme',
                                     style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
-                                        color:
-                                            Theme.of(context).selectedRowColor,
+                                        color: Theme.of(context).primaryColor,
                                       ),
                                     ),
                                   ),
                                   FloatingActionButton(
+                                    backgroundColor:
+                                        Theme.of(context).hintColor,
                                     onPressed: () {
-                                      setAsDarkPurple(context);
+                                      setAsLightPurple(context);
                                       print('Done');
                                     },
                                   ),
-                                  FloatingActionButton(onPressed: () {
-                                    setAsLightRed(context);
-                                  })
+                                  FloatingActionButton(
+                                    backgroundColor:
+                                        Theme.of(context).indicatorColor,
+                                    onPressed: () {
+                                      setAsLightRed(context);
+                                      print('Done');
+                                    },
+                                  ),
                                 ],
                               )),
                         );

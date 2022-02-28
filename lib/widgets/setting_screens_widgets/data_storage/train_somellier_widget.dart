@@ -38,7 +38,7 @@ class TrainSomellierWidget extends StatelessWidget {
               'Train Somellier',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
@@ -74,7 +74,7 @@ class TrainSomellierWidget extends StatelessWidget {
               width: 30,
               child: SvgPicture.asset(
                 'assets/icons/general/thumbs-up.svg',
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
               ),
             ),
           ),
@@ -91,7 +91,7 @@ class TrainSomellierWidget extends StatelessWidget {
               width: 30,
               child: SvgPicture.asset(
                 'assets/icons/general/thumbs-down.svg',
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
               ),
             ),
           ),

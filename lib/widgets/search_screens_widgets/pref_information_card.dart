@@ -61,7 +61,7 @@ class PrefInformationCard extends StatelessWidget {
                     wineName,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontWeight: FontWeight.bold,
                         fontSize: 9,
                       ),
@@ -79,7 +79,7 @@ class PrefInformationCard extends StatelessWidget {
                   'Preparation time',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 7,
                       fontWeight: FontWeight.w600,
                     ),
@@ -107,7 +107,7 @@ class PrefInformationCard extends StatelessWidget {
                         textStyle: TextStyle(
                           fontSize: 5,
                           fontWeight: FontWeight.w600,
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                         ),
                       ),
                     ),

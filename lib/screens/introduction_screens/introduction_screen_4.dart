@@ -34,7 +34,7 @@ class IntroductionScreen4 extends StatelessWidget {
                 'Track your wine histroy',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -52,7 +52,7 @@ class IntroductionScreen4 extends StatelessWidget {
                 'Making an account lets you track and access your wine histroy anywhere',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
@@ -101,7 +101,7 @@ class IntroductionScreen4 extends StatelessWidget {
                         'Get Started',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).indicatorColor,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),

@@ -34,7 +34,7 @@ class IntroductionScreen3 extends StatelessWidget {
                 'Adaptation to your preference',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontWeight: FontWeight.bold,
                     fontSize: 28,
                   ),
@@ -53,7 +53,7 @@ class IntroductionScreen3 extends StatelessWidget {
                 'Your personal Somellier adapts to your personal preference in wine.',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
@@ -86,7 +86,7 @@ class IntroductionScreen3 extends StatelessWidget {
                 'Skip',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -122,7 +122,7 @@ class IntroductionScreen3 extends StatelessWidget {
                       'Next',
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -137,7 +137,7 @@ class IntroductionScreen3 extends StatelessWidget {
                       width: 18,
                       child: SvgPicture.asset(
                         'assets/icons/general/arrow_right.svg',
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                       ),
                     ),
                   ),

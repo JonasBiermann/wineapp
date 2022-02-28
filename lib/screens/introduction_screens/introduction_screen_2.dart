@@ -35,7 +35,7 @@ class IntroductionScreen2 extends StatelessWidget {
                 'Get wine suggestions anywhere',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -53,7 +53,7 @@ class IntroductionScreen2 extends StatelessWidget {
                 'No matter where you are, your personal somellier will always give you a suggestion.',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
@@ -86,7 +86,7 @@ class IntroductionScreen2 extends StatelessWidget {
                 'Skip',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -122,7 +122,7 @@ class IntroductionScreen2 extends StatelessWidget {
                       'Next',
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -136,9 +136,8 @@ class IntroductionScreen2 extends StatelessWidget {
                       height: 11.37,
                       width: 18,
                       child: SvgPicture.asset(
-                        'assets/icons/general/arrow_right.svg',
-                        color: Theme.of(context).colorScheme.primary,
-                      ),
+                          'assets/icons/general/arrow_right.svg',
+                          color: Theme.of(context).indicatorColor),
                     ),
                   ),
                 ],

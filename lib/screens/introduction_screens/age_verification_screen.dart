@@ -35,7 +35,7 @@ class AgeVerificationScreen extends StatelessWidget {
                 'Type in your age below',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -54,7 +54,7 @@ class AgeVerificationScreen extends StatelessWidget {
                 'Deepnding on your region, you will have to fulfill the minimum age to consume alcohol',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -125,7 +125,7 @@ class AgeVerificationScreen extends StatelessWidget {
                   'Skip to Login',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 9,
                       fontWeight: FontWeight.bold,
                     ),
@@ -157,7 +157,7 @@ class AgeVerificationScreen extends StatelessWidget {
                     'Continue',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),

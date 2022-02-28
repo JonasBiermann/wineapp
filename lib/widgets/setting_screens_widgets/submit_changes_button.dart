@@ -24,7 +24,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                 color: Theme.of(context).scaffoldBackgroundColor,
                 borderRadius: BorderRadius.circular(35),
                 border: Border.all(
-                  color: quartiaryTextColor,
+                  color: Theme.of(context).primaryColorLight,
                   width: 1,
                 ),
               ),
@@ -33,7 +33,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                   'Delete Changes',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -56,7 +56,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                   'Submit',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),

@@ -17,7 +17,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Material(
       borderRadius: BorderRadius.circular(0),
-      color: backgroundColor,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: SizedBox(
         height: 88,
         width: 320,
@@ -47,7 +47,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Icon(
                       data[0],
                       size: 17,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                     ),
                   ),
                 ),
@@ -71,7 +71,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Icon(
                       data[1],
                       size: 17,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                     ),
                   ),
                 ),
@@ -95,7 +95,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Icon(
                       data[2],
                       size: 17,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                     ),
                   ),
                 ),
@@ -115,7 +115,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                       dataLabel[0],
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                         ),
@@ -130,7 +130,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                       dataLabel[1],
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                         ),
@@ -145,7 +145,7 @@ class SettingBottomNavigationBar extends StatelessWidget {
                       dataLabel[2],
                       style: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                          color: Theme.of(context).colorScheme.primary,
+                          color: Theme.of(context).indicatorColor,
                           fontSize: 9,
                           fontWeight: FontWeight.bold,
                         ),

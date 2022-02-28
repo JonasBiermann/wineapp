@@ -25,7 +25,7 @@ class DataCategoryAmountWidget extends StatelessWidget {
           '${dataAmount}',
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
-              color: Theme.of(context).colorScheme.primary,
+              color: Theme.of(context).indicatorColor,
               fontSize: 12,
               fontWeight: FontWeight.w600,
             ),

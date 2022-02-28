@@ -50,7 +50,7 @@ class SettingCard extends StatelessWidget {
               settingName,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -63,10 +63,13 @@ class SettingCard extends StatelessWidget {
               left: 288,
             ),
             child: SizedBox(
-                height: 17,
-                width: 17,
-                child: SvgPicture.asset(settingIcon,
-                    color: Theme.of(context).colorScheme.primary)),
+              height: 17,
+              width: 17,
+              child: SvgPicture.asset(
+                settingIcon,
+                color: Theme.of(context).indicatorColor,
+              ),
+            ),
           ),
         ],
       ),

@@ -23,11 +23,11 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           height: 225,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(25),
             border: Border.all(
               width: 2,
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -39,8 +39,8 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           child: Text(
             'Design',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).indicatorColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -82,8 +82,8 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
             child: Text(
               widget.designName,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -101,15 +101,15 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           topPadding: 108,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).colorScheme.primary,
+          color: Theme.of(context).indicatorColor,
           topPadding: 136,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).colorScheme.secondary,
+          color: Theme.of(context).primaryColorLight,
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).colorScheme.tertiary,
+          color: Theme.of(context).hintColor,
           topPadding: 192,
         ),
         DesignOverviewColorCode(

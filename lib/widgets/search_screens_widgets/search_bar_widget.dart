@@ -70,7 +70,7 @@ class _SearchBarState extends State<SearchBar> {
                   hintText: 'Search',
                   hintStyle: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.tertiary,
+                        color: Theme.of(context).hintColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold),
                   ),
@@ -85,8 +85,10 @@ class _SearchBarState extends State<SearchBar> {
             child: SizedBox(
               height: 17,
               width: 17,
-              child: SvgPicture.asset('assets/icons/general/search.svg',
-                  color: Theme.of(context).colorScheme.primary),
+              child: SvgPicture.asset(
+                'assets/icons/general/search.svg',
+                color: Theme.of(context).indicatorColor,
+              ),
             ),
           ),
           Padding(
@@ -140,7 +142,7 @@ class _SearchBarState extends State<SearchBar> {
                   width: 20,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                   ),
                 ),
               ),
@@ -151,7 +153,7 @@ class _SearchBarState extends State<SearchBar> {
                 height: 65,
                 width: 390,
                 decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).primaryColorLight,
                 ),
               ),
             ),
@@ -172,7 +174,7 @@ class _SearchBarState extends State<SearchBar> {
                   child: Center(
                     child: SvgPicture.asset(
                       'assets/icons/general/cross-circle.svg',
-                      color: mainTextColor,
+                      color: Theme.of(context).indicatorColor,
                       height: 15,
                       width: 15,
                     ),
@@ -187,7 +189,7 @@ class _SearchBarState extends State<SearchBar> {
                 'Filter your meals',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -202,7 +204,7 @@ class _SearchBarState extends State<SearchBar> {
                 'Cooking time',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
@@ -222,6 +224,8 @@ class _SearchBarState extends State<SearchBar> {
                     filterIndex: 0,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
+                    filterColor: Theme.of(context).primaryColor,
+                    borderColor: Theme.of(context).primaryColorLight,
                   ),
                   BigFilterSelectCard(
                     filterCategory: mainFilterCategory,
@@ -229,6 +233,8 @@ class _SearchBarState extends State<SearchBar> {
                     filterIndex: 1,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
+                    filterColor: Theme.of(context).primaryColor,
+                    borderColor: Theme.of(context).primaryColorLight,
                   ),
                   BigFilterSelectCard(
                     filterCategory: mainFilterCategory,
@@ -236,6 +242,8 @@ class _SearchBarState extends State<SearchBar> {
                     filterIndex: 2,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
+                    filterColor: Theme.of(context).primaryColor,
+                    borderColor: Theme.of(context).primaryColorLight,
                   ),
                 ],
               ),
@@ -255,6 +263,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 0,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                     FilterSelectCard(
                       filterCategory: filterCategory,
@@ -262,6 +273,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 1,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                     FilterSelectCard(
                       filterCategory: filterCategory,
@@ -269,6 +283,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 2,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                     FilterSelectCard(
                       filterCategory: filterCategory,
@@ -276,6 +293,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 3,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                     FilterSelectCard(
                       filterCategory: filterCategory,
@@ -283,6 +303,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 4,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                     FilterSelectCard(
                       filterCategory: filterCategory,
@@ -290,6 +313,9 @@ class _SearchBarState extends State<SearchBar> {
                       filterIndex: 5,
                       appliedFilters: appliedFilters,
                       textStyle: unTextStyle(context),
+                      filterColor: Theme.of(context).primaryColor,
+                      borderColor: Theme.of(context).primaryColorLight,
+                      svgColor: Theme.of(context).primaryColorLight,
                     ),
                   ],
                 ),
@@ -306,7 +332,7 @@ class _SearchBarState extends State<SearchBar> {
                   height: 40,
                   width: 145,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).primaryColorLight,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
                       color: Theme.of(context).scaffoldBackgroundColor,
@@ -349,7 +375,7 @@ class _SearchBarState extends State<SearchBar> {
                           'Filter',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).indicatorColor,
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
                             ),
@@ -364,7 +390,7 @@ class _SearchBarState extends State<SearchBar> {
                         'assets/icons/general/settings-sliders.svg',
                         height: 14,
                         width: 14,
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                       ),
                     ),
                     Positioned(
@@ -387,8 +413,7 @@ class _SearchBarState extends State<SearchBar> {
                                 appliedFilters.toString(),
                                 style: GoogleFonts.poppins(
                                   textStyle: TextStyle(
-                                    color:
-                                        Theme.of(context).colorScheme.primary,
+                                    color: Theme.of(context).indicatorColor,
                                     fontSize: 6,
                                     fontWeight: FontWeight.w600,
                                   ),

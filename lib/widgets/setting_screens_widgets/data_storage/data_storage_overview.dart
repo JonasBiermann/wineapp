@@ -29,9 +29,7 @@ class DataStorageOverview extends StatelessWidget {
           y: somellierAccuracy,
           color: Theme.of(context).primaryColor),
       ChartData(
-          x: 'not Accurate',
-          y: 20,
-          color: Theme.of(context).colorScheme.secondary),
+          x: 'not Accurate', y: 20, color: Theme.of(context).primaryColorLight),
     ];
     return Column(
       children: [
@@ -73,7 +71,7 @@ class DataStorageOverview extends StatelessWidget {
                     'Somellier Accuracy',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -117,7 +115,7 @@ class DataStorageOverview extends StatelessWidget {
                     '${somellierAccuracy}%',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -145,7 +143,7 @@ class DataStorageOverview extends StatelessWidget {
                   'Go Back',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
 
-LineChartData somellierData() {
+LineChartData somellierData(Color color, textColor) {
   return LineChartData(
     gridData: FlGridData(
       show: false,
@@ -18,8 +18,8 @@ LineChartData somellierData() {
         reservedSize: 20,
         interval: 1,
         getTextStyles: (context, value) => GoogleFonts.poppins(
-          textStyle: const TextStyle(
-            color: mainTextColor,
+          textStyle: TextStyle(
+            color: Theme.of(context).indicatorColor,
             fontWeight: FontWeight.w600,
             fontSize: 12,
           ),
@@ -65,7 +65,7 @@ LineChartData somellierData() {
         isCurved: true,
         curveSmoothness: 0.5,
         preventCurveOverShooting: true,
-        colors: [mainTextColor],
+        colors: [textColor],
         barWidth: 3,
         isStrokeCapRound: true,
         dotData: FlDotData(
@@ -74,7 +74,7 @@ LineChartData somellierData() {
         belowBarData: BarAreaData(
           show: true,
           colors: [
-            backgroundColor.withOpacity(0.4),
+            color.withOpacity(0.4),
           ],
         ),
       ),

@@ -36,7 +36,7 @@ class PickLanguageScreen extends StatelessWidget {
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     fontSize: 28,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -54,7 +54,7 @@ class PickLanguageScreen extends StatelessWidget {
                 'Pick your native/preferred language to use the App',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).primaryColorLight,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -100,7 +100,7 @@ class PickLanguageScreen extends StatelessWidget {
                     'US - English',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
@@ -116,8 +116,9 @@ class PickLanguageScreen extends StatelessWidget {
                     height: 21,
                     width: 21,
                     child: SvgPicture.asset(
-                        'assets/icons/general/arrow-down-2.svg',
-                        color: Theme.of(context).colorScheme.primary),
+                      'assets/icons/general/arrow-down-2.svg',
+                      color: Theme.of(context).indicatorColor,
+                    ),
                   ),
                 ),
               ],
@@ -142,7 +143,7 @@ class PickLanguageScreen extends StatelessWidget {
                   'Skip to Login',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 9,
                       fontWeight: FontWeight.bold,
                     ),
@@ -174,7 +175,7 @@ class PickLanguageScreen extends StatelessWidget {
                     'Continue',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),

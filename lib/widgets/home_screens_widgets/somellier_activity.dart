@@ -44,7 +44,7 @@ class SomellierActivity extends StatelessWidget {
                 'Somellier Activity',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
@@ -58,9 +58,9 @@ class SomellierActivity extends StatelessWidget {
             child: SizedBox(
               height: 125,
               width: 232.26,
-              child: LineChart(
-                somellierData(),
-              ),
+              child: LineChart(somellierData(
+                  Theme.of(context).scaffoldBackgroundColor,
+                  Theme.of(context).indicatorColor)),
             ),
           ),
         ],

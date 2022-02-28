@@ -28,7 +28,7 @@ class HomeScreenHeader extends StatelessWidget {
               subText,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).primaryColorLight,
                     fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
@@ -44,7 +44,7 @@ class HomeScreenHeader extends StatelessWidget {
                 mainText,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),

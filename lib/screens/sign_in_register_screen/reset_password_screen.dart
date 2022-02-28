@@ -22,8 +22,8 @@ class ResetPasswordScreen extends StatelessWidget {
                 child: Text(
                   'Reset Password',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        color: mainTextColor,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 23,
                         fontWeight: FontWeight.bold),
                   ),
@@ -40,7 +40,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   'No worries, you can easily reset your password. WE got you covered.',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.secondary,
+                        color: Theme.of(context).primaryColorLight,
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                   ),
@@ -65,7 +65,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         hintText: 'Reset Password',
                         hintStyle: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.tertiary,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
@@ -94,7 +94,7 @@ class ResetPasswordScreen extends StatelessWidget {
                         hintText: 'Confirm new Passowrd',
                         hintStyle: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.tertiary,
+                              color: Theme.of(context).hintColor,
                               fontSize: 14,
                               fontWeight: FontWeight.bold),
                         ),
@@ -130,7 +130,7 @@ class ResetPasswordScreen extends StatelessWidget {
                           'Submit',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Theme.of(context).indicatorColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -150,7 +150,7 @@ class ResetPasswordScreen extends StatelessWidget {
                 child: Text(
                   'Remembered your Password?',
                   style: GoogleFonts.poppins(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 11,
                       fontWeight: FontWeight.w600),
                 ),
@@ -174,7 +174,7 @@ class ResetPasswordScreen extends StatelessWidget {
                   child: Text(
                     'Login',
                     style: GoogleFonts.poppins(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

@@ -51,7 +51,7 @@ class DataStorageInfoCard extends StatelessWidget {
                   color: Theme.of(context).scaffoldBackgroundColor,
                   border: Border.all(
                     width: 2,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                   ),
                   borderRadius: BorderRadius.circular(35),
                 ),
@@ -63,7 +63,7 @@ class DataStorageInfoCard extends StatelessWidget {
                   color: Theme.of(context).primaryColor,
                   border: Border.all(
                     width: 2,
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                   ),
                   borderRadius: BorderRadius.circular(
                     35,
@@ -84,7 +84,7 @@ class DataStorageInfoCard extends StatelessWidget {
                     ),
                     border: Border.all(
                       width: 2,
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                     ),
                   ),
                 ),
@@ -98,12 +98,12 @@ class DataStorageInfoCard extends StatelessWidget {
                   height: 30,
                   width: cDataAmount / dataAmount * 290,
                   decoration: BoxDecoration(
-                    color: Theme.of(context).colorScheme.secondary,
+                    color: Theme.of(context).primaryColorLight,
                     borderRadius: BorderRadius.circular(
                       35,
                     ),
                     border: Border.all(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       width: 2,
                     ),
                   ),
@@ -121,7 +121,7 @@ class DataStorageInfoCard extends StatelessWidget {
             'Data & Storage',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -140,7 +140,7 @@ class DataStorageInfoCard extends StatelessWidget {
               'Storage Used',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -177,7 +177,7 @@ class DataStorageInfoCard extends StatelessWidget {
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).colorScheme.secondary,
+          color: Theme.of(context).primaryColorLight,
           topPadding: 192,
         ),
         DataCategoryAmountWidget(

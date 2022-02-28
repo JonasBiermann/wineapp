@@ -154,8 +154,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Deals & Offers',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

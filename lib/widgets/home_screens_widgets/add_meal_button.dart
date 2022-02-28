@@ -50,7 +50,7 @@ class AddMealButton extends StatelessWidget {
                   'Add Meal',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontWeight: FontWeight.w600,
                         fontSize: 20),
                   ),
@@ -64,7 +64,7 @@ class AddMealButton extends StatelessWidget {
                 height: 20,
                 width: 20,
                 child: SvgPicture.asset('assets/icons/general/add-2.svg',
-                    color: Theme.of(context).colorScheme.primary),
+                    color: Theme.of(context).indicatorColor),
               ),
             ),
           ],

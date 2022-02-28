@@ -25,7 +25,7 @@ class AuthService {
             e.message.toString(),
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -49,7 +49,7 @@ class AuthService {
             e.message.toString(),
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),

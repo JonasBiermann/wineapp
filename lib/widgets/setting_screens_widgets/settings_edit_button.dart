@@ -22,7 +22,7 @@ class SettingsEditButton extends StatelessWidget {
               color: Theme.of(context).scaffoldBackgroundColor,
               borderRadius: BorderRadius.circular(8),
               border: Border.all(
-                color: Theme.of(context).colorScheme.secondary,
+                color: Theme.of(context).primaryColorLight,
               ),
             ),
           ),
@@ -35,7 +35,7 @@ class SettingsEditButton extends StatelessWidget {
               'Edit',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.secondary,
+                  color: Theme.of(context).primaryColorLight,
                   fontSize: 10,
                   fontWeight: FontWeight.bold,
                 ),
@@ -51,7 +51,7 @@ class SettingsEditButton extends StatelessWidget {
               'assets/icons/general/pencil.svg',
               width: 9,
               height: 9,
-              color: Theme.of(context).colorScheme.secondary,
+              color: Theme.of(context).primaryColorLight,
             ),
           ),
         ],

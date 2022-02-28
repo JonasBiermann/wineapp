@@ -38,7 +38,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 'Forgot Password?',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -55,7 +55,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               child: Text(
                   'Don\'t worry! It happens. Please enter the address assosciated with your account',
                   style: GoogleFonts.poppins(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                   textAlign: TextAlign.center),
@@ -68,7 +68,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
               height: 50,
               width: 315,
               decoration: BoxDecoration(
-                color: primaryColor,
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(20.0),
               ),
               child: Padding(
@@ -79,7 +79,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                       hintText: 'Phone/Email',
                       hintStyle: GoogleFonts.poppins(
                         textStyle: TextStyle(
-                            color: Theme.of(context).colorScheme.tertiary,
+                            color: Theme.of(context).hintColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
@@ -122,7 +122,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                         'Continue',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
-                              color: Theme.of(context).colorScheme.primary,
+                              color: Theme.of(context).indicatorColor,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),

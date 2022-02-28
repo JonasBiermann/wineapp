@@ -39,7 +39,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                   'Enter Code',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
+                      color: Theme.of(context).indicatorColor,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
@@ -58,7 +58,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                   'A 4 digit Code has been sent to +49 1577 1677 857',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
-                      color: Theme.of(context).colorScheme.secondary,
+                      color: Theme.of(context).primaryColorLight,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -108,7 +108,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                           'Confirm',
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
-                                color: Theme.of(context).colorScheme.primary,
+                                color: Theme.of(context).indicatorColor,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -201,7 +201,7 @@ class _RegVerificationTextFieldState extends State<RegVerificationTextField> {
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
-                    color: Theme.of(context).colorScheme.primary,
+                    color: Theme.of(context).indicatorColor,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                   ),

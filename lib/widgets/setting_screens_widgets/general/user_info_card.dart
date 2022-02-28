@@ -56,7 +56,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
             widget.name,
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -88,7 +88,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Username',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -108,7 +108,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Email',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -128,7 +128,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Phone',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -148,7 +148,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Age',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -168,7 +168,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Country',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -188,7 +188,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Gender',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -208,7 +208,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               'Account Age',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -229,7 +229,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -249,8 +249,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.userMail,
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -271,7 +271,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -292,7 +292,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -313,7 +313,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -334,7 +334,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -355,7 +355,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),

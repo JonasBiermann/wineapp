@@ -17,7 +17,6 @@ class SearchScreen extends StatefulWidget {
 }
 
 class _SearchScreenState extends State<SearchScreen> {
-  Color filterColor = backgroundColor;
   bool filterStat = false;
   int prefIndex = 0;
   List<String> prefSearch = [
@@ -38,7 +37,6 @@ class _SearchScreenState extends State<SearchScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -65,31 +63,43 @@ class _SearchScreenState extends State<SearchScreen> {
                           prefSearch: prefSearch,
                           prefIndex: 0,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                         FilterCard(
                           prefSearch: prefSearch,
                           prefIndex: 1,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                         FilterCard(
                           prefSearch: prefSearch,
                           prefIndex: 2,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                         FilterCard(
                           prefSearch: prefSearch,
                           prefIndex: 3,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                         FilterCard(
                           prefSearch: prefSearch,
                           prefIndex: 4,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                         FilterCard(
                           prefSearch: prefSearch,
                           prefIndex: 5,
                           textStyle: unTextStyle(context),
+                          filterColor:
+                              Theme.of(context).scaffoldBackgroundColor,
                         ),
                       ],
                     ),
@@ -105,10 +115,10 @@ class _SearchScreenState extends State<SearchScreen> {
                       'Found 40 results',
                       textAlign: TextAlign.left,
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
+                        textStyle: TextStyle(
                           fontSize: 26,
                           fontWeight: FontWeight.bold,
-                          color: mainTextColor,
+                          color: Theme.of(context).indicatorColor,
                         ),
                       ),
                     ),
@@ -185,16 +195,17 @@ class FilterCard extends StatefulWidget {
     required this.prefSearch,
     required this.prefIndex,
     required this.textStyle,
+    required this.filterColor,
   }) : super(key: key);
   List<String> prefSearch;
   int prefIndex;
   TextStyle textStyle;
+  Color filterColor;
   @override
   _FilterCardState createState() => _FilterCardState();
 }
 
 class _FilterCardState extends State<FilterCard> {
-  Color filterColor = backgroundColor;
   bool filterStat = false;
 
   @override
@@ -207,19 +218,14 @@ class _FilterCardState extends State<FilterCard> {
           onTap: () {
             setState(() {
               if (filterStat == false) {
-                filterColor = primaryColor;
+                widget.filterColor = Theme.of(context).primaryColor;
                 widget.textStyle = selTextStyle(context);
               }
               if (filterStat == true) {
-                filterColor = backgroundColor;
+                widget.filterColor = Theme.of(context).scaffoldBackgroundColor;
                 widget.textStyle = unTextStyle(context);
               }
-              if (filterColor == backgroundColor) {
-                filterStat = false;
-              }
-              if (filterColor == primaryColor) {
-                filterStat = true;
-              }
+              filterStat = !filterStat;
             });
           },
           child: AnimatedContainer(
@@ -229,9 +235,9 @@ class _FilterCardState extends State<FilterCard> {
             width: 70,
             height: 25,
             decoration: BoxDecoration(
-              color: filterColor,
+              color: widget.filterColor,
               borderRadius: BorderRadius.circular(7),
-              border: Border.all(color: primaryColor),
+              border: Border.all(color: Theme.of(context).primaryColor),
             ),
             child: Center(
               child: Text(

@@ -4,27 +4,30 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class FilterSelectCard extends StatefulWidget {
-  FilterSelectCard(
-      {Key? key,
-      required this.filterCategory,
-      required this.filterSvg,
-      required this.filterIndex,
-      required this.appliedFilters,
-      required this.textStyle})
-      : super(key: key);
+  FilterSelectCard({
+    Key? key,
+    required this.filterCategory,
+    required this.filterSvg,
+    required this.filterIndex,
+    required this.appliedFilters,
+    required this.textStyle,
+    required this.filterColor,
+    required this.borderColor,
+    required this.svgColor,
+  }) : super(key: key);
   List<String> filterCategory;
   List<String> filterSvg;
   int filterIndex;
   ValueNotifier<int> appliedFilters;
   TextStyle textStyle;
+  Color filterColor;
+  Color borderColor;
+  Color svgColor;
   @override
   FilterSelectCardState createState() => FilterSelectCardState();
 }
 
 class FilterSelectCardState extends State<FilterSelectCard> {
-  Color filterColor = primaryColor;
-  Color borderColor = quartiaryTextColor;
-  Color svgColor = quartiaryTextColor;
   bool filterStat = false;
 
   @override
@@ -37,27 +40,22 @@ class FilterSelectCardState extends State<FilterSelectCard> {
         onTap: () {
           setState(() {
             if (filterStat == false) {
-              filterColor = quartiaryTextColor;
+              widget.filterColor = Theme.of(context).primaryColorLight;
               widget.textStyle = selTextStyle(context);
-              borderColor = backgroundColor;
-              svgColor = mainTextColor;
+              widget.borderColor = Theme.of(context).scaffoldBackgroundColor;
+              widget.svgColor = Theme.of(context).indicatorColor;
               widget.appliedFilters.value += 1;
               print(widget.appliedFilters);
             }
             if (filterStat == true) {
-              filterColor = primaryColor;
+              widget.filterColor = Theme.of(context).primaryColor;
               widget.textStyle = unTextStyle(context);
-              borderColor = quartiaryTextColor;
-              svgColor = quartiaryTextColor;
+              widget.borderColor = Theme.of(context).primaryColorLight;
+              widget.svgColor = Theme.of(context).primaryColorLight;
               widget.appliedFilters.value -= 1;
               print(widget.appliedFilters);
             }
-            if (filterColor == primaryColor) {
-              filterStat = false;
-            }
-            if (filterColor == quartiaryTextColor) {
-              filterStat = true;
-            }
+            filterStat = !filterStat;
           });
         },
         child: Column(
@@ -69,18 +67,18 @@ class FilterSelectCardState extends State<FilterSelectCard> {
               height: 47,
               width: 47,
               decoration: BoxDecoration(
-                color: filterColor,
+                color: widget.filterColor,
                 borderRadius: BorderRadius.circular(
                   10,
                 ),
                 border: Border.all(
-                  color: borderColor,
+                  color: widget.borderColor,
                 ),
               ),
               child: Center(
                 child: SvgPicture.asset(
                   widget.filterSvg[widget.filterIndex],
-                  color: svgColor,
+                  color: widget.svgColor,
                   height: 20,
                   width: 20,
                 ),
@@ -100,27 +98,28 @@ class FilterSelectCardState extends State<FilterSelectCard> {
 }
 
 class BigFilterSelectCard extends StatefulWidget {
-  BigFilterSelectCard({
-    Key? key,
-    required this.filterCategory,
-    required this.filterSvg,
-    required this.filterIndex,
-    required this.appliedFilters,
-    required this.textStyle,
-  }) : super(key: key);
+  BigFilterSelectCard(
+      {Key? key,
+      required this.filterCategory,
+      required this.filterSvg,
+      required this.filterIndex,
+      required this.appliedFilters,
+      required this.textStyle,
+      required this.filterColor,
+      required this.borderColor})
+      : super(key: key);
   List<String> filterCategory;
   List<String> filterSvg;
   int filterIndex;
   ValueNotifier<int> appliedFilters;
   TextStyle textStyle;
+  Color filterColor;
+  Color borderColor;
   @override
   _BigFilterSelectCardState createState() => _BigFilterSelectCardState();
 }
 
 class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
-  Color filterColor = primaryColor;
-  Color borderColor = quartiaryTextColor;
-
   bool filterStat = false;
 
   List<String> selectedSvg = [
@@ -143,29 +142,24 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
         onTap: () {
           setState(() {
             if (filterStat == false) {
-              filterColor = quartiaryTextColor;
+              widget.filterColor = Theme.of(context).primaryColorLight;
               widget.textStyle = selTextStyle(context);
-              borderColor = backgroundColor;
+              widget.borderColor = Theme.of(context).scaffoldBackgroundColor;
               widget.filterSvg[widget.filterIndex] =
                   selectedSvg[widget.filterIndex];
               widget.appliedFilters.value += 1;
               print(widget.appliedFilters);
             }
             if (filterStat == true) {
-              filterColor = primaryColor;
+              widget.filterColor = Theme.of(context).primaryColor;
               widget.textStyle = unTextStyle(context);
-              borderColor = quartiaryTextColor;
+              widget.borderColor = Theme.of(context).primaryColorLight;
               widget.filterSvg[widget.filterIndex] =
                   unselectedSvg[widget.filterIndex];
               widget.appliedFilters.value -= 1;
               print(widget.appliedFilters);
             }
-            if (filterColor == primaryColor) {
-              filterStat = false;
-            }
-            if (filterColor == quartiaryTextColor) {
-              filterStat = true;
-            }
+            filterStat = !filterStat;
           });
         },
         child: Stack(
@@ -177,10 +171,10 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
               height: 90,
               width: 85,
               decoration: BoxDecoration(
-                color: filterColor,
+                color: widget.filterColor,
                 borderRadius: BorderRadius.circular(20),
                 border: Border.all(
-                  color: borderColor,
+                  color: widget.borderColor,
                 ),
               ),
             ),
