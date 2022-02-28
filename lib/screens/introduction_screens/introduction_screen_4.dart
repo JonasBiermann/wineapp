@@ -12,7 +12,7 @@ class IntroductionScreen4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           Positioned(
@@ -33,8 +33,8 @@ class IntroductionScreen4 extends StatelessWidget {
               child: Text(
                 'Track your wine histroy',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: mainTextColor,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 28,
                       fontWeight: FontWeight.bold),
                 ),
@@ -51,8 +51,8 @@ class IntroductionScreen4 extends StatelessWidget {
               child: Text(
                 'Making an account lets you track and access your wine histroy anywhere',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: quartiaryTextColor,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
@@ -77,7 +77,7 @@ class IntroductionScreen4 extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   createRoute(
-                    PickLanguageScreen(),
+                    const PickLanguageScreen(),
                   ),
                 );
               },
@@ -87,7 +87,7 @@ class IntroductionScreen4 extends StatelessWidget {
                     height: 50,
                     width: 315,
                     decoration: BoxDecoration(
-                      color: primaryColor,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20.0),
                     ),
                   ),
@@ -100,8 +100,8 @@ class IntroductionScreen4 extends StatelessWidget {
                       child: Text(
                         'Get Started',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              color: mainTextColor,
+                          textStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
                               fontSize: 16,
                               fontWeight: FontWeight.bold),
                         ),

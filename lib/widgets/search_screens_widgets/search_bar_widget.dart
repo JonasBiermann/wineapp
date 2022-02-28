@@ -55,7 +55,7 @@ class _SearchBarState extends State<SearchBar> {
             height: 35,
             width: 290,
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(20.0),
             ),
           ),
@@ -69,8 +69,8 @@ class _SearchBarState extends State<SearchBar> {
                 decoration: InputDecoration(
                   hintText: 'Search',
                   hintStyle: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        color: tertiaryTextColor,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.tertiary,
                         fontSize: 16,
                         fontWeight: FontWeight.bold),
                   ),
@@ -86,7 +86,7 @@ class _SearchBarState extends State<SearchBar> {
               height: 17,
               width: 17,
               child: SvgPicture.asset('assets/icons/general/search.svg',
-                  color: mainTextColor),
+                  color: Theme.of(context).colorScheme.primary),
             ),
           ),
           Padding(
@@ -125,7 +125,8 @@ class _SearchBarState extends State<SearchBar> {
               height: 377,
               width: 390,
               decoration: BoxDecoration(
-                  color: primaryColor, borderRadius: BorderRadius.circular(35)),
+                  color: Theme.of(context).primaryColor,
+                  borderRadius: BorderRadius.circular(35)),
             ),
             Positioned(
               top: 7,
@@ -139,7 +140,7 @@ class _SearchBarState extends State<SearchBar> {
                   width: 20,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
-                    color: mainTextColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ),
@@ -149,8 +150,8 @@ class _SearchBarState extends State<SearchBar> {
               child: Container(
                 height: 65,
                 width: 390,
-                decoration: const BoxDecoration(
-                  color: quartiaryTextColor,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.secondary,
                 ),
               ),
             ),
@@ -165,7 +166,7 @@ class _SearchBarState extends State<SearchBar> {
                   height: 27,
                   width: 27,
                   decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.circular(10),
                   ),
                   child: Center(
@@ -185,8 +186,8 @@ class _SearchBarState extends State<SearchBar> {
               child: Text(
                 'Filter your meals',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
@@ -200,8 +201,8 @@ class _SearchBarState extends State<SearchBar> {
               child: Text(
                 'Cooking time',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 12,
                     fontWeight: FontWeight.w600,
                   ),
@@ -305,10 +306,10 @@ class _SearchBarState extends State<SearchBar> {
                   height: 40,
                   width: 145,
                   decoration: BoxDecoration(
-                    color: quartiaryTextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
-                      color: backgroundColor,
+                      color: Theme.of(context).scaffoldBackgroundColor,
                       width: 1,
                     ),
                   ),
@@ -316,8 +317,8 @@ class _SearchBarState extends State<SearchBar> {
                     child: Text(
                       'Clear',
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: backgroundColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).scaffoldBackgroundColor,
                           fontSize: 12,
                           fontWeight: FontWeight.w600,
                         ),
@@ -340,15 +341,15 @@ class _SearchBarState extends State<SearchBar> {
                       height: 40,
                       width: 145,
                       decoration: BoxDecoration(
-                        color: backgroundColor,
+                        color: Theme.of(context).scaffoldBackgroundColor,
                         borderRadius: BorderRadius.circular(15),
                       ),
                       child: Center(
                         child: Text(
                           'Filter',
                           style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                              color: mainTextColor,
+                            textStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
                               fontSize: 13,
                               fontWeight: FontWeight.w600,
                             ),
@@ -363,7 +364,7 @@ class _SearchBarState extends State<SearchBar> {
                         'assets/icons/general/settings-sliders.svg',
                         height: 14,
                         width: 14,
-                        color: mainTextColor,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                     Positioned(
@@ -373,7 +374,7 @@ class _SearchBarState extends State<SearchBar> {
                         height: 9,
                         width: 20,
                         decoration: BoxDecoration(
-                          color: primaryColor,
+                          color: Theme.of(context).primaryColor,
                           borderRadius: BorderRadius.circular(
                             20,
                           ),
@@ -385,8 +386,9 @@ class _SearchBarState extends State<SearchBar> {
                               child: Text(
                                 appliedFilters.toString(),
                                 style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: mainTextColor,
+                                  textStyle: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                     fontSize: 6,
                                     fontWeight: FontWeight.w600,
                                   ),

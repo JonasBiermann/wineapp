@@ -73,11 +73,11 @@ class _CodeFieldState extends State<CodeField> {
               height: 40,
               width: 30,
               decoration: BoxDecoration(
-                color: backgroundColor,
+                color: Theme.of(context).scaffoldBackgroundColor,
                 borderRadius: BorderRadius.circular(10),
                 border: Border.all(
                   width: 1,
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                 ),
               ),
               child: Padding(
@@ -85,8 +85,8 @@ class _CodeFieldState extends State<CodeField> {
                 child: TextField(
                   textAlign: TextAlign.center,
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 15,
                       fontWeight: FontWeight.w600,
                     ),

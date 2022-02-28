@@ -16,7 +16,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Stack(
           children: [
             Positioned(
@@ -38,8 +38,8 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                 child: Text(
                   'Enter Code',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 28,
                       fontWeight: FontWeight.bold,
                     ),
@@ -57,8 +57,8 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                 child: Text(
                   'A 4 digit Code has been sent to +49 1577 1677 857',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: quartiaryTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -94,7 +94,7 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                       height: 50,
                       width: 315,
                       decoration: BoxDecoration(
-                        color: primaryColor,
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
@@ -107,8 +107,8 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
                         child: Text(
                           'Confirm',
                           style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                color: mainTextColor,
+                            textStyle: TextStyle(
+                                color: Theme.of(context).colorScheme.primary,
                                 fontSize: 16,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -192,7 +192,7 @@ class _RegVerificationTextFieldState extends State<RegVerificationTextField> {
             width: 50,
             height: 57,
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(11),
             ),
             child: Padding(
@@ -200,8 +200,8 @@ class _RegVerificationTextFieldState extends State<RegVerificationTextField> {
               child: TextField(
                 textAlign: TextAlign.center,
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 15,
                     fontWeight: FontWeight.w600,
                   ),

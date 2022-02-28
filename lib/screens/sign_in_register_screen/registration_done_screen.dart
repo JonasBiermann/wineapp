@@ -11,7 +11,7 @@ class RegDoneScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Stack(
           children: [
             Positioned(
@@ -33,10 +33,10 @@ class RegDoneScreen extends StatelessWidget {
                 child: Text(
                   'Done!',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
+                    textStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 28,
-                        color: mainTextColor),
+                        color: Theme.of(context).colorScheme.primary),
                   ),
                   textAlign: TextAlign.center,
                 ),
@@ -51,8 +51,8 @@ class RegDoneScreen extends StatelessWidget {
                 child: Text(
                   'Great, you set up your account. Let\'s continue to your homescreen.',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        color: quartiaryTextColor,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.secondary,
                         fontSize: 14,
                         fontWeight: FontWeight.w600),
                   ),
@@ -80,7 +80,7 @@ class RegDoneScreen extends StatelessWidget {
                       height: 50,
                       width: 315,
                       decoration: BoxDecoration(
-                        color: primaryColor,
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                     ),
@@ -93,8 +93,8 @@ class RegDoneScreen extends StatelessWidget {
                         child: Text(
                           'Continue to Home',
                           style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                              color: mainTextColor,
+                            textStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
                               fontWeight: FontWeight.bold,
                               fontSize: 16,
                             ),

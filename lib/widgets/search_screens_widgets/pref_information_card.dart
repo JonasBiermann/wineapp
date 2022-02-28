@@ -24,7 +24,7 @@ class PrefInformationCard extends StatelessWidget {
                 height: 175,
                 width: 150,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(25),
                 ),
               ),
@@ -60,8 +60,8 @@ class PrefInformationCard extends StatelessWidget {
                   child: Text(
                     wineName,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.bold,
                         fontSize: 9,
                       ),
@@ -78,8 +78,8 @@ class PrefInformationCard extends StatelessWidget {
                 child: Text(
                   'Preparation time',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 7,
                       fontWeight: FontWeight.w600,
                     ),
@@ -95,7 +95,7 @@ class PrefInformationCard extends StatelessWidget {
                   width: 27,
                   height: 11,
                   decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.circular(
                       10,
                     ),
@@ -104,10 +104,10 @@ class PrefInformationCard extends StatelessWidget {
                     child: Text(
                       '30min',
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
+                        textStyle: TextStyle(
                           fontSize: 5,
                           fontWeight: FontWeight.w600,
-                          color: mainTextColor,
+                          color: Theme.of(context).colorScheme.primary,
                         ),
                       ),
                     ),

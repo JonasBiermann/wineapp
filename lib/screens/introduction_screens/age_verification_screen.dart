@@ -13,7 +13,7 @@ class AgeVerificationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           Positioned(
@@ -34,8 +34,8 @@ class AgeVerificationScreen extends StatelessWidget {
               child: Text(
                 'Type in your age below',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 28,
                     fontWeight: FontWeight.bold,
                   ),
@@ -53,8 +53,8 @@ class AgeVerificationScreen extends StatelessWidget {
               child: Text(
                 'Deepnding on your region, you will have to fulfill the minimum age to consume alcohol',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: quartiaryTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.secondary,
                     fontSize: 14,
                     fontWeight: FontWeight.w600,
                   ),
@@ -72,11 +72,11 @@ class AgeVerificationScreen extends StatelessWidget {
                   height: 50,
                   width: 320,
                   decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.circular(15),
                     border: Border.all(
                       width: 1,
-                      color: primaryColor,
+                      color: Theme.of(context).primaryColor,
                     ),
                   ),
                 ),
@@ -124,8 +124,8 @@ class AgeVerificationScreen extends StatelessWidget {
                 child: Text(
                   'Skip to Login',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 9,
                       fontWeight: FontWeight.bold,
                     ),
@@ -149,15 +149,15 @@ class AgeVerificationScreen extends StatelessWidget {
                 height: 50,
                 width: 315,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Center(
                   child: Text(
                     'Continue',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),

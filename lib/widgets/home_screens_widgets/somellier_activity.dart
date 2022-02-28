@@ -20,7 +20,7 @@ class SomellierActivity extends StatelessWidget {
             height: 200,
             width: 320,
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(35),
               boxShadow: const [
                 BoxShadow(
@@ -43,8 +43,8 @@ class SomellierActivity extends StatelessWidget {
               child: Text(
                 'Somellier Activity',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),

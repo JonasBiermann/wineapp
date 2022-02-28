@@ -39,7 +39,7 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           HomeScreenHeader(
@@ -73,13 +73,13 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
                       height: 40,
                       decoration: value == changeIndex
                           ? BoxDecoration(
-                              color: primaryColor,
+                              color: Theme.of(context).primaryColor,
                               borderRadius: BorderRadius.circular(25),
                             )
                           : BoxDecoration(
-                              color: backgroundColor,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               border: Border.all(
-                                color: primaryColor,
+                                color: Theme.of(context).primaryColor,
                                 width: 2,
                               ),
                               borderRadius: BorderRadius.circular(25),
@@ -89,15 +89,16 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
                           changeLabel[value],
                           style: value == changeIndex
                               ? GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: mainTextColor,
+                                  textStyle: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
                               : GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: primaryColor,
+                                  textStyle: TextStyle(
+                                    color: Theme.of(context).primaryColor,
                                     fontSize: 16,
                                     fontWeight: FontWeight.bold,
                                   ),

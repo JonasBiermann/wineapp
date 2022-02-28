@@ -17,13 +17,13 @@ class NotificationEditCard extends StatelessWidget {
           height: 292,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(
               25,
             ),
             border: Border.all(
               width: 2,
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -35,8 +35,8 @@ class NotificationEditCard extends StatelessWidget {
           child: Text(
             'Notifications',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -54,8 +54,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Email',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -74,8 +74,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Phone',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -94,8 +94,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Somellier',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -114,8 +114,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Meal Suggestions',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -134,8 +134,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'Invitations',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -174,8 +174,8 @@ class NotificationEditCard extends StatelessWidget {
             child: Text(
               'App News',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

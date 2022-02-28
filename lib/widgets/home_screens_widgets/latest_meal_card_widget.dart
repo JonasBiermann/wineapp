@@ -33,7 +33,7 @@ class _LatestMealCardState extends State<LatestMealCard> {
             height: 320,
             width: 320,
             decoration: BoxDecoration(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               borderRadius: BorderRadius.circular(35),
               boxShadow: const [
                 BoxShadow(
@@ -56,8 +56,8 @@ class _LatestMealCardState extends State<LatestMealCard> {
               child: Text(
                 'Latest Meal',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 20,
                     fontWeight: FontWeight.w600,
                   ),
@@ -103,8 +103,8 @@ class _LatestMealCardState extends State<LatestMealCard> {
               child: Text(
                 'Your most recent meal was psaghetti and your personal somellier suggested red wine.\nDid it matche the taste?',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: mainTextColor,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 12,
                       fontWeight: FontWeight.w600),
                 ),
@@ -134,11 +134,11 @@ class _LatestMealCardState extends State<LatestMealCard> {
                       ),
                       decoration: value == tasteIndex
                           ? BoxDecoration(
-                              color: backgroundColor,
+                              color: Theme.of(context).scaffoldBackgroundColor,
                               borderRadius: BorderRadius.circular(90),
                             )
                           : BoxDecoration(
-                              color: primaryColor,
+                              color: Theme.of(context).primaryColor,
                               borderRadius: BorderRadius.circular(90),
                             ),
                       child: SizedBox(
@@ -150,8 +150,8 @@ class _LatestMealCardState extends State<LatestMealCard> {
                           ),
                           child: SvgPicture.asset(icondata[value],
                               color: value == tasteIndex
-                                  ? mainTextColor
-                                  : quartiaryTextColor),
+                                  ? Theme.of(context).colorScheme.primary
+                                  : Theme.of(context).colorScheme.secondary),
                         ),
                       ),
                     ),
@@ -195,13 +195,16 @@ class _LatestMealCardState extends State<LatestMealCard> {
                             textAlign: TextAlign.right,
                             style: GoogleFonts.poppins(
                               textStyle: value == tasteIndex
-                                  ? const TextStyle(
+                                  ? TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: mainTextColor,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                       fontSize: 9)
-                                  : const TextStyle(
+                                  : TextStyle(
                                       fontWeight: FontWeight.w600,
-                                      color: quartiaryTextColor,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
                                       fontSize: 9),
                             ),
                           ),

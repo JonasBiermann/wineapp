@@ -16,13 +16,13 @@ class UserInfoEditWidget extends StatelessWidget {
           height: 258,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(
               25,
             ),
             border: Border.all(
               width: 2,
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -34,8 +34,8 @@ class UserInfoEditWidget extends StatelessWidget {
           child: Text(
             'Aurelie Hertrampf',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -53,8 +53,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Username',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -73,8 +73,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Email',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -93,8 +93,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Phone',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -113,8 +113,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Age',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -133,8 +133,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Country',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -153,8 +153,8 @@ class UserInfoEditWidget extends StatelessWidget {
             child: Text(
               'Gender',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),

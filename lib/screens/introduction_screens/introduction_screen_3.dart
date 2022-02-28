@@ -11,7 +11,7 @@ class IntroductionScreen3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: Stack(
         children: [
           Positioned(
@@ -33,8 +33,8 @@ class IntroductionScreen3 extends StatelessWidget {
               child: Text(
                 'Adaptation to your preference',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
                     fontSize: 28,
                   ),
@@ -52,8 +52,8 @@ class IntroductionScreen3 extends StatelessWidget {
               child: Text(
                 'Your personal Somellier adapts to your personal preference in wine.',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                      color: quartiaryTextColor,
+                  textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
                 ),
@@ -85,8 +85,8 @@ class IntroductionScreen3 extends StatelessWidget {
               child: Text(
                 'Skip',
                 style: GoogleFonts.poppins(
-                  textStyle: const TextStyle(
-                    color: mainTextColor,
+                  textStyle: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
                     fontSize: 14,
                     fontWeight: FontWeight.bold,
                   ),
@@ -111,7 +111,7 @@ class IntroductionScreen3 extends StatelessWidget {
                     height: 50,
                     width: 153,
                     decoration: BoxDecoration(
-                      color: primaryColor,
+                      color: Theme.of(context).primaryColor,
                       borderRadius: BorderRadius.circular(20),
                     ),
                   ),
@@ -121,8 +121,8 @@ class IntroductionScreen3 extends StatelessWidget {
                     child: Text(
                       'Next',
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: mainTextColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
                         ),
@@ -137,7 +137,7 @@ class IntroductionScreen3 extends StatelessWidget {
                       width: 18,
                       child: SvgPicture.asset(
                         'assets/icons/general/arrow_right.svg',
-                        color: mainTextColor,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ),

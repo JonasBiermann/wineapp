@@ -41,13 +41,13 @@ class SettingBottomNavigationBar extends StatelessWidget {
                   child: Container(
                     height: 22,
                     width: 46,
-                    decoration: const BoxDecoration(
-                      color: backgroundColor,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     child: Icon(
                       data[0],
                       size: 17,
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -65,13 +65,13 @@ class SettingBottomNavigationBar extends StatelessWidget {
                   child: Container(
                     height: 22,
                     width: 46,
-                    decoration: const BoxDecoration(
-                      color: backgroundColor,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
                     ),
                     child: Icon(
                       data[1],
                       size: 17,
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -90,12 +90,12 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     height: 22,
                     width: 46,
                     decoration: BoxDecoration(
-                        color: primaryColor,
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(90)),
                     child: Icon(
                       data[2],
                       size: 17,
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -114,8 +114,8 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Text(
                       dataLabel[0],
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: mainTextColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                         ),
@@ -129,8 +129,8 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Text(
                       dataLabel[1],
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: mainTextColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 9,
                           fontWeight: FontWeight.w500,
                         ),
@@ -144,8 +144,8 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     child: Text(
                       dataLabel[2],
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: mainTextColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 9,
                           fontWeight: FontWeight.bold,
                         ),

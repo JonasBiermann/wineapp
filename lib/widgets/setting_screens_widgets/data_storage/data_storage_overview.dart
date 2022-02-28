@@ -24,8 +24,14 @@ class DataStorageOverview extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<ChartData> chartData = [
-      ChartData(x: 'Accurate', y: somellierAccuracy, color: primaryColor),
-      ChartData(x: 'not Accurate', y: 20, color: quartiaryTextColor),
+      ChartData(
+          x: 'Accurate',
+          y: somellierAccuracy,
+          color: Theme.of(context).primaryColor),
+      ChartData(
+          x: 'not Accurate',
+          y: 20,
+          color: Theme.of(context).colorScheme.secondary),
     ];
     return Column(
       children: [
@@ -45,10 +51,10 @@ class DataStorageOverview extends StatelessWidget {
                 height: 200,
                 width: 320,
                 decoration: BoxDecoration(
-                  color: backgroundColor,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   border: Border.all(
                     width: 2,
-                    color: primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                   borderRadius: BorderRadius.circular(
                     25,
@@ -66,8 +72,8 @@ class DataStorageOverview extends StatelessWidget {
                   child: Text(
                     'Somellier Accuracy',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -110,8 +116,8 @@ class DataStorageOverview extends StatelessWidget {
                   child: Text(
                     '${somellierAccuracy}%',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -138,8 +144,8 @@ class DataStorageOverview extends StatelessWidget {
                 child: Text(
                   'Go Back',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

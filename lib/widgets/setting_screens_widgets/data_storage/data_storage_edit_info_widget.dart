@@ -18,13 +18,13 @@ class DataStorageEditInfoWidget extends StatelessWidget {
           height: 156,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(
               25,
             ),
             border: Border.all(
               width: 2,
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
             ),
           ),
         ),
@@ -39,8 +39,8 @@ class DataStorageEditInfoWidget extends StatelessWidget {
             child: Text(
               'Data & Storage',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),

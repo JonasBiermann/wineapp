@@ -27,13 +27,13 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SingleChildScrollView(
         child: Stack(
           children: [
             Container(
               height: 750,
-              color: backgroundColor,
+              color: Theme.of(context).scaffoldBackgroundColor,
             ),
             HomeScreenHeader(
                 subText: 'Welcome Back', mainText: 'Aurelie', boxWidth: 161),

@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:theme_manager/theme_manager.dart';
+import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_1.dart';
 import 'package:wineapp/services/auth_services.dart';
@@ -24,9 +25,12 @@ class WineApp extends StatelessWidget {
         return MaterialApp(
             title: 'Wine App',
             theme: theme.copyWith(
+              primaryColor: redDesign[100],
+              scaffoldBackgroundColor: redDesign[200],
               colorScheme: theme.colorScheme.copyWith(
-                primary: Colors.blue,
-                secondary: Colors.lightBlue,
+                primary: redDesign[50],
+                secondary: redDesign[300],
+                tertiary: redDesign[400],
               ),
             ),
             home: StreamBuilder(

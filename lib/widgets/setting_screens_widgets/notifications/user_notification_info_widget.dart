@@ -31,9 +31,9 @@ class UserNotificationInfoWidget extends StatelessWidget {
           height: 253,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             border: Border.all(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               width: 2,
             ),
             borderRadius: BorderRadius.circular(
@@ -49,8 +49,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Notifications',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -65,8 +65,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Email',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -81,8 +81,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Phone',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -97,8 +97,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Somellier',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -113,8 +113,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Meal Suggestions',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -129,8 +129,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Invitations',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -145,8 +145,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'Deals & Offers',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -161,8 +161,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
           child: Text(
             'App News',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -180,8 +180,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
             child: Text(
               userMail,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -201,8 +201,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
             child: Text(
               phoneNumber,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -223,8 +223,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 ? Text(
                     notificationTrue,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -234,8 +234,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 : Text(
                     notificationFalse,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -256,8 +256,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 ? Text(
                     notificationTrue,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -267,8 +267,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 : Text(
                     notificationFalse,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -289,8 +289,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 ? Text(
                     notificationTrue,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -300,8 +300,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 : Text(
                     notificationFalse,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -322,8 +322,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 ? Text(
                     notificationTrue,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -333,8 +333,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 : Text(
                     notificationFalse,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -355,8 +355,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 ? Text(
                     notificationTrue,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -366,8 +366,8 @@ class UserNotificationInfoWidget extends StatelessWidget {
                 : Text(
                     notificationFalse,
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),

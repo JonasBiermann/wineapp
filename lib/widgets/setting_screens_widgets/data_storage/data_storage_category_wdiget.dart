@@ -23,8 +23,8 @@ class DataStorageCategoryWidget extends StatelessWidget {
         child: Text(
           categoryName,
           style: GoogleFonts.poppins(
-            textStyle: const TextStyle(
-              color: mainTextColor,
+            textStyle: TextStyle(
+              color: Theme.of(context).colorScheme.primary,
               fontSize: 12,
               fontWeight: FontWeight.w600,
             ),

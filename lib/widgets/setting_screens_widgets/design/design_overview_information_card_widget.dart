@@ -101,15 +101,15 @@ class DesignOverviewInformationCardWidget extends StatelessWidget {
           topPadding: 108,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).selectedRowColor,
+          color: Theme.of(context).colorScheme.primary,
           topPadding: 136,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).unselectedWidgetColor,
+          color: Theme.of(context).colorScheme.secondary,
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: Theme.of(context).unselectedWidgetColor,
+          color: Theme.of(context).colorScheme.tertiary,
           topPadding: 192,
         ),
         DesignOverviewColorCode(

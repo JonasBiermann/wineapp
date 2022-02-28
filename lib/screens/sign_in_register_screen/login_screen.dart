@@ -26,7 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Scaffold(
-        backgroundColor: backgroundColor,
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: Stack(
           children: [
             Positioned(
@@ -38,8 +38,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text(
                   'Welcome back 👋',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                        color: mainTextColor,
+                    textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 23,
                         fontWeight: FontWeight.bold),
                   ),
@@ -55,8 +55,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text(
                   'We\'re so happy to see you back. Login to continue where you left off.',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: quartiaryTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
                       fontSize: 14,
                       fontWeight: FontWeight.w600,
                     ),
@@ -71,19 +71,19 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
                 width: 315,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextField(
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          color: mainTextColor,
+                      textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontSize: 12,
                           fontWeight: FontWeight.bold),
                     ),
-                    cursorColor: mainTextColor,
+                    cursorColor: Theme.of(context).colorScheme.primary,
                     cursorRadius: const Radius.circular(90),
                     cursorWidth: 2.5,
                     cursorHeight: 20,
@@ -91,8 +91,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration: InputDecoration(
                       hintText: 'Username',
                       hintStyle: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                            color: tertiaryTextColor,
+                        textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.tertiary,
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
@@ -109,7 +109,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 50,
                 width: 257,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 child: Padding(
@@ -117,12 +117,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Center(
                     child: TextField(
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                            color: mainTextColor,
+                        textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
                             fontSize: 12,
                             fontWeight: FontWeight.bold),
                       ),
-                      cursorColor: mainTextColor,
+                      cursorColor: Theme.of(context).colorScheme.primary,
                       cursorRadius: const Radius.circular(90),
                       cursorWidth: 2.5,
                       cursorHeight: 20,
@@ -131,8 +131,8 @@ class _LoginScreenState extends State<LoginScreen> {
                       decoration: InputDecoration(
                           hintText: 'Password',
                           hintStyle: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                              color: tertiaryTextColor,
+                            textStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.tertiary,
                               fontSize: 14,
                               fontWeight: FontWeight.bold,
                             ),
@@ -170,8 +170,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'Forgot Password',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontSize: 12,
                         fontWeight: FontWeight.bold,
                       ),
@@ -195,14 +195,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         content: Text(
                           'All fields are required!',
                           style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                              color: mainTextColor,
+                            textStyle: TextStyle(
+                              color: Theme.of(context).colorScheme.primary,
                               fontSize: 12,
                               fontWeight: FontWeight.w600,
                             ),
                           ),
                         ),
-                        backgroundColor: primaryColor,
+                        backgroundColor: Theme.of(context).primaryColor,
                       ),
                     );
                   } else {
@@ -229,21 +229,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       height: 50,
                       width: 315,
                       decoration: BoxDecoration(
-                        color: primaryColor,
+                        color: Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(20.0),
                       ),
                       child: loading
-                          ? const Center(
+                          ? Center(
                               child: CircularProgressIndicator(
-                                color: mainTextColor,
+                                color: Theme.of(context).colorScheme.primary,
                               ),
                             )
                           : Center(
                               child: Text(
                                 'Login',
                                 style: GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                      color: mainTextColor,
+                                  textStyle: TextStyle(
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                       fontSize: 14,
                                       fontWeight: FontWeight.bold),
                                 ),
@@ -265,8 +266,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.only(right: 5.0),
-                        child: const Divider(
-                          color: mainTextColor,
+                        child: Divider(
+                          color: Theme.of(context).colorScheme.primary,
                           height: 10,
                         ),
                       ),
@@ -278,8 +279,8 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: Text(
                           'OR',
                           style: GoogleFonts.poppins(
-                            textStyle: const TextStyle(
-                                color: quartiaryTextColor,
+                            textStyle: TextStyle(
+                                color: Theme.of(context).colorScheme.secondary,
                                 fontSize: 10,
                                 fontWeight: FontWeight.bold),
                           ),
@@ -289,8 +290,8 @@ class _LoginScreenState extends State<LoginScreen> {
                     Expanded(
                       child: Container(
                         margin: const EdgeInsets.only(left: 5.0),
-                        child: const Divider(
-                          color: mainTextColor,
+                        child: Divider(
+                          color: Theme.of(context).colorScheme.primary,
                           height: 10,
                         ),
                       ),
@@ -353,7 +354,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: Text(
                   'Dont have an account yet?',
                   style: GoogleFonts.poppins(
-                      color: quartiaryTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 11,
                       fontWeight: FontWeight.w600),
                 ),
@@ -376,7 +377,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'Create new Account',
                     style: GoogleFonts.poppins(
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

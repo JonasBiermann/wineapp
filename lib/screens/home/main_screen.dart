@@ -39,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
       ),
       bottomNavigationBar: Material(
         borderRadius: BorderRadius.circular(0),
-        color: backgroundColor,
+        color: Theme.of(context).scaffoldBackgroundColor,
         child: SizedBox(
           height: 90,
           width: 390,
@@ -67,19 +67,18 @@ class _MainScreenState extends State<MainScreen> {
                         height: 22,
                         decoration: value == widget.pageIndex
                             ? BoxDecoration(
-                                color: primaryColor,
+                                color: Theme.of(context).primaryColor,
                                 borderRadius: BorderRadius.circular(90),
                               )
                             : BoxDecoration(
-                                color: backgroundColor,
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
                                 borderRadius: BorderRadius.circular(90)),
-                        child: Icon(
-                          data[value],
-                          size: 17,
-                          color: value == widget.pageIndex
-                              ? mainTextColor
-                              : quartiaryTextColor,
-                        ),
+                        child: Icon(data[value],
+                            size: 17,
+                            color: value == widget.pageIndex
+                                ? Theme.of(context).colorScheme.primary
+                                : Theme.of(context).colorScheme.secondary),
                       ),
                     ),
                     Row(
@@ -89,15 +88,17 @@ class _MainScreenState extends State<MainScreen> {
                           dataLabel[value],
                           style: value == widget.pageIndex
                               ? GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: mainTextColor,
+                                  textStyle: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.primary,
                                     fontSize: 11,
                                     fontWeight: FontWeight.bold,
                                   ),
                                 )
                               : GoogleFonts.poppins(
-                                  textStyle: const TextStyle(
-                                    color: quartiaryTextColor,
+                                  textStyle: TextStyle(
+                                    color:
+                                        Theme.of(context).colorScheme.secondary,
                                     fontSize: 11,
                                     fontWeight: FontWeight.w500,
                                   ),

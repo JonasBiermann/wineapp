@@ -29,10 +29,10 @@ class DataStorageInfoCard extends StatelessWidget {
           height: 253,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             borderRadius: BorderRadius.circular(25),
             border: Border.all(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               width: 2,
             ),
           ),
@@ -48,10 +48,10 @@ class DataStorageInfoCard extends StatelessWidget {
                 height: 30,
                 width: 290,
                 decoration: BoxDecoration(
-                  color: backgroundColor,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   border: Border.all(
                     width: 2,
-                    color: mainTextColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   borderRadius: BorderRadius.circular(35),
                 ),
@@ -60,10 +60,10 @@ class DataStorageInfoCard extends StatelessWidget {
                 height: 30,
                 width: pDataAmount / dataAmount * 290 + 26,
                 decoration: BoxDecoration(
-                  color: primaryColor,
+                  color: Theme.of(context).primaryColor,
                   border: Border.all(
                     width: 2,
-                    color: mainTextColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                   borderRadius: BorderRadius.circular(
                     35,
@@ -78,13 +78,13 @@ class DataStorageInfoCard extends StatelessWidget {
                   height: 30,
                   width: aDataAmount / dataAmount * 290 + 26,
                   decoration: BoxDecoration(
-                    color: backgroundColor,
+                    color: Theme.of(context).scaffoldBackgroundColor,
                     borderRadius: BorderRadius.circular(
                       35,
                     ),
                     border: Border.all(
                       width: 2,
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 ),
@@ -98,12 +98,12 @@ class DataStorageInfoCard extends StatelessWidget {
                   height: 30,
                   width: cDataAmount / dataAmount * 290,
                   decoration: BoxDecoration(
-                    color: quartiaryTextColor,
+                    color: Theme.of(context).colorScheme.secondary,
                     borderRadius: BorderRadius.circular(
                       35,
                     ),
                     border: Border.all(
-                      color: mainTextColor,
+                      color: Theme.of(context).colorScheme.primary,
                       width: 2,
                     ),
                   ),
@@ -120,8 +120,8 @@ class DataStorageInfoCard extends StatelessWidget {
           child: Text(
             'Data & Storage',
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -139,8 +139,8 @@ class DataStorageInfoCard extends StatelessWidget {
             child: Text(
               'Storage Used',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -169,15 +169,15 @@ class DataStorageInfoCard extends StatelessWidget {
           topPadding: 220,
         ),
         DesignOverviewColorContainer(
-          color: primaryColor,
+          color: Theme.of(context).primaryColor,
           topPadding: 136,
         ),
         DesignOverviewColorContainer(
-          color: backgroundColor,
+          color: Theme.of(context).scaffoldBackgroundColor,
           topPadding: 164,
         ),
         DesignOverviewColorContainer(
-          color: quartiaryTextColor,
+          color: Theme.of(context).colorScheme.secondary,
           topPadding: 192,
         ),
         DataCategoryAmountWidget(

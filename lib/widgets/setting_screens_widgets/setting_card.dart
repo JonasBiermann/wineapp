@@ -29,7 +29,7 @@ class SettingCard extends StatelessWidget {
             height: 35,
             width: 320,
             decoration: BoxDecoration(
-                color: primaryColor,
+                color: Theme.of(context).primaryColor,
                 borderRadius: BorderRadius.circular(35),
                 boxShadow: const [
                   BoxShadow(
@@ -49,8 +49,8 @@ class SettingCard extends StatelessWidget {
             child: Text(
               settingName,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 14,
                   fontWeight: FontWeight.w600,
                 ),
@@ -65,7 +65,8 @@ class SettingCard extends StatelessWidget {
             child: SizedBox(
                 height: 17,
                 width: 17,
-                child: SvgPicture.asset(settingIcon, color: mainTextColor)),
+                child: SvgPicture.asset(settingIcon,
+                    color: Theme.of(context).colorScheme.primary)),
           ),
         ],
       ),

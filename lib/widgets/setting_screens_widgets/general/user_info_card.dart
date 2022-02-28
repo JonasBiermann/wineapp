@@ -39,9 +39,9 @@ class _UserInfoCardState extends State<UserInfoCard> {
           height: 256,
           width: 320,
           decoration: BoxDecoration(
-            color: backgroundColor,
+            color: Theme.of(context).scaffoldBackgroundColor,
             border: Border.all(
-              color: primaryColor,
+              color: Theme.of(context).primaryColor,
               width: 2,
             ),
             borderRadius: BorderRadius.circular(25),
@@ -55,8 +55,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
           child: Text(
             widget.name,
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -87,8 +87,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Username',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -107,8 +107,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Email',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -127,8 +127,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Phone',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -147,8 +147,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Age',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -167,8 +167,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Country',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -187,8 +187,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Gender',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -207,8 +207,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
             child: Text(
               'Account Age',
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w600,
                 ),
@@ -228,8 +228,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.userName,
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -270,8 +270,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.phoneNumber,
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -291,8 +291,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.userAge.toString(),
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -312,8 +312,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.userCountry,
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -333,8 +333,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               widget.userGneder,
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -354,8 +354,8 @@ class _UserInfoCardState extends State<UserInfoCard> {
               '${widget.accountAge} Days',
               textAlign: TextAlign.right,
               style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: mainTextColor,
+                textStyle: TextStyle(
+                  color: Theme.of(context).colorScheme.primary,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),

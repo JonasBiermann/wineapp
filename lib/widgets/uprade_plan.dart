@@ -19,8 +19,8 @@ class UpgradePlan extends StatelessWidget {
           child: Text(
             upgradePhrase,
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontWeight: FontWeight.bold,
                 fontSize: 16,
               ),
@@ -35,7 +35,7 @@ class UpgradePlan extends StatelessWidget {
             width: 20,
             child: SvgPicture.asset(
               'assets/icons/general/info.svg',
-              color: mainTextColor,
+              color: Theme.of(context).colorScheme.primary,
             ),
           ),
         ),
@@ -49,7 +49,7 @@ class UpgradePlan extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25),
                   border: Border.all(
-                    color: mainTextColor,
+                    color: Theme.of(context).colorScheme.primary,
                     width: 2.0,
                   ),
                 ),
@@ -62,7 +62,7 @@ class UpgradePlan extends StatelessWidget {
                   width: 40,
                   child: SvgPicture.asset(
                     'assets/icons/general/check-2.svg',
-                    color: mainTextColor,
+                    color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
               ),
@@ -75,8 +75,8 @@ class UpgradePlan extends StatelessWidget {
                   child: Text(
                     'Basic Plan',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: mainTextColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).colorScheme.primary,
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                       ),
@@ -93,8 +93,8 @@ class UpgradePlan extends StatelessWidget {
                   child: Text(
                     'Free',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          color: mainTextColor,
+                      textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w400,
                           fontSize: 7),
                     ),
@@ -113,8 +113,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'Limited Somellier',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: mainTextColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -143,8 +143,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'See Wine-Stats',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: mainTextColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -199,7 +199,7 @@ class UpgradePlan extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   border: Border.all(
-                    color: primaryColor,
+                    color: Theme.of(context).primaryColor,
                     width: 2.0,
                   ),
                 ),
@@ -212,7 +212,7 @@ class UpgradePlan extends StatelessWidget {
                   width: 40,
                   child: SvgPicture.asset(
                     'assets/icons/general/diamond.svg',
-                    color: primaryColor,
+                    color: Theme.of(context).primaryColor,
                   ),
                 ),
               ),
@@ -225,8 +225,8 @@ class UpgradePlan extends StatelessWidget {
                   child: Text(
                     'Premium Plan',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                        color: primaryColor,
+                      textStyle: TextStyle(
+                        color: Theme.of(context).primaryColor,
                         fontWeight: FontWeight.w600,
                         fontSize: 14,
                       ),
@@ -243,8 +243,8 @@ class UpgradePlan extends StatelessWidget {
                   child: Text(
                     'One-time purchase',
                     style: GoogleFonts.poppins(
-                      textStyle: const TextStyle(
-                          color: primaryColor,
+                      textStyle: TextStyle(
+                          color: Theme.of(context).primaryColor,
                           fontWeight: FontWeight.w400,
                           fontSize: 7),
                     ),
@@ -263,8 +263,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'Unlimited Somellier',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: primaryColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -278,8 +278,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'Unlock Designs',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: primaryColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -293,8 +293,8 @@ class UpgradePlan extends StatelessWidget {
                       child: Text(
                         'No Ads',
                         style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                            color: primaryColor,
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
                             fontWeight: FontWeight.w500,
                             fontSize: 9,
                           ),
@@ -318,7 +318,7 @@ class UpgradePlan extends StatelessWidget {
                         width: 4,
                         child: SvgPicture.asset(
                           'assets/icons/general/Ellipse 2.svg',
-                          color: primaryColor,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       SizedBox(
@@ -326,7 +326,7 @@ class UpgradePlan extends StatelessWidget {
                         width: 4,
                         child: SvgPicture.asset(
                           'assets/icons/general/Ellipse 2.svg',
-                          color: primaryColor,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                       SizedBox(
@@ -334,7 +334,7 @@ class UpgradePlan extends StatelessWidget {
                         width: 4,
                         child: SvgPicture.asset(
                           'assets/icons/general/Ellipse 2.svg',
-                          color: primaryColor,
+                          color: Theme.of(context).primaryColor,
                         ),
                       ),
                     ],
@@ -356,7 +356,7 @@ class UpgradePlan extends StatelessWidget {
                   height: 35,
                   width: 320,
                   decoration: BoxDecoration(
-                    color: primaryColor,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.circular(90),
                   ),
                 ),
@@ -369,8 +369,8 @@ class UpgradePlan extends StatelessWidget {
                     child: Text(
                       'Upgrade now - €3.29',
                       style: GoogleFonts.poppins(
-                        textStyle: const TextStyle(
-                          color: mainTextColor,
+                        textStyle: TextStyle(
+                          color: Theme.of(context).colorScheme.primary,
                           fontWeight: FontWeight.w600,
                           fontSize: 14,
                         ),

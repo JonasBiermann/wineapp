@@ -57,8 +57,8 @@ class NotificationOverview extends StatelessWidget {
                 child: Text(
                   'Go Back',
                   style: GoogleFonts.poppins(
-                    textStyle: const TextStyle(
-                      color: mainTextColor,
+                    textStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.primary,
                       fontSize: 11,
                       fontWeight: FontWeight.bold,
                     ),

@@ -24,14 +24,14 @@ class AuthService {
           content: Text(
             e.message.toString(),
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          backgroundColor: primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
       );
     } catch (e) {
@@ -48,14 +48,14 @@ class AuthService {
           content: Text(
             e.message.toString(),
             style: GoogleFonts.poppins(
-              textStyle: const TextStyle(
-                color: mainTextColor,
+              textStyle: TextStyle(
+                color: Theme.of(context).colorScheme.primary,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
             ),
           ),
-          backgroundColor: primaryColor,
+          backgroundColor: Theme.of(context).primaryColor,
         ),
       );
     }
