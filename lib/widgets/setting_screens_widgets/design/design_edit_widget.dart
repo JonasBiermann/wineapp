@@ -78,41 +78,135 @@ class DesignEdit extends StatelessWidget {
                       builder: (BuildContext context) {
                         return Dialog(
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(25)),
+                            borderRadius: BorderRadius.circular(25),
+                          ),
                           elevation: 1,
-                          backgroundColor: Theme.of(context).primaryColor,
+                          backgroundColor: Theme.of(context).indicatorColor,
                           insetAnimationCurve: Curves.decelerate,
                           child: Container(
-                              height: 200,
+                            height: 170,
+                            child: Padding(
+                              padding: const EdgeInsets.only(
+                                left: 33,
+                                top: 85,
+                              ),
                               child: Column(
                                 children: [
-                                  Text(
-                                    'Theme',
-                                    style: GoogleFonts.poppins(
-                                      textStyle: TextStyle(
-                                        color: Theme.of(context).primaryColor,
+                                  Row(
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.only(
+                                          right: 40,
+                                        ),
+                                        child: GestureDetector(
+                                          onTap: () {
+                                            setAsLightPurple(context);
+                                          },
+                                          child: Container(
+                                            height: 60,
+                                            width: 105,
+                                            decoration: BoxDecoration(
+                                                borderRadius:
+                                                    BorderRadius.circular(10),
+                                                color: Theme.of(context)
+                                                    .scaffoldBackgroundColor
+                                                    .withOpacity(.3),
+                                                border: Border.all(
+                                                    color: Theme.of(context)
+                                                        .scaffoldBackgroundColor,
+                                                    width: 3)),
+                                            child: Center(
+                                              child: Text(
+                                                'Wine',
+                                                style: GoogleFonts.poppins(
+                                                  textStyle: TextStyle(
+                                                    fontSize: 12,
+                                                    fontWeight: FontWeight.bold,
+                                                    color: Theme.of(context)
+                                                        .scaffoldBackgroundColor,
+                                                  ),
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                    ),
-                                  ),
-                                  FloatingActionButton(
-                                    backgroundColor:
-                                        Theme.of(context).hintColor,
-                                    onPressed: () {
-                                      setAsLightPurple(context);
-                                      print('Done');
-                                    },
-                                  ),
-                                  FloatingActionButton(
-                                    backgroundColor:
-                                        Theme.of(context).indicatorColor,
-                                    onPressed: () {
-                                      setAsLightRed(context);
-                                      print('Done');
-                                    },
-                                  ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          setAsLightRed(context);
+                                        },
+                                        child: Container(
+                                          height: 60,
+                                          width: 105,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10),
+                                              color: Theme.of(context)
+                                                  .scaffoldBackgroundColor
+                                                  .withOpacity(.3),
+                                              border: Border.all(
+                                                  color: Theme.of(context)
+                                                      .scaffoldBackgroundColor,
+                                                  width: 3)),
+                                          child: Center(
+                                            child: Text(
+                                              'Wine',
+                                              style: GoogleFonts.poppins(
+                                                textStyle: TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Theme.of(context)
+                                                      .scaffoldBackgroundColor,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  )
                                 ],
-                              )),
+                              ),
+                            ),
+                          ),
                         );
+                        // return Dialog(
+                        //   shape: RoundedRectangleBorder(
+                        //       borderRadius: BorderRadius.circular(25)),
+                        //   elevation: 1,
+                        //   backgroundColor: Theme.of(context).primaryColor,
+                        //   insetAnimationCurve: Curves.decelerate,
+                        //   child: Container(
+                        //       height: 200,
+                        //       child: Column(
+                        //         children: [
+                        //           Text(
+                        //             'Theme',
+                        //             style: GoogleFonts.poppins(
+                        //               textStyle: TextStyle(
+                        //                 color: Theme.of(context).primaryColor,
+                        //               ),
+                        //             ),
+                        //           ),
+                        //           FloatingActionButton(
+                        //             backgroundColor:
+                        //                 Theme.of(context).hintColor,
+                        //             onPressed: () {
+                        //               setAsLightPurple(context);
+                        //               print('Done');
+                        //             },
+                        //           ),
+                        //           FloatingActionButton(
+                        //             backgroundColor:
+                        //                 Theme.of(context).indicatorColor,
+                        //             onPressed: () {
+                        //               setAsLightRed(context);
+                        //               print('Done');
+                        //             },
+                        //           ),
+                        //         ],
+                        //       )),
+                        // );
                       });
                 },
               ),
