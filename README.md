@@ -1,4 +1,4 @@
-# wineapp
+# WineApp
 
 This is my first shot on publishing an actual app in both the appstore and google playstore
 
