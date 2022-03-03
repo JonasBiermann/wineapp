@@ -29,7 +29,7 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
     DesignOverview(
       designName: 'Purple Drank',
     ),
-    const DesignEdit(),
+    DesignEdit(),
   ];
   List<String> dataLabel = [
     'Home',

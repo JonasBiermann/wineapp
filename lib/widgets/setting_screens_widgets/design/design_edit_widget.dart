@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 import 'package:wineapp/constants.dart';
+import 'package:wineapp/models/theme_model.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/design/design_overview_category_widget.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/settings_edit_button.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
-class DesignEdit extends StatelessWidget {
-  const DesignEdit({Key? key}) : super(key: key);
+class DesignEdit extends StatefulWidget {
+  DesignEdit({Key? key}) : super(key: key);
+
+  @override
+  State<DesignEdit> createState() => _DesignEditState();
+}
+
+class _DesignEditState extends State<DesignEdit> {
+  bool selected = false;
 
   @override
   Widget build(BuildContext context) {
@@ -83,47 +92,95 @@ class DesignEdit extends StatelessWidget {
                           elevation: 1,
                           backgroundColor: Theme.of(context).indicatorColor,
                           insetAnimationCurve: Curves.decelerate,
-                          child: Container(
+                          child: SizedBox(
                             height: 170,
-                            child: Padding(
-                              padding: const EdgeInsets.only(
-                                left: 33,
-                                top: 85,
-                              ),
-                              child: Column(
-                                children: [
-                                  Row(
+                            width: 320,
+                            child: Stack(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 25,
+                                    left: 35,
+                                    right: 35,
+                                  ),
+                                  child: Stack(
                                     children: [
+                                      Container(
+                                        width: 250,
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(90),
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                      GestureDetector(
+                                        onTap: () {
+                                          selected = false;
+                                          print(selected);
+                                        },
+                                        child: AnimatedContainer(
+                                          duration: const Duration(
+                                            milliseconds: 200,
+                                          ),
+                                          width: 138,
+                                          height: 30,
+                                          decoration: BoxDecoration(
+                                            color: Theme.of(context)
+                                                .indicatorColor,
+                                            borderRadius:
+                                                BorderRadius.circular(90),
+                                            border: Border.all(
+                                              color: Colors.black,
+                                              width: 1,
+                                            ),
+                                          ),
+                                          child: Center(
+                                            child: Text(
+                                              'Light Mode',
+                                              style: GoogleFonts.poppins(
+                                                textStyle: const TextStyle(
+                                                  fontSize: 12,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: Colors.black,
+                                                ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
                                       Padding(
                                         padding: const EdgeInsets.only(
-                                          right: 40,
+                                          left: 112,
                                         ),
                                         child: GestureDetector(
                                           onTap: () {
-                                            setAsLightPurple(context);
+                                            setState(() {
+                                              selected = true;
+                                              print(selected);
+                                            });
                                           },
-                                          child: Container(
-                                            height: 60,
-                                            width: 105,
+                                          child: AnimatedContainer(
+                                            duration: const Duration(
+                                              milliseconds: 200,
+                                            ),
+                                            width: 138,
+                                            height: 30,
                                             decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.circular(10),
-                                                color: Theme.of(context)
-                                                    .scaffoldBackgroundColor
-                                                    .withOpacity(.3),
-                                                border: Border.all(
-                                                    color: Theme.of(context)
-                                                        .scaffoldBackgroundColor,
-                                                    width: 3)),
+                                              color: selected
+                                                  ? Colors.black
+                                                  : Colors.transparent,
+                                              borderRadius:
+                                                  BorderRadius.circular(90),
+                                            ),
                                             child: Center(
                                               child: Text(
-                                                'Wine',
+                                                'Dark Mode',
                                                 style: GoogleFonts.poppins(
-                                                  textStyle: TextStyle(
+                                                  textStyle: const TextStyle(
                                                     fontSize: 12,
-                                                    fontWeight: FontWeight.bold,
-                                                    color: Theme.of(context)
-                                                        .scaffoldBackgroundColor,
+                                                    fontWeight: FontWeight.w600,
+                                                    color: Colors.white,
                                                   ),
                                                 ),
                                               ),
@@ -131,82 +188,28 @@ class DesignEdit extends StatelessWidget {
                                           ),
                                         ),
                                       ),
-                                      GestureDetector(
-                                        onTap: () {
-                                          setAsLightRed(context);
-                                        },
-                                        child: Container(
-                                          height: 60,
-                                          width: 105,
-                                          decoration: BoxDecoration(
-                                              borderRadius:
-                                                  BorderRadius.circular(10),
-                                              color: Theme.of(context)
-                                                  .scaffoldBackgroundColor
-                                                  .withOpacity(.3),
-                                              border: Border.all(
-                                                  color: Theme.of(context)
-                                                      .scaffoldBackgroundColor,
-                                                  width: 3)),
-                                          child: Center(
-                                            child: Text(
-                                              'Wine',
-                                              style: GoogleFonts.poppins(
-                                                textStyle: TextStyle(
-                                                  fontSize: 12,
-                                                  fontWeight: FontWeight.bold,
-                                                  color: Theme.of(context)
-                                                      .scaffoldBackgroundColor,
-                                                ),
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
                                     ],
-                                  )
-                                ],
-                              ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                    top: 85,
+                                    left: 35,
+                                    right: 35,
+                                  ),
+                                  child: SizedBox(
+                                    height: 60,
+                                    width: 250,
+                                    child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
+                                        children: widgets),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
                         );
-                        // return Dialog(
-                        //   shape: RoundedRectangleBorder(
-                        //       borderRadius: BorderRadius.circular(25)),
-                        //   elevation: 1,
-                        //   backgroundColor: Theme.of(context).primaryColor,
-                        //   insetAnimationCurve: Curves.decelerate,
-                        //   child: Container(
-                        //       height: 200,
-                        //       child: Column(
-                        //         children: [
-                        //           Text(
-                        //             'Theme',
-                        //             style: GoogleFonts.poppins(
-                        //               textStyle: TextStyle(
-                        //                 color: Theme.of(context).primaryColor,
-                        //               ),
-                        //             ),
-                        //           ),
-                        //           FloatingActionButton(
-                        //             backgroundColor:
-                        //                 Theme.of(context).hintColor,
-                        //             onPressed: () {
-                        //               setAsLightPurple(context);
-                        //               print('Done');
-                        //             },
-                        //           ),
-                        //           FloatingActionButton(
-                        //             backgroundColor:
-                        //                 Theme.of(context).indicatorColor,
-                        //             onPressed: () {
-                        //               setAsLightRed(context);
-                        //               print('Done');
-                        //             },
-                        //           ),
-                        //         ],
-                        //       )),
-                        // );
                       });
                 },
               ),

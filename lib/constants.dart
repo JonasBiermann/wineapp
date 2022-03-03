@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stacked_themes/stacked_themes.dart';
 import 'package:theme_manager/theme_manager.dart';
 
 const MaterialColor purpleDesign = MaterialColor(0xff6F00CF, <int, Color>{
@@ -16,12 +17,8 @@ const MaterialColor redDesign = MaterialColor(0xff810707, <int, Color>{
   400: Color(0xff810707),
 });
 
-const primaryColor = Color(0xff9A81D5);
-const mainTextColor = Color(0xffFFFFFF);
-const secondaryTextColor = Color(0xffD3C1FF);
-const tertiaryTextColor = Color(0xff6F00CF);
-const quartiaryTextColor = Color(0xffC3B3EA);
-const backgroundColor = Color(0xff6F00CF);
+Color redBackgroundColor = const Color(0xff810707);
+Color purpleBackgroundColor = const Color(0xff6F00CF);
 
 TextStyle unTextStyle(BuildContext context) {
   return TextStyle(
@@ -39,42 +36,41 @@ TextStyle selTextStyle(BuildContext context) {
   );
 }
 
-void setAsLightPurple(BuildContext context) {
-  ThemeManager.of(context).setThemeData(ThemeData(
-      brightness: Brightness.light,
-      primaryColor: purpleDesign[100],
-      scaffoldBackgroundColor: purpleDesign[400],
-      indicatorColor: purpleDesign[50],
-      primaryColorLight: purpleDesign[300],
-      hintColor: purpleDesign[400]));
-}
-
-void setAsLightRed(BuildContext context) {
-  ThemeManager.of(context).setThemeData(ThemeData(
-      brightness: Brightness.light,
-      primaryColor: redDesign[100],
-      scaffoldBackgroundColor: redDesign[400],
-      indicatorColor: redDesign[50],
-      primaryColorLight: redDesign[300],
-      hintColor: redDesign[400]));
-}
-
-// void setAsDarkPurple(BuildContext context) {
+// void setAsLightPurple(BuildContext context) {
 //   ThemeManager.of(context).setThemeData(ThemeData(
-//     brightness: Brightness.dark,
-//     primaryColor: purpleDesign[100],
-//     scaffoldBackgroundColor: purpleDesign[400],
-//     unselectedWidgetColor: purpleDesign[300],
-//     selectedRowColor: purpleDesign[50],
-//   ));
+//       brightness: Brightness.light,
+//       primaryColor: purpleDesign[100],
+//       scaffoldBackgroundColor: purpleDesign[400],
+//       indicatorColor: purpleDesign[50],
+//       primaryColorLight: purpleDesign[300],
+//       hintColor: purpleDesign[400]));
 // }
 
-// void setAsDarkRed(BuildContext context) {
+// void setAsLightRed(BuildContext context) {
 //   ThemeManager.of(context).setThemeData(ThemeData(
-//     brightness: Brightness.dark,
-//     primaryColor: redDesign[100],
-//     scaffoldBackgroundColor: redDesign[400],
-//     unselectedWidgetColor: redDesign[300],
-//     selectedRowColor: redDesign[50],
-//   ));
+//       brightness: Brightness.light,
+//       primaryColor: redDesign[100],
+//       scaffoldBackgroundColor: redDesign[400],
+//       indicatorColor: redDesign[50],
+//       primaryColorLight: redDesign[300],
+//       hintColor: redDesign[400]));
 // }
+
+List<ThemeData> getThemes() {
+  return [
+    ThemeData(
+        brightness: Brightness.light,
+        primaryColor: purpleDesign[100],
+        scaffoldBackgroundColor: purpleDesign[400],
+        indicatorColor: purpleDesign[50],
+        primaryColorLight: purpleDesign[300],
+        hintColor: purpleDesign[400]),
+    ThemeData(
+        brightness: Brightness.light,
+        primaryColor: redDesign[100],
+        scaffoldBackgroundColor: redDesign[400],
+        indicatorColor: redDesign[50],
+        primaryColorLight: redDesign[300],
+        hintColor: redDesign[400])
+  ];
+}
