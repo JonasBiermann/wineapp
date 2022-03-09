@@ -68,7 +68,7 @@ class IntroductionScreen3 extends StatelessWidget {
               height: 10,
               width: 70,
               child: SvgPicture.asset(
-                  'assets/icons/icons_purple/Dot Indicastor_3.svg'),
+                  'assets/icons/icons_purple/dot_Indicator_3_purple.svg'),
             ),
           ),
           Positioned(

@@ -75,28 +75,27 @@ class _MultipleThemeViewerWidgetState extends State<MultipleThemeViewerWidget> {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        if (getThemeManager(context).selectedThemeIndex! >= 2) {
-          getThemeManager(context)
-              .selectThemeAtIndex(widget.themeData.index + 2);
-        } else {
-          getThemeManager(context).selectThemeAtIndex(widget.themeData.index);
-        }
+        var index = getThemeManager(context).selectedThemeIndex;
         setState(() {
-          if (getThemeManager(context).selectedThemeIndex == 0) {
-            globals.currentTheme = true;
-          }
-          if (getThemeManager(context).selectedThemeIndex == 1) {
-            globals.currentTheme = false;
+          if (widget.themeData.selected == false) {
+            widget.themeData.selected = true;
+            print(widget.themes.elementAt(index!).selected);
+            widget.themes.elementAt(index).selected = false;
+            print(widget.themes.elementAt(index).selected);
           }
         });
+        getThemeManager(context).selectThemeAtIndex(widget.themeData.index);
       },
       child: Container(
         height: 60,
         width: 105,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          color: widget.themeData.color.withOpacity(.3),
-        ),
+            borderRadius: BorderRadius.circular(10),
+            color: widget.themeData.color.withOpacity(.3),
+            border: widget.themeData.selected
+                ? Border.all(
+                    color: Theme.of(context).scaffoldBackgroundColor, width: 3)
+                : Border.all(color: Colors.black)),
         child: Center(
           child: Text(
             widget.themeData.themeName,
