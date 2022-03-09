@@ -2,6 +2,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:stacked_themes/stacked_themes.dart';
 import 'package:flutter/material.dart';
 import 'package:wineapp/constants.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class MultiThemeModel {
   int index;
@@ -80,16 +81,22 @@ class _MultipleThemeViewerWidgetState extends State<MultipleThemeViewerWidget> {
         } else {
           getThemeManager(context).selectThemeAtIndex(widget.themeData.index);
         }
+        setState(() {
+          if (getThemeManager(context).selectedThemeIndex == 0) {
+            globals.currentTheme = true;
+          }
+          if (getThemeManager(context).selectedThemeIndex == 1) {
+            globals.currentTheme = false;
+          }
+        });
       },
       child: Container(
         height: 60,
         width: 105,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: widget.themeData.color.withOpacity(.3),
-            border: widget.themeData.selected
-                ? Border.all(color: widget.themeData.color, width: 3)
-                : Border.all(color: Colors.white)),
+          borderRadius: BorderRadius.circular(10),
+          color: widget.themeData.color.withOpacity(.3),
+        ),
         child: Center(
           child: Text(
             widget.themeData.themeName,

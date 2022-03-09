@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_4.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_2.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 import '../../animation/page_route_transition.dart';
 
@@ -23,8 +24,10 @@ class IntroductionScreen1 extends StatelessWidget {
             child: SizedBox(
               height: 218.29,
               width: 300,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/wine_tasting.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/wine_tasting.svg')
+                  : SvgPicture.asset('assets/icons/icons_red/wine_tasting.svg'),
             ),
           ),
           Positioned(
@@ -70,8 +73,11 @@ class IntroductionScreen1 extends StatelessWidget {
             child: SizedBox(
               height: 10,
               width: 70,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/dot_indicator_1.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/dot_indicator_1.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/dot_indicator_1.svg'),
             ),
           ),
           Positioned(
