@@ -53,36 +53,51 @@ List<MultiThemeModel> get themes => List<MultiThemeModel>.generate(
         selected: selectedForThemeModel(index)));
 
 List<Widget> get widgets => themes
-    .map((themeData) => MultipleThemeViewerWidget(themeData: themeData))
+    .map((themeData) =>
+        MultipleThemeViewerWidget(themeData: themeData, themes: themes))
     .toList();
 
-class MultipleThemeViewerWidget extends StatelessWidget {
-  MultipleThemeViewerWidget({Key? key, required this.themeData})
+class MultipleThemeViewerWidget extends StatefulWidget {
+  MultipleThemeViewerWidget(
+      {Key? key, required this.themeData, required this.themes})
       : super(key: key);
   final MultiThemeModel themeData;
+  final List themes;
+
+  @override
+  State<MultipleThemeViewerWidget> createState() =>
+      _MultipleThemeViewerWidgetState();
+}
+
+class _MultipleThemeViewerWidgetState extends State<MultipleThemeViewerWidget> {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        getThemeManager(context).selectThemeAtIndex(themeData.index);
+        if (getThemeManager(context).selectedThemeIndex! >= 2) {
+          getThemeManager(context)
+              .selectThemeAtIndex(widget.themeData.index + 2);
+        } else {
+          getThemeManager(context).selectThemeAtIndex(widget.themeData.index);
+        }
       },
       child: Container(
         height: 60,
         width: 105,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),
-            color: themeData.color.withOpacity(.3),
-            border: themeData.selected
-                ? Border.all(color: themeData.color, width: 3)
-                : Border.all(color: Colors.transparent)),
+            color: widget.themeData.color.withOpacity(.3),
+            border: widget.themeData.selected
+                ? Border.all(color: widget.themeData.color, width: 3)
+                : Border.all(color: Colors.white)),
         child: Center(
           child: Text(
-            themeData.themeName,
+            widget.themeData.themeName,
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
-                color: themeData.color,
+                color: widget.themeData.color,
               ),
             ),
           ),
