@@ -1,3 +1,3 @@
 library my_prj.globals;
 
-bool currentTheme = false;
+bool currentTheme = true;

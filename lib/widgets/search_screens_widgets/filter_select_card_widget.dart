@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class FilterSelectCard extends StatefulWidget {
   FilterSelectCard({
@@ -122,15 +123,25 @@ class BigFilterSelectCard extends StatefulWidget {
 class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
   bool filterStat = false;
 
-  List<String> selectedSvg = [
+  List<String> selectedSvgPurple = [
     'assets/icons/icons_purple/cooking_selected_purple.svg',
     'assets/icons/icons_purple/wine_tasting_selected_purple.svg',
     'assets/icons/icons_purple/eating_together_selected_purple.svg',
   ];
-  List<String> unselectedSvg = [
+  List<String> selectedSvgRed = [
+    'assets/icons/icons_red/cooking_selected_red.svg',
+    'assets/icons/icons_red/wine_tasting_selected_red.svg',
+    'assets/icons/icons_red/eating_together_selected_red.svg',
+  ];
+  List<String> unselectedSvgPurple = [
     'assets/icons/icons_purple/cooking_normal_purple.svg',
     'assets/icons/icons_purple/wine_tasting_normal_purple.svg',
     'assets/icons/icons_purple/eating_together_normal_purple.svg'
+  ];
+  List<String> unselectedSvgRed = [
+    'assets/icons/icons_red/cooking_normal_red.svg',
+    'assets/icons/icons_red/wine_tasting_normal_red.svg',
+    'assets/icons/icons_red/eating_together_normal_red.svg'
   ];
   @override
   Widget build(BuildContext context) {
@@ -145,8 +156,9 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
               widget.filterColor = Theme.of(context).primaryColorLight;
               widget.textStyle = selTextStyle(context);
               widget.borderColor = Theme.of(context).scaffoldBackgroundColor;
-              widget.filterSvg[widget.filterIndex] =
-                  selectedSvg[widget.filterIndex];
+              widget.filterSvg[widget.filterIndex] = globals.currentTheme
+                  ? selectedSvgPurple[widget.filterIndex]
+                  : selectedSvgRed[widget.filterIndex];
               widget.appliedFilters.value += 1;
               print(widget.appliedFilters);
             }
@@ -154,8 +166,9 @@ class _BigFilterSelectCardState extends State<BigFilterSelectCard> {
               widget.filterColor = Theme.of(context).primaryColor;
               widget.textStyle = unTextStyle(context);
               widget.borderColor = Theme.of(context).primaryColorLight;
-              widget.filterSvg[widget.filterIndex] =
-                  unselectedSvg[widget.filterIndex];
+              widget.filterSvg[widget.filterIndex] = globals.currentTheme
+                  ? unselectedSvgPurple[widget.filterIndex]
+                  : unselectedSvgRed[widget.filterIndex];
               widget.appliedFilters.value -= 1;
               print(widget.appliedFilters);
             }

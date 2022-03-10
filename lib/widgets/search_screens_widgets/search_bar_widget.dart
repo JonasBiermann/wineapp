@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/search_screens_widgets/filter_select_card_widget.dart';
 import 'package:wineapp/widgets/search_screens_widgets/slider_widget.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class SearchBar extends StatefulWidget {
   SearchBar({
@@ -30,10 +31,15 @@ class _SearchBarState extends State<SearchBar> {
     'Both',
   ];
 
-  List<String> mainFilterSvg = [
+  List<String> mainFilterSvgPurple = [
     'assets/icons/icons_purple/cooking_normal_purple.svg',
     'assets/icons/icons_purple/wine_tasting_normal_purple.svg',
     'assets/icons/icons_purple/eating_together_normal_purple.svg'
+  ];
+  List<String> mainFilterSvgRed = [
+    'assets/icons/icons_red/cooking_normal_red.svg',
+    'assets/icons/icons_red/wine_tasting_normal_red.svg',
+    'assets/icons/icons_red/eating_together_normal_red.svg'
   ];
   List<String> filterSvg = [
     'assets/icons/general/restaurant.svg',
@@ -220,7 +226,9 @@ class _SearchBarState extends State<SearchBar> {
                 children: [
                   BigFilterSelectCard(
                     filterCategory: mainFilterCategory,
-                    filterSvg: mainFilterSvg,
+                    filterSvg: globals.currentTheme
+                        ? mainFilterSvgPurple
+                        : mainFilterSvgRed,
                     filterIndex: 0,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
@@ -229,7 +237,9 @@ class _SearchBarState extends State<SearchBar> {
                   ),
                   BigFilterSelectCard(
                     filterCategory: mainFilterCategory,
-                    filterSvg: mainFilterSvg,
+                    filterSvg: globals.currentTheme
+                        ? mainFilterSvgPurple
+                        : mainFilterSvgRed,
                     filterIndex: 1,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
@@ -238,7 +248,9 @@ class _SearchBarState extends State<SearchBar> {
                   ),
                   BigFilterSelectCard(
                     filterCategory: mainFilterCategory,
-                    filterSvg: mainFilterSvg,
+                    filterSvg: globals.currentTheme
+                        ? mainFilterSvgPurple
+                        : mainFilterSvgRed,
                     filterIndex: 2,
                     appliedFilters: appliedFilters,
                     textStyle: unTextStyle(context),
