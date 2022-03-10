@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/reset_password_screen.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class ForgotPasswordScreen extends StatefulWidget {
   const ForgotPasswordScreen({Key? key}) : super(key: key);
@@ -24,8 +24,11 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             child: SizedBox(
               width: 300,
               height: 199.37,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/forgot_password.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/forgot_password_purple.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/forgot_password_red.svg'),
             ),
           ),
           Positioned(

@@ -26,9 +26,9 @@ class IntroductionScreen1 extends StatelessWidget {
               width: 300,
               child: globals.currentTheme
                   ? SvgPicture.asset(
-                      'assets/icons/icons_purple/wine_tasting_purple.svg')
+                      'assets/icons/icons_purple/wine_tasting_normal_purple.svg')
                   : SvgPicture.asset(
-                      'assets/icons/icons_red/wine_tasting_red.svg'),
+                      'assets/icons/icons_red/wine_tasting_normal_red.svg'),
             ),
           ),
           Positioned(

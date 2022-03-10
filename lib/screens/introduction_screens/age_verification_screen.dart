@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';
 import 'package:wineapp/widgets/age_verification_textfields.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class AgeVerificationScreen extends StatelessWidget {
   AgeVerificationScreen({Key? key}) : super(key: key);
@@ -22,7 +23,10 @@ class AgeVerificationScreen extends StatelessWidget {
             child: SizedBox(
               height: 241.29,
               width: 300,
-              child: SvgPicture.asset('assets/icons/icons_purple/birthday.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/birthday_purple.svg')
+                  : SvgPicture.asset('assets/icons/icons_red/birthday_red.svg'),
             ),
           ),
           Positioned(

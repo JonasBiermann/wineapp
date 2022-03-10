@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/pick_language_screen.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class IntroductionScreen4 extends StatelessWidget {
   const IntroductionScreen4({Key? key}) : super(key: key);
@@ -21,7 +20,10 @@ class IntroductionScreen4 extends StatelessWidget {
             child: SizedBox(
               width: 300,
               height: 254.47,
-              child: SvgPicture.asset('assets/icons/icons_purple/history.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/history_purple.svg')
+                  : SvgPicture.asset('assets/icons/icons_red/history_red.svg'),
             ),
           ),
           Positioned(
@@ -66,8 +68,11 @@ class IntroductionScreen4 extends StatelessWidget {
             child: SizedBox(
               width: 70,
               height: 10,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/dot_Indicator_4_purple.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/dot_Indicator_4_purple.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/dot_indicator_4_red.svg'),
             ),
           ),
           Positioned(

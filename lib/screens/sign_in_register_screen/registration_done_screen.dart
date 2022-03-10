@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class RegDoneScreen extends StatelessWidget {
   const RegDoneScreen({Key? key}) : super(key: key);
@@ -20,8 +20,11 @@ class RegDoneScreen extends StatelessWidget {
               child: SizedBox(
                 height: 302.51,
                 width: 300,
-                child:
-                    SvgPicture.asset('assets/icons/icons_purple/reg_done.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/reg_done_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/red_done_red.svg'),
               ),
             ),
             Positioned(

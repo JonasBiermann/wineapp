@@ -5,6 +5,7 @@ import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_3.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_4.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class IntroductionScreen2 extends StatelessWidget {
   const IntroductionScreen2({Key? key}) : super(key: key);
@@ -21,8 +22,11 @@ class IntroductionScreen2 extends StatelessWidget {
             child: SizedBox(
               height: 232.23,
               width: 300,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/special_event.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/special_event_purple.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/special_event_red.svg'),
             ),
           ),
           Positioned(
@@ -67,8 +71,11 @@ class IntroductionScreen2 extends StatelessWidget {
             child: SizedBox(
               height: 10,
               width: 70,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/dot_Indicator_2_purple.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/dot_Indicator_2_purple.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/dot_indicator_2_red.svg'),
             ),
           ),
           Positioned(

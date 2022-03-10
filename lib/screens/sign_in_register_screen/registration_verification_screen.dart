@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/registration_done_screen.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class RegVerificationScreen extends StatefulWidget {
   const RegVerificationScreen({Key? key}) : super(key: key);
@@ -25,8 +25,11 @@ class _RegVerificationScreenState extends State<RegVerificationScreen> {
               child: SizedBox(
                 width: 300,
                 height: 246.26,
-                child:
-                    SvgPicture.asset('assets/icons/icons_purple/code_sent.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/code_sent_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/code_sent_red.svg'),
               ),
             ),
             Positioned(

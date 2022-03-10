@@ -5,6 +5,7 @@ import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/introduction_screens/age_verification_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class PickLanguageScreen extends StatelessWidget {
   const PickLanguageScreen({Key? key}) : super(key: key);
@@ -21,8 +22,11 @@ class PickLanguageScreen extends StatelessWidget {
             child: SizedBox(
               height: 215,
               width: 300,
-              child: SvgPicture.asset(
-                  'assets/icons/icons_purple/globe_languages.svg'),
+              child: globals.currentTheme
+                  ? SvgPicture.asset(
+                      'assets/icons/icons_purple/globe_languages_purple.svg')
+                  : SvgPicture.asset(
+                      'assets/icons/icons_red/globe_languages_red.svg'),
             ),
           ),
           Positioned(

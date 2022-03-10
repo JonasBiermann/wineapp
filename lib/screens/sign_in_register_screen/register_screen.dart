@@ -7,6 +7,7 @@ import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/registration_verification_screen.dart';
 import 'package:wineapp/services/auth_services.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -214,9 +215,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 15,
                   width: 15,
                   child: agreed
-                      ? SvgPicture.asset(
-                          'assets/icons/general/accept_icon.svg',
-                        )
+                      ? globals.currentTheme
+                          ? SvgPicture.asset(
+                              'assets/icons/icons_purple/accept_icon_purple.svg',
+                            )
+                          : SvgPicture.asset(
+                              'assets/icons/icons_red/accept_icon_red.svg')
                       : SvgPicture.asset(
                           'assets/icons/general/accept_icon.svg',
                           color: Theme.of(context).indicatorColor,
@@ -425,8 +429,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   width: 55,
                   child: loading
                       ? const CircularProgressIndicator(color: Colors.white)
-                      : SvgPicture.asset(
-                          'assets/icons/icons_purple/google.svg'),
+                      : globals.currentTheme
+                          ? SvgPicture.asset(
+                              'assets/icons/icons_purple/google_signup_purple.svg')
+                          : SvgPicture.asset(
+                              'assets/icons/icons_red/google_signup_red.svg'),
                 ),
               ),
             ),
@@ -436,7 +443,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/icons_purple/apple.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/apple_signup_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/apple_signup_red.svg'),
               ),
             ),
             Positioned(
@@ -445,8 +456,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset(
-                    'assets/icons/icons_purple/twitter_signup.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/twitter_signup_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/twitter_signup_red.svg'),
               ),
             ),
             Positioned(

@@ -86,6 +86,9 @@ class _MultipleThemeViewerWidgetState extends State<MultipleThemeViewerWidget> {
                     .selected
                     .value = false;
               }
+              setState(() {
+                globals.currentTheme = !globals.currentTheme;
+              });
             },
             child: Container(
               height: 60,

@@ -8,6 +8,7 @@ import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/forgot_password_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';
 import 'package:wineapp/services/auth_services.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -320,8 +321,11 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: SizedBox(
                   height: 50,
                   width: 55,
-                  child:
-                      SvgPicture.asset('assets/icons/icons_purple/google.svg'),
+                  child: globals.currentTheme
+                      ? SvgPicture.asset(
+                          'assets/icons/icons_purple/google_signup_purple.svg')
+                      : SvgPicture.asset(
+                          'assets/icons/icons_red/google_signup_red.svg'),
                 ),
               ),
             ),
@@ -331,7 +335,11 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset('assets/icons/icons_purple/apple.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/apple_signup_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/apple_signup_red.svg'),
               ),
             ),
             Positioned(
@@ -340,8 +348,11 @@ class _LoginScreenState extends State<LoginScreen> {
               child: SizedBox(
                 height: 50,
                 width: 55,
-                child: SvgPicture.asset(
-                    'assets/icons/icons_purple/twitter_signup.svg'),
+                child: globals.currentTheme
+                    ? SvgPicture.asset(
+                        'assets/icons/icons_purple/twitter_signup_purple.svg')
+                    : SvgPicture.asset(
+                        'assets/icons/icons_red/twitter_signup_red.svg'),
               ),
             ),
             Positioned(

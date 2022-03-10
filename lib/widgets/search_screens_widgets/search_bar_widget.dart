@@ -31,14 +31,14 @@ class _SearchBarState extends State<SearchBar> {
   ];
 
   List<String> mainFilterSvg = [
-    'assets/icons/icons_purple/cooking.svg',
-    'assets/icons/icons_purple/wine_tasting.svg',
-    'assets/icons/icons_purple/eating together.svg'
+    'assets/icons/icons_purple/cooking_normal_purple.svg',
+    'assets/icons/icons_purple/wine_tasting_normal_purple.svg',
+    'assets/icons/icons_purple/eating_together_normal_purple.svg'
   ];
   List<String> filterSvg = [
     'assets/icons/general/restaurant.svg',
     'assets/icons/general/turkey-2.svg',
-    'assets/icons/icons_purple/glass-cheers.svg',
+    'assets/icons/general/glass-cheers.svg',
     'assets/icons/general/lettuce.svg',
     'assets/icons/general/candy.svg',
     'assets/icons/general/pepper.svg',
