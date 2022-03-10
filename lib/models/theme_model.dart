@@ -8,7 +8,7 @@ class MultiThemeModel {
   int index;
   String themeName;
   Color color;
-  bool selected;
+  ValueNotifier<bool> selected;
 
   MultiThemeModel(
       {required this.index,
@@ -39,13 +39,13 @@ colorsForThemeModel(int index) {
 selectedForThemeModel(int index) {
   switch (index) {
     case 0:
-      return true;
+      return ValueNotifier(true);
     case 1:
-      return false;
+      return ValueNotifier(false);
   }
 }
 
-List<MultiThemeModel> get themes => List<MultiThemeModel>.generate(
+List<MultiThemeModel> themes = List<MultiThemeModel>.generate(
     2,
     (index) => MultiThemeModel(
         index: index,
@@ -53,7 +53,7 @@ List<MultiThemeModel> get themes => List<MultiThemeModel>.generate(
         color: colorsForThemeModel(index),
         selected: selectedForThemeModel(index)));
 
-List<Widget> get widgets => themes
+List<Widget> widgets = themes
     .map((themeData) =>
         MultipleThemeViewerWidget(themeData: themeData, themes: themes))
     .toList();
@@ -62,9 +62,8 @@ class MultipleThemeViewerWidget extends StatefulWidget {
   MultipleThemeViewerWidget(
       {Key? key, required this.themeData, required this.themes})
       : super(key: key);
-  final MultiThemeModel themeData;
-  final List themes;
-
+  MultiThemeModel themeData;
+  List<MultiThemeModel> themes;
   @override
   State<MultipleThemeViewerWidget> createState() =>
       _MultipleThemeViewerWidgetState();
@@ -73,42 +72,49 @@ class MultipleThemeViewerWidget extends StatefulWidget {
 class _MultipleThemeViewerWidgetState extends State<MultipleThemeViewerWidget> {
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        var index = getThemeManager(context).selectedThemeIndex;
-        setState(() {
-          if (widget.themeData.selected == false) {
-            widget.themeData.selected = true;
-            print(widget.themes.elementAt(index!).selected);
-            widget.themes.elementAt(index).selected = false;
-            print(widget.themes.elementAt(index).selected);
-          }
-        });
-        getThemeManager(context).selectThemeAtIndex(widget.themeData.index);
-      },
-      child: Container(
-        height: 60,
-        width: 105,
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(10),
-            color: widget.themeData.color.withOpacity(.3),
-            border: widget.themeData.selected
-                ? Border.all(
-                    color: Theme.of(context).scaffoldBackgroundColor, width: 3)
-                : Border.all(color: Colors.black)),
-        child: Center(
-          child: Text(
-            widget.themeData.themeName,
-            style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                fontSize: 12,
-                fontWeight: FontWeight.bold,
-                color: widget.themeData.color,
+    return ValueListenableBuilder(
+        valueListenable: widget.themeData.selected,
+        builder: (context, bool selected, _) {
+          return GestureDetector(
+            onTap: () {
+              getThemeManager(context)
+                  .selectThemeAtIndex(widget.themeData.index);
+              if (!selected) {
+                widget.themeData.selected.value = true;
+                widget.themes
+                    .elementAt(widget.themeData.index == 0 ? 1 : 0)
+                    .selected
+                    .value = false;
+              }
+            },
+            child: Container(
+              height: 60,
+              width: 105,
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: widget.themeData.color.withOpacity(.3),
+                  border: selected
+                      ? Border.all(color: widget.themeData.color, width: 3)
+                      : Border.all(color: Colors.white)),
+              child: Center(
+                child: Text(
+                  widget.themeData.themeName,
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                    color: widget.themeData.color,
+                  ),
+                ),
               ),
             ),
-          ),
-        ),
-      ),
-    );
+          );
+        });
+  }
+
+  @override
+  void dispose() {
+// TODO: implement dispose
+    widget.themeData.selected.dispose();
+    super.dispose();
   }
 }
