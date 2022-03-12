@@ -16,9 +16,11 @@ class HomeScreenHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: 35,
-      top: 43,
+    return Padding(
+      padding: const EdgeInsets.only(
+        left: 35,
+        top: 43,
+      ),
       child: Stack(
         children: [
           SizedBox(
@@ -28,10 +30,12 @@ class HomeScreenHeader extends StatelessWidget {
               subText,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                    color: Theme.of(context).primaryColorLight,
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600),
+                  color: Theme.of(context).primaryColorLight,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w600,
+                ),
               ),
+              textAlign: TextAlign.left,
             ),
           ),
           Positioned(
@@ -48,6 +52,7 @@ class HomeScreenHeader extends StatelessWidget {
                       fontSize: 22,
                       fontWeight: FontWeight.bold),
                 ),
+                textAlign: TextAlign.left,
               ),
             ),
           ),

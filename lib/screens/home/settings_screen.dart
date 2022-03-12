@@ -11,33 +11,42 @@ class SettingsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: Stack(
-        children: [
-          HomeScreenHeader(
-            subText: 'Your Account',
-            mainText: 'Aurelie',
-            boxWidth: 184,
-          ),
-          const Positioned(
-            left: 318,
-            top: 50,
-            child: SizedBox(
-              height: 37,
-              width: 37,
-              child: CircleAvatar(
-                backgroundImage: AssetImage('assets/images/a+j1.jpeg'),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Row(
+              children: [
+                HomeScreenHeader(
+                  subText: 'Your Account',
+                  mainText: 'Aurelie',
+                  boxWidth: 184,
+                ),
+                const Padding(
+                  padding: EdgeInsets.only(
+                    left: 99,
+                    top: 50,
+                  ),
+                  child: SizedBox(
+                    height: 37,
+                    width: 37,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage('assets/images/a+j1.jpeg'),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 27,
+              ),
+              child: UpgradePlan(
+                upgradePhrase: 'Upgrade your Plan',
               ),
             ),
-          ),
-          Positioned(
-            left: 35,
-            top: 125,
-            child: UpgradePlan(
-              upgradePhrase: 'Upgrade your Plan',
-            ),
-          ),
-          const SettingCards(),
-        ],
+            const SettingCards(),
+          ],
+        ),
       ),
     );
   }

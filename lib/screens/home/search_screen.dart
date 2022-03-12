@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
-import 'package:wineapp/screens/search_screens/pref_search_results/dinner_pref_search.dart';
-import 'package:wineapp/screens/search_screens/pref_search_results/lunch_pref_search.dart';
-import 'package:wineapp/screens/search_screens/pref_search_results/party_pref_search.dart';
-import 'package:wineapp/screens/search_screens/pref_search_results/wine_pref_search.dart';
+import 'package:wineapp/models/wine_model.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import '../../widgets/search_screens_widgets/search_bar_widget.dart';
@@ -27,32 +24,37 @@ class _SearchScreenState extends State<SearchScreen> {
     '🍬 Sweet',
     '🌶 Spicy',
   ];
-  List<Widget> prefResultWidgets = <Widget>[
-    WinePrefResults(),
-    LunchPrefResults(),
-    DinnerPrefResults(),
-    PartyPrefResults(),
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Stack(
+            Row(
               children: [
                 HomeScreenHeader(
                   subText: 'Explore',
-                  mainText: 'Wine and Food',
-                  boxWidth: 184,
+                  mainText: 'Wine and Cuisines',
+                  boxWidth: 220,
                 ),
-                SearchBar(
-                  appliedFilters: ValueNotifier<int>(0),
+              ],
+            ),
+            SearchBar(
+              appliedFilters: ValueNotifier<int>(0),
+            ),
+            Stack(
+              children: [
+                Container(
+                  height: 123,
+                  width: MediaQuery.of(context).size.width,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                 ),
                 Positioned(
                   left: 35,
-                  top: 172,
+                  top: 10,
                   child: SizedBox(
                     width: 400,
                     height: 25,
@@ -107,81 +109,52 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
                 Positioned(
                   left: 35,
-                  top: 215,
+                  top: 45,
                   child: SizedBox(
                     height: 78,
                     width: 160,
-                    child: Text(
-                      'Found 40 results',
-                      textAlign: TextAlign.left,
-                      style: GoogleFonts.poppins(
-                        textStyle: TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).indicatorColor,
+                    child: Center(
+                      child: Text(
+                        'Found 40 results',
+                        textAlign: TextAlign.left,
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).indicatorColor,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-                Positioned(
-                  left: 35,
-                  top: 303,
-                  child: SizedBox(
-                    height: 1000,
-                    width: 150,
-                    child: Column(
-                      children: const [
-                        PrefInformationCard(
-                          wineName: 'Healthy',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Healthy',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Helathy',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Healthy',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Healthy',
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
+              ],
+            ),
+            Row(
+              children: [
                 Padding(
                   padding: const EdgeInsets.only(
-                    left: 210,
-                    top: 218,
+                    top: 10,
+                    left: 35,
                   ),
                   child: SizedBox(
-                    height: 1000,
-                    width: 150,
-                    child: Column(
-                      children: const [
-                        PrefInformationCard(
-                          wineName: 'Spaghetti',
+                    width: 320,
+                    height: wineModels.length * 210 - 25,
+                    child: Center(
+                      child: SingleChildScrollView(
+                        child: Column(
+                          children: [
+                            for (var wine in wineModels)
+                              PrefInformationCard(
+                                  model: WineModel.fromJson(wine))
+                          ],
                         ),
-                        PrefInformationCard(
-                          wineName: 'Spaghetti',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Spaghetti',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Spaghetti',
-                        ),
-                        PrefInformationCard(
-                          wineName: 'Spaghetti',
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ],
-            ),
+            )
           ],
         ),
       ),

@@ -12,9 +12,10 @@ class SettingCards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      left: 35,
-      top: 388,
+    return Padding(
+      padding: const EdgeInsets.only(
+        top: 25,
+      ),
       child: SizedBox(
         height: 350,
         width: 320,
