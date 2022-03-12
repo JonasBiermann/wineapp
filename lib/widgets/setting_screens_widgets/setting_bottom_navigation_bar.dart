@@ -8,10 +8,12 @@ class SettingBottomNavigationBar extends StatelessWidget {
     Key? key,
     required this.data,
     required this.dataLabel,
+    required this.detailSetting,
   }) : super(key: key);
 
   final List<IconData> data;
   final List<String> dataLabel;
+  final bool detailSetting;
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +68,10 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     height: 22,
                     width: 46,
                     decoration: BoxDecoration(
-                      color: Theme.of(context).scaffoldBackgroundColor,
+                      color: detailSetting
+                          ? Theme.of(context).primaryColor
+                          : Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: BorderRadius.circular(90),
                     ),
                     child: Icon(
                       data[1],
@@ -90,7 +95,9 @@ class SettingBottomNavigationBar extends StatelessWidget {
                     height: 22,
                     width: 46,
                     decoration: BoxDecoration(
-                        color: Theme.of(context).primaryColor,
+                        color: detailSetting
+                            ? Theme.of(context).scaffoldBackgroundColor
+                            : Theme.of(context).primaryColor,
                         borderRadius: BorderRadius.circular(90)),
                     child: Icon(
                       data[2],

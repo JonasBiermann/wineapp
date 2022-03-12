@@ -31,16 +31,12 @@ class _SearchScreenState extends State<SearchScreen> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(
-              children: [
-                HomeScreenHeader(
-                  subText: 'Explore',
-                  mainText: 'Wine and Cuisines',
-                  boxWidth: 220,
-                ),
-              ],
+            HomeScreenHeader(
+              subText: 'Explore',
+              mainText: 'Wine and Cuisines',
+              boxWidth: 220,
             ),
             SearchBar(
               appliedFilters: ValueNotifier<int>(0),
@@ -130,30 +126,25 @@ class _SearchScreenState extends State<SearchScreen> {
                 ),
               ],
             ),
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                    left: 35,
-                  ),
-                  child: SizedBox(
-                    width: 320,
-                    height: wineModels.length * 210 - 25,
-                    child: Center(
-                      child: SingleChildScrollView(
-                        child: Column(
-                          children: [
-                            for (var wine in wineModels)
-                              PrefInformationCard(
-                                  model: WineModel.fromJson(wine))
-                          ],
-                        ),
-                      ),
+            Padding(
+              padding: const EdgeInsets.only(
+                top: 10,
+                left: 35,
+              ),
+              child: SizedBox(
+                width: 320,
+                height: wineModels.length * 210 - 25,
+                child: Center(
+                  child: SingleChildScrollView(
+                    child: Column(
+                      children: [
+                        for (var wine in wineModels)
+                          PrefInformationCard(model: WineModel.fromJson(wine))
+                      ],
                     ),
                   ),
                 ),
-              ],
+              ),
             )
           ],
         ),

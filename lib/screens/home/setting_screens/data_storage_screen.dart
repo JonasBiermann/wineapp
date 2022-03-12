@@ -130,6 +130,7 @@ class _DataStorageSettingsScreenState extends State<DataStorageSettingsScreen> {
         ],
       ),
       bottomNavigationBar: SettingBottomNavigationBar(
+        detailSetting: false,
         data: data,
         dataLabel: dataLabel,
       ),

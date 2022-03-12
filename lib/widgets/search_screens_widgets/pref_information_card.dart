@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/models/wine_model.dart';
+import 'package:wineapp/screens/home/wine_detail_screen.dart';
 
 class PrefInformationCard extends StatelessWidget {
   const PrefInformationCard({
@@ -28,7 +30,7 @@ class PrefInformationCard extends StatelessWidget {
               boxShadow: [
                 BoxShadow(
                   offset: const Offset(0, 4),
-                  color: Color(0xff000000).withOpacity(.25),
+                  color: const Color(0xff000000).withOpacity(.25),
                 ),
               ],
               borderRadius: BorderRadius.circular(
@@ -92,6 +94,7 @@ class PrefInformationCard extends StatelessWidget {
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
+              fontSize: 7,
             ),
           ),
           Positioned(
@@ -102,6 +105,7 @@ class PrefInformationCard extends StatelessWidget {
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
+              fontSize: 7,
             ),
           ),
           Positioned(
@@ -112,113 +116,12 @@ class PrefInformationCard extends StatelessWidget {
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
+              fontSize: 7,
             ),
           ),
-          const Positioned(top: 132, left: 170, child: LearnMoreButton())
+          Positioned(top: 132, left: 170, child: LearnMoreButton(model: model))
         ],
       ),
-      // child: Column(
-      //   children: [
-      //     Stack(
-      //       children: [
-      //         Container(
-      //           height: 175,
-      //           width: 150,
-      //           decoration: BoxDecoration(
-      //             color: Theme.of(context).primaryColor,
-      //             borderRadius: BorderRadius.circular(25),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.only(
-      //             left: 20,
-      //             top: 15,
-      //           ),
-      //           child: Container(
-      //             height: 110,
-      //             width: 110,
-      //             decoration: BoxDecoration(
-      //               borderRadius: BorderRadius.circular(
-      //                 40,
-      //               ),
-      //               image: DecorationImage(
-      //                 image: AssetImage(
-      //                   model.imageURL,
-      //                 ),
-      //                 fit: BoxFit.cover,
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.only(
-      //             top: 130,
-      //             left: 20,
-      //           ),
-      //           child: SizedBox(
-      //             width: 110,
-      //             height: 14,
-      //             child: Text(
-      //               model.wineName,
-      //               style: GoogleFonts.poppins(
-      //                 textStyle: TextStyle(
-      //                   color: Theme.of(context).indicatorColor,
-      //                   fontWeight: FontWeight.bold,
-      //                   fontSize: 9,
-      //                 ),
-      //               ),
-      //               textAlign: TextAlign.left,
-      //             ),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.only(
-      //             left: 20,
-      //             top: 149,
-      //           ),
-      //           child: Text(
-      //             'Preparation time',
-      //             style: GoogleFonts.poppins(
-      //               textStyle: TextStyle(
-      //                 color: Theme.of(context).indicatorColor,
-      //                 fontSize: 7,
-      //                 fontWeight: FontWeight.w600,
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //         Padding(
-      //           padding: const EdgeInsets.only(
-      //             left: 103,
-      //             top: 149,
-      //           ),
-      //           child: Container(
-      //             width: 27,
-      //             height: 11,
-      //             decoration: BoxDecoration(
-      //               color: Theme.of(context).scaffoldBackgroundColor,
-      //               borderRadius: BorderRadius.circular(
-      //                 10,
-      //               ),
-      //             ),
-      //             child: Center(
-      //               child: Text(
-      //                 model.prepTime.toString(),
-      //                 style: GoogleFonts.poppins(
-      //                   textStyle: TextStyle(
-      //                     fontSize: 5,
-      //                     fontWeight: FontWeight.w600,
-      //                     color: Theme.of(context).indicatorColor,
-      //                   ),
-      //                 ),
-      //               ),
-      //             ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
@@ -230,11 +133,13 @@ class CuisineCard extends StatelessWidget {
     required this.height,
     required this.width,
     required this.color,
+    required this.fontSize,
   }) : super(key: key);
 
   final String wineCuisine;
   final double height;
   final double width;
+  final double fontSize;
   final Color color;
 
   @override
@@ -250,9 +155,9 @@ class CuisineCard extends StatelessWidget {
         child: Text(
           wineCuisine,
           style: GoogleFonts.poppins(
-            textStyle: const TextStyle(
+            textStyle: TextStyle(
               color: Colors.white,
-              fontSize: 7,
+              fontSize: fontSize,
               fontWeight: FontWeight.bold,
             ),
           ),
@@ -263,49 +168,61 @@ class CuisineCard extends StatelessWidget {
 }
 
 class LearnMoreButton extends StatelessWidget {
-  const LearnMoreButton({Key? key}) : super(key: key);
-
+  const LearnMoreButton({
+    Key? key,
+    required this.model,
+  }) : super(key: key);
+  final WineModel model;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
-      child: Stack(
-        children: [
-          Container(
-            height: 33,
-            width: 125,
-            decoration: BoxDecoration(
-              color: Theme.of(context).scaffoldBackgroundColor,
-              borderRadius: BorderRadius.circular(90),
-            ),
+      onTap: () {
+        Navigator.of(context).push(
+          createRoute(
+            WineDetailScreen(model: model),
           ),
-          Positioned(
-            left: 13,
-            top: 7,
-            child: Text(
-              'Learn More',
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 12,
-                  fontWeight: FontWeight.bold,
+        );
+      },
+      child: Hero(
+        tag: model.wineID,
+        child: Stack(
+          children: [
+            Container(
+              height: 33,
+              width: 125,
+              decoration: BoxDecoration(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                borderRadius: BorderRadius.circular(90),
+              ),
+            ),
+            Positioned(
+              left: 13,
+              top: 7,
+              child: Text(
+                'Learn More',
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            left: 95.02,
-            top: 8,
-            child: SizedBox(
-              height: 18,
-              width: 11.37,
-              child: SvgPicture.asset(
-                'assets/icons/general/arrow_right.svg',
-                color: Colors.white,
+            Positioned(
+              left: 95.02,
+              top: 8,
+              child: SizedBox(
+                height: 18,
+                width: 11.37,
+                child: SvgPicture.asset(
+                  'assets/icons/general/arrow_right.svg',
+                  color: Colors.white,
+                ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }

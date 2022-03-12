@@ -50,7 +50,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Notifications',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
               ),
@@ -66,7 +66,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Email',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -82,7 +82,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Phone',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -98,7 +98,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Somellier',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -114,7 +114,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Meal Suggestions',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -130,7 +130,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Invitations',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -146,7 +146,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'Deals & Offers',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -162,7 +162,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
             'App News',
             style: GoogleFonts.poppins(
               textStyle: TextStyle(
-                color: Theme.of(context).colorScheme.primary,
+                color: Theme.of(context).indicatorColor,
                 fontSize: 12,
                 fontWeight: FontWeight.w600,
               ),
@@ -181,7 +181,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
               userMail,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -202,7 +202,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
               phoneNumber,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
-                  color: Theme.of(context).colorScheme.primary,
+                  color: Theme.of(context).indicatorColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                 ),
@@ -224,7 +224,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationTrue,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -235,7 +235,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationFalse,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -257,7 +257,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationTrue,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -268,7 +268,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationFalse,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -290,7 +290,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationTrue,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -301,7 +301,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationFalse,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -323,7 +323,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationTrue,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -334,7 +334,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationFalse,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -356,7 +356,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationTrue,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),
@@ -367,7 +367,7 @@ class UserNotificationInfoWidget extends StatelessWidget {
                     notificationFalse,
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
-                        color: Theme.of(context).colorScheme.primary,
+                        color: Theme.of(context).indicatorColor,
                         fontSize: 12,
                         fontWeight: FontWeight.w500,
                       ),

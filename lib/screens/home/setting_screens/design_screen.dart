@@ -122,6 +122,7 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
       ),
       bottomNavigationBar: SettingBottomNavigationBar(
         data: data,
+        detailSetting: false,
         dataLabel: dataLabel,
       ),
     );

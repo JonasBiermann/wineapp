@@ -136,6 +136,7 @@ class _GeneralSettingScreenState extends State<GeneralSettingScreen> {
         ],
       ),
       bottomNavigationBar: SettingBottomNavigationBar(
+        detailSetting: false,
         data: data,
         dataLabel: dataLabel,
       ),

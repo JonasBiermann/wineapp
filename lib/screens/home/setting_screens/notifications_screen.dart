@@ -129,6 +129,7 @@ class _NotificationSettingScreenState extends State<NotificationSettingScreen> {
         ],
       ),
       bottomNavigationBar: SettingBottomNavigationBar(
+        detailSetting: false,
         data: data,
         dataLabel: dataLabel,
       ),
