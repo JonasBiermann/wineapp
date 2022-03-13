@@ -1,18 +1,17 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
-import 'package:wineapp/models/wine_model.dart';
 import 'package:wineapp/screens/home/wine_detail_screen.dart';
 
 class PrefInformationCard extends StatelessWidget {
-  const PrefInformationCard({
+  PrefInformationCard({
     Key? key,
-    required this.model,
+    required this.wineDocument,
   }) : super(key: key);
 
-  final WineModel model;
+  DocumentSnapshot wineDocument;
 
   @override
   Widget build(BuildContext context) {
@@ -47,8 +46,8 @@ class PrefInformationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(35),
                 image: DecorationImage(
-                  image: AssetImage(model.imageURL),
-                  fit: BoxFit.cover,
+                  image: NetworkImage(wineDocument['wineURL']),
+                  fit: BoxFit.fitHeight,
                 ),
               ),
             ),
@@ -60,7 +59,7 @@ class PrefInformationCard extends StatelessWidget {
               height: 30,
               width: 140,
               child: Text(
-                model.wineName,
+                wineDocument['wineName'],
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: Theme.of(context).indicatorColor,
@@ -68,6 +67,7 @@ class PrefInformationCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                textAlign: TextAlign.right,
               ),
             ),
           ),
@@ -90,7 +90,7 @@ class PrefInformationCard extends StatelessWidget {
             left: 198,
             top: 74,
             child: CuisineCard(
-              wineCuisine: model.wineUse[0],
+              wineCuisine: wineDocument['wineUse'][0],
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -101,7 +101,7 @@ class PrefInformationCard extends StatelessWidget {
             left: 250,
             top: 74,
             child: CuisineCard(
-              wineCuisine: model.wineUse[1],
+              wineCuisine: wineDocument['wineUse'][1],
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -112,14 +112,17 @@ class PrefInformationCard extends StatelessWidget {
             left: 250,
             top: 100,
             child: CuisineCard(
-              wineCuisine: model.wineUse[2],
+              wineCuisine: wineDocument['wineUse'][2],
               height: 21,
               width: 47,
               color: Theme.of(context).scaffoldBackgroundColor,
               fontSize: 7,
             ),
           ),
-          Positioned(top: 132, left: 170, child: LearnMoreButton(model: model))
+          Positioned(
+              top: 132,
+              left: 170,
+              child: LearnMoreButton(wineDocument: wineDocument))
         ],
       ),
     );
@@ -168,23 +171,23 @@ class CuisineCard extends StatelessWidget {
 }
 
 class LearnMoreButton extends StatelessWidget {
-  const LearnMoreButton({
+  LearnMoreButton({
     Key? key,
-    required this.model,
+    required this.wineDocument,
   }) : super(key: key);
-  final WineModel model;
+  DocumentSnapshot wineDocument;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
           createRoute(
-            WineDetailScreen(model: model),
+            WineDetailScreen(wineDocument: wineDocument),
           ),
         );
       },
       child: Hero(
-        tag: model.wineID,
+        tag: wineDocument['wineID'],
         child: Stack(
           children: [
             Container(

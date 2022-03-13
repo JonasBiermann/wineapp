@@ -25,7 +25,7 @@ Color purpleBackgroundColor = const Color(0xff6F00CF);
 TextStyle unTextStyle(BuildContext context) {
   return TextStyle(
     color: Theme.of(context).primaryColorLight,
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: FontWeight.w600,
   );
 }
@@ -33,7 +33,7 @@ TextStyle unTextStyle(BuildContext context) {
 TextStyle selTextStyle(BuildContext context) {
   return TextStyle(
     color: Theme.of(context).indicatorColor,
-    fontSize: 12,
+    fontSize: 11,
     fontWeight: FontWeight.bold,
   );
 }

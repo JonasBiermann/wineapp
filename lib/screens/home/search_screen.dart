@@ -5,6 +5,7 @@ import 'package:wineapp/models/wine_model.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import '../../widgets/search_screens_widgets/search_bar_widget.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -17,12 +18,12 @@ class _SearchScreenState extends State<SearchScreen> {
   bool filterStat = false;
   int prefIndex = 0;
   List<String> prefSearch = [
-    '🍴 Lunch',
-    '🍝 Dinner',
-    '🍾 Party',
-    '🥬 Healthy',
-    '🍬 Sweet',
-    '🌶 Spicy',
+    '🇪🇸 Hispanic',
+    '🇮🇹 Italian',
+    '🇩🇪 German',
+    '🇲🇽 Mexican',
+    '🇬🇷 Greek',
+    '🇫🇷 French',
   ];
 
   @override
@@ -128,24 +129,29 @@ class _SearchScreenState extends State<SearchScreen> {
             ),
             Padding(
               padding: const EdgeInsets.only(
-                top: 10,
                 left: 35,
               ),
-              child: SizedBox(
-                width: 320,
-                height: wineModels.length * 210 - 25,
-                child: Center(
-                  child: SingleChildScrollView(
-                    child: Column(
-                      children: [
-                        for (var wine in wineModels)
-                          PrefInformationCard(model: WineModel.fromJson(wine))
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            )
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('wines')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) return const Text('Loading...');
+                    return SizedBox(
+                      width: 320,
+                      height: snapshot.data!.docs.length * 220,
+                      child: Center(
+                        child: ListView.builder(
+                          scrollDirection: Axis.vertical,
+                          itemCount: snapshot.data!.docs.length,
+                          itemBuilder: (context, index) => PrefInformationCard(
+                            wineDocument: snapshot.data!.docs[index],
+                          ),
+                        ),
+                      ),
+                    );
+                  }),
+            ),
           ],
         ),
       ),
