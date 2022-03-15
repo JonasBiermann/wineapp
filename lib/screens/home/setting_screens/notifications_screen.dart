@@ -126,6 +126,32 @@ class _NotificationSettingScreenState extends State<NotificationSettingScreen> {
             ),
             child: changeWidget[changeIndex],
           ),
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 15,
+            ),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pop(context);
+              },
+              child: SizedBox(
+                height: 17,
+                width: 47,
+                child: Center(
+                  child: Text(
+                    'Go Back',
+                    style: GoogleFonts.poppins(
+                      textStyle: TextStyle(
+                        color: Theme.of(context).indicatorColor,
+                        fontSize: 11,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ),
         ],
       ),
       bottomNavigationBar: SettingBottomNavigationBar(

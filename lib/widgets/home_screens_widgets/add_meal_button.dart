@@ -16,7 +16,7 @@ class AddMealButton extends StatelessWidget {
       top: 685,
       child: GestureDetector(
         onTap: () async {
-          await AuthService().signOut();
+          await AuthService().logOut();
         },
         child: Stack(
           children: [
@@ -45,9 +45,9 @@ class AddMealButton extends StatelessWidget {
               top: 695 - 685,
               child: SizedBox(
                 height: 30,
-                width: 96,
+                width: 142,
                 child: Text(
-                  'Add Meal',
+                  'Ask Somellier',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                         color: Theme.of(context).indicatorColor,

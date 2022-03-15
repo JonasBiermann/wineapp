@@ -45,7 +45,7 @@ class WineDetailScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image: NetworkImage(wineDocument['wineURL']),
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fitHeight,
                     ),
                     borderRadius: BorderRadius.circular(35),
                   ),
@@ -164,6 +164,33 @@ class WineDetailScreen extends StatelessWidget {
                       fontSize: 14,
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 29,
+                  left: 171,
+                ),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: SizedBox(
+                    height: 17,
+                    width: 47,
+                    child: Center(
+                      child: Text(
+                        'Go Back',
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Theme.of(context).indicatorColor,
+                            fontSize: 11,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],

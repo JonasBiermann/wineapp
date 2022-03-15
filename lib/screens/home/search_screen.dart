@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
-import 'package:wineapp/models/wine_model.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import '../../widgets/search_screens_widgets/search_bar_widget.dart';

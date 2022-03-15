@@ -95,8 +95,9 @@ class AuthService {
   }
 
   //Sign Out function
-  Future signOut() async {
+  Future logOut() async {
     await GoogleSignIn().signOut();
     await firebaseAuth.signOut();
+    print('logged out');
   }
 }

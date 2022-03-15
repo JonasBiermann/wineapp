@@ -22,7 +22,7 @@ class PrefInformationCard extends StatelessWidget {
       child: Stack(
         children: [
           Container(
-            height: 175,
+            height: 185,
             width: 320,
             decoration: BoxDecoration(
               color: Theme.of(context).primaryColor,
@@ -38,8 +38,8 @@ class PrefInformationCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 10,
-            top: 10,
+            left: 15,
+            top: 15,
             child: Container(
               height: 155,
               width: 138,
@@ -53,11 +53,11 @@ class PrefInformationCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            top: 10,
-            left: 155,
+            top: 15,
+            left: 170,
             child: SizedBox(
-              height: 30,
-              width: 140,
+              height: 15,
+              width: 125,
               child: Text(
                 wineDocument['wineName'],
                 style: GoogleFonts.poppins(
@@ -67,13 +67,15 @@ class PrefInformationCard extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.right,
               ),
             ),
           ),
           Positioned(
-            left: 261,
-            top: 55,
+            left: 257,
+            top: 41,
             child: Text(
               'Cuisine',
               style: GoogleFonts.poppins(
@@ -87,40 +89,81 @@ class PrefInformationCard extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 198,
-            top: 74,
+            left: 170,
+            top: 56,
             child: CuisineCard(
               wineCuisine: wineDocument['wineUse'][0],
-              height: 21,
-              width: 47,
+              height: 25,
+              width: 60,
               color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 7,
+              fontSize: 9,
             ),
           ),
           Positioned(
-            left: 250,
-            top: 74,
+            left: 236,
+            top: 56,
             child: CuisineCard(
               wineCuisine: wineDocument['wineUse'][1],
-              height: 21,
-              width: 47,
+              height: 25,
+              width: 60,
               color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 7,
+              fontSize: 9,
             ),
           ),
           Positioned(
-            left: 250,
-            top: 100,
-            child: CuisineCard(
-              wineCuisine: wineDocument['wineUse'][2],
-              height: 21,
-              width: 47,
-              color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 7,
+            left: 271,
+            top: 91,
+            child: Text(
+              'Price',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  color: Theme.of(context).indicatorColor,
+                  fontSize: 9,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
             ),
           ),
           Positioned(
-              top: 132,
+            left: 170,
+            top: 105,
+            child: Container(
+              height: 25,
+              width: 125,
+              decoration: BoxDecoration(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                borderRadius: BorderRadius.circular(7),
+              ),
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: wineDocument['winePrice'][0],
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColorLight,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                      TextSpan(
+                          text: wineDocument['winePrice'][1],
+                          style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 12,
+                            fontWeight: FontWeight.w600,
+                          )))
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+              top: 145,
               left: 170,
               child: LearnMoreButton(wineDocument: wineDocument))
         ],
@@ -161,7 +204,7 @@ class CuisineCard extends StatelessWidget {
             textStyle: TextStyle(
               color: Colors.white,
               fontSize: fontSize,
-              fontWeight: FontWeight.bold,
+              fontWeight: FontWeight.w600,
             ),
           ),
         ),
@@ -191,16 +234,16 @@ class LearnMoreButton extends StatelessWidget {
         child: Stack(
           children: [
             Container(
-              height: 33,
+              height: 25,
               width: 125,
               decoration: BoxDecoration(
                 color: Theme.of(context).scaffoldBackgroundColor,
-                borderRadius: BorderRadius.circular(90),
+                borderRadius: BorderRadius.circular(7),
               ),
             ),
             Positioned(
               left: 13,
-              top: 7,
+              top: 5,
               child: Text(
                 'Learn More',
                 style: GoogleFonts.poppins(
@@ -214,7 +257,7 @@ class LearnMoreButton extends StatelessWidget {
             ),
             Positioned(
               left: 95.02,
-              top: 8,
+              top: 4.55,
               child: SizedBox(
                 height: 18,
                 width: 11.37,

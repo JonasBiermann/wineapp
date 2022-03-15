@@ -9,20 +9,16 @@ class SettingCard extends StatelessWidget {
       {Key? key,
       required this.settingName,
       required this.settingIcon,
-      required this.pageRoute})
+      required this.onTap})
       : super(key: key);
 
   final String settingName;
   final String settingIcon;
-  final Widget pageRoute;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          createRoute(pageRoute),
-        );
-      },
+      onTap: onTap,
       child: Stack(
         children: [
           Container(
