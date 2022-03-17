@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/constants.dart';
+import 'package:wineapp/screens/ask_somellier_screens/step_1.dart';
 import 'package:wineapp/services/auth_services.dart';
 
 class AddMealButton extends StatelessWidget {
@@ -15,8 +17,13 @@ class AddMealButton extends StatelessWidget {
       left: 35,
       top: 685,
       child: GestureDetector(
-        onTap: () async {
-          await AuthService().logOut();
+        onTap: () {
+          Navigator.push(
+            context,
+            createRoute(
+              AskSomellierStep1Screen(),
+            ),
+          );
         },
         child: Stack(
           children: [

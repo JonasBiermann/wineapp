@@ -139,11 +139,16 @@ class _DesignEditState extends State<DesignEdit> {
             ),
           ],
         ),
-        const Padding(
+        Padding(
           padding: EdgeInsets.only(
             top: 256,
           ),
-          child: SubmitSettingChangesButton(),
+          child: SubmitSettingChangesButton(
+            cancelOnTap: () {},
+            continueOnTap: () {},
+            buttonText: 'Submit',
+            cancelText: 'Delete Changes',
+          ),
         ),
       ],
     );

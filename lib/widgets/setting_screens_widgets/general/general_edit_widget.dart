@@ -51,11 +51,16 @@ class GeneralEdit extends StatelessWidget {
           ),
           child: UserInfoEditWidget(),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
+        Padding(
+          padding: const EdgeInsets.only(
             top: 99,
           ),
-          child: SubmitSettingChangesButton(),
+          child: SubmitSettingChangesButton(
+            cancelOnTap: () {},
+            continueOnTap: () {},
+            buttonText: 'Submit',
+            cancelText: 'Delete Changes',
+          ),
         ),
       ],
     );

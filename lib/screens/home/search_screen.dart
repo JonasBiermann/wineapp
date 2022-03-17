@@ -131,25 +131,25 @@ class _SearchScreenState extends State<SearchScreen> {
                 left: 35,
               ),
               child: StreamBuilder<QuerySnapshot>(
-                  stream: FirebaseFirestore.instance
-                      .collection('wines')
-                      .snapshots(),
-                  builder: (context, snapshot) {
-                    if (!snapshot.hasData) return const Text('Loading...');
-                    return SizedBox(
-                      width: 320,
-                      height: snapshot.data!.docs.length * 220,
-                      child: Center(
-                        child: ListView.builder(
-                          scrollDirection: Axis.vertical,
-                          itemCount: snapshot.data!.docs.length,
-                          itemBuilder: (context, index) => PrefInformationCard(
-                            wineDocument: snapshot.data!.docs[index],
-                          ),
+                stream:
+                    FirebaseFirestore.instance.collection('wines').snapshots(),
+                builder: (context, snapshot) {
+                  if (!snapshot.hasData) return const Text('Loading...');
+                  return SizedBox(
+                    width: 330,
+                    height: snapshot.data!.docs.length * 220,
+                    child: Center(
+                      child: ListView.builder(
+                        scrollDirection: Axis.vertical,
+                        itemCount: snapshot.data!.docs.length,
+                        itemBuilder: (context, index) => PrefInformationCard(
+                          wineDocument: snapshot.data!.docs[index],
                         ),
                       ),
-                    );
-                  }),
+                    ),
+                  );
+                },
+              ),
             ),
           ],
         ),
