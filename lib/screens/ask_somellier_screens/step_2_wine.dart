@@ -81,9 +81,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                     children: const [
                       ChooseCuisineCard(
                         cuisineName: '🇨🇳 Chinese',
+                        width: 120,
                       ),
                       ChooseCuisineCard(
                         cuisineName: '🇲🇽 Mexican',
+                        width: 120,
                       )
                     ],
                   ),
@@ -92,9 +94,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                     children: const [
                       ChooseCuisineCard(
                         cuisineName: '🇬🇷 Greek',
+                        width: 120,
                       ),
                       ChooseCuisineCard(
                         cuisineName: '🇮🇹 Italian',
+                        width: 120,
                       )
                     ],
                   ),
@@ -103,9 +107,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                     children: const [
                       ChooseCuisineCard(
                         cuisineName: '🇮🇳 Indian',
+                        width: 120,
                       ),
                       ChooseCuisineCard(
                         cuisineName: '🇫🇷 French',
+                        width: 120,
                       )
                     ],
                   ),
@@ -114,9 +120,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                     children: const [
                       ChooseCuisineCard(
                         cuisineName: '🇹🇭 Thai',
+                        width: 120,
                       ),
                       ChooseCuisineCard(
                         cuisineName: '🇪🇸 Hispanic',
+                        width: 120,
                       )
                     ],
                   ),
@@ -125,9 +133,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                     children: const [
                       ChooseCuisineCard(
                         cuisineName: '🇯🇵 Japanese',
+                        width: 120,
                       ),
                       ChooseCuisineCard(
                         cuisineName: '🇩🇪 German',
+                        width: 120,
                       )
                     ],
                   )
@@ -153,6 +163,8 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                   createRoute(
                     const AskSomellierStep3Screen(
                       stepDescription: 'Do you want to pick a specific wine?',
+                      wineOrMeal: 'wines',
+                      mealVSWine: true,
                     ),
                   ),
                 );
@@ -198,9 +210,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
 }
 
 class ChooseCuisineCard extends StatefulWidget {
-  const ChooseCuisineCard({Key? key, required this.cuisineName})
+  const ChooseCuisineCard(
+      {Key? key, required this.cuisineName, required this.width})
       : super(key: key);
   final String cuisineName;
+  final double width;
   @override
   ChooseCuisineCardState createState() => ChooseCuisineCardState();
 }
@@ -218,7 +232,7 @@ class ChooseCuisineCardState extends State<ChooseCuisineCard> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 200),
         height: 50,
-        width: 120,
+        width: widget.width,
         decoration: BoxDecoration(
           color: selected
               ? Theme.of(context).primaryColorLight

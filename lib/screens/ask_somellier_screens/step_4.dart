@@ -12,11 +12,15 @@ import '../../widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart
 
 class AskSomellierStep4Screen extends StatelessWidget {
   AskSomellierStep4Screen(
-      {Key? key, required this.stepDescription, required this.wineOrMeal})
+      {Key? key,
+      required this.stepDescription,
+      required this.wineOrMeal,
+      required this.mealVSWine})
       : super(key: key);
 
   final String wineOrMeal;
   final String stepDescription;
+  final bool mealVSWine;
   List<String> dataLabel = [
     'Home',
     'Search',
@@ -154,9 +158,13 @@ class AskSomellierStep4Screen extends StatelessWidget {
                       dragStartBehavior: DragStartBehavior.down,
                       scrollDirection: Axis.vertical,
                       itemCount: snapshot.data!.docs.length,
-                      itemBuilder: (context, index) => PrefInformationCard(
-                        wineDocument: snapshot.data!.docs[index],
-                      ),
+                      itemBuilder: (context, index) => mealVSWine
+                          ? PrefInformationCardWine(
+                              snapShotDocument: snapshot.data!.docs[index],
+                            )
+                          : PrefInformationCardMeal(
+                              snapshotDocument: snapshot.data!.docs[index],
+                            ),
                     ),
                   ),
                 );

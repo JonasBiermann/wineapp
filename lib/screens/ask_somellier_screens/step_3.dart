@@ -9,9 +9,15 @@ import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.da
 import '../../widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
 
 class AskSomellierStep3Screen extends StatefulWidget {
-  const AskSomellierStep3Screen({Key? key, required this.stepDescription})
+  const AskSomellierStep3Screen(
+      {Key? key,
+      required this.stepDescription,
+      required this.wineOrMeal,
+      required this.mealVSWine})
       : super(key: key);
   final String stepDescription;
+  final String wineOrMeal;
+  final bool mealVSWine;
 
   @override
   State<AskSomellierStep3Screen> createState() =>
@@ -166,8 +172,9 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
                     context,
                     createRoute(
                       AskSomellierStep4Screen(
+                        mealVSWine: widget.mealVSWine,
                         stepDescription: 'Search for your wine below',
-                        wineOrMeal: 'wines',
+                        wineOrMeal: widget.wineOrMeal,
                       ),
                     ),
                   );

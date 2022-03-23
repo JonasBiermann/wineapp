@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
+import 'package:wineapp/screens/home/food_detail_screen.dart';
 import 'package:wineapp/screens/home/wine_detail_screen.dart';
 
-class PrefInformationCard extends StatelessWidget {
-  PrefInformationCard({
+class PrefInformationCardWine extends StatelessWidget {
+  PrefInformationCardWine({
     Key? key,
-    required this.wineDocument,
+    required this.snapShotDocument,
   }) : super(key: key);
 
-  DocumentSnapshot wineDocument;
+  DocumentSnapshot snapShotDocument;
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +47,7 @@ class PrefInformationCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(35),
                 image: DecorationImage(
-                  image: NetworkImage(wineDocument['wineURL']),
+                  image: NetworkImage(snapShotDocument['url']),
                   fit: BoxFit.fitHeight,
                 ),
               ),
@@ -59,7 +60,7 @@ class PrefInformationCard extends StatelessWidget {
               height: 15,
               width: 125,
               child: Text(
-                wineDocument['wineName'],
+                snapShotDocument['name'],
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: Theme.of(context).indicatorColor,
@@ -92,7 +93,7 @@ class PrefInformationCard extends StatelessWidget {
             left: 170,
             top: 56,
             child: CuisineCard(
-              wineCuisine: wineDocument['wineUse'][0],
+              wineCuisine: snapShotDocument['use'][0],
               height: 25,
               width: 60,
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -103,7 +104,7 @@ class PrefInformationCard extends StatelessWidget {
             left: 236,
             top: 56,
             child: CuisineCard(
-              wineCuisine: wineDocument['wineUse'][1],
+              wineCuisine: snapShotDocument['use'][1],
               height: 25,
               width: 60,
               color: Theme.of(context).scaffoldBackgroundColor,
@@ -139,7 +140,7 @@ class PrefInformationCard extends StatelessWidget {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                        text: wineDocument['winePrice'][0],
+                        text: snapShotDocument['rating'],
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             color: Theme.of(context).primaryColorLight,
@@ -148,14 +149,6 @@ class PrefInformationCard extends StatelessWidget {
                           ),
                         ),
                       ),
-                      TextSpan(
-                          text: wineDocument['winePrice'][1],
-                          style: GoogleFonts.poppins(
-                              textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 12,
-                            fontWeight: FontWeight.w600,
-                          )))
                     ],
                   ),
                 ),
@@ -163,9 +156,13 @@ class PrefInformationCard extends StatelessWidget {
             ),
           ),
           Positioned(
-              top: 145,
-              left: 170,
-              child: LearnMoreButton(wineDocument: wineDocument))
+            top: 145,
+            left: 170,
+            child: LearnMoreButton(
+              wineDocument: snapShotDocument,
+              routeWidget: WineDetailScreen(wineDocument: snapShotDocument),
+            ),
+          ),
         ],
       ),
     );
@@ -214,23 +211,23 @@ class CuisineCard extends StatelessWidget {
 }
 
 class LearnMoreButton extends StatelessWidget {
-  LearnMoreButton({
-    Key? key,
-    required this.wineDocument,
-  }) : super(key: key);
+  LearnMoreButton(
+      {Key? key, required this.wineDocument, required this.routeWidget})
+      : super(key: key);
   DocumentSnapshot wineDocument;
+  Widget routeWidget;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
         Navigator.of(context).push(
           createRoute(
-            WineDetailScreen(wineDocument: wineDocument),
+            routeWidget,
           ),
         );
       },
       child: Hero(
-        tag: wineDocument['wineID'],
+        tag: wineDocument['iD'],
         child: Stack(
           children: [
             Container(
@@ -269,6 +266,154 @@ class LearnMoreButton extends StatelessWidget {
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class PrefInformationCardMeal extends StatelessWidget {
+  const PrefInformationCardMeal({Key? key, required this.snapshotDocument})
+      : super(key: key);
+  final DocumentSnapshot snapshotDocument;
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(
+        bottom: 25,
+      ),
+      child: Stack(
+        children: [
+          Container(
+            height: 185,
+            width: 320,
+            decoration: BoxDecoration(
+              color: Theme.of(context).primaryColor,
+              boxShadow: [
+                BoxShadow(
+                  offset: const Offset(0, 4),
+                  color: const Color(0xff000000).withOpacity(.25),
+                ),
+              ],
+              borderRadius: BorderRadius.circular(
+                35,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 15,
+            top: 15,
+            child: Container(
+              height: 155,
+              width: 138,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(35),
+                image: DecorationImage(
+                  image: NetworkImage(snapshotDocument['url']),
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 15,
+            left: 170,
+            child: SizedBox(
+              height: 15,
+              width: 125,
+              child: Text(
+                snapshotDocument['name'],
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    color: Theme.of(context).indicatorColor,
+                    fontSize: 10,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                softWrap: true,
+                overflow: TextOverflow.ellipsis,
+                textAlign: TextAlign.right,
+              ),
+            ),
+          ),
+          Positioned(
+            left: 257,
+            top: 41,
+            child: Text(
+              'Cuisine',
+              style: GoogleFonts.poppins(
+                textStyle: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 9,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              textAlign: TextAlign.right,
+            ),
+          ),
+          Positioned(
+            left: 170,
+            top: 56,
+            child: CuisineCard(
+              wineCuisine: snapshotDocument['type'],
+              height: 25,
+              width: 127,
+              color: Theme.of(context).scaffoldBackgroundColor,
+              fontSize: 9,
+            ),
+          ),
+          Positioned(
+            left: 271,
+            top: 91,
+            child: Text(
+              'Price',
+              style: GoogleFonts.poppins(
+                textStyle: TextStyle(
+                  color: Theme.of(context).indicatorColor,
+                  fontSize: 9,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            left: 170,
+            top: 105,
+            child: Container(
+              height: 25,
+              width: 125,
+              decoration: BoxDecoration(
+                color: Theme.of(context).scaffoldBackgroundColor,
+                borderRadius: BorderRadius.circular(7),
+              ),
+              child: Center(
+                child: RichText(
+                  text: TextSpan(
+                    children: <TextSpan>[
+                      TextSpan(
+                        text: snapshotDocument['rating'],
+                        style: GoogleFonts.poppins(
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColorLight,
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: 145,
+            left: 170,
+            child: LearnMoreButton(
+              wineDocument: snapshotDocument,
+              routeWidget: FoodDetailScreen(mealDocument: snapshotDocument),
+            ),
+          ),
+        ],
       ),
     );
   }

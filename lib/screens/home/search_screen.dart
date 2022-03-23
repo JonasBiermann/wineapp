@@ -142,8 +142,9 @@ class _SearchScreenState extends State<SearchScreen> {
                       child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         itemCount: snapshot.data!.docs.length,
-                        itemBuilder: (context, index) => PrefInformationCard(
-                          wineDocument: snapshot.data!.docs[index],
+                        itemBuilder: (context, index) =>
+                            PrefInformationCardWine(
+                          snapShotDocument: snapshot.data!.docs[index],
                         ),
                       ),
                     ),
