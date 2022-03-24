@@ -1,9 +1,9 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 
-LineChartData somellierData(Color color, textColor) {
+LineChartData somellierData(Color color, textColor, DocumentSnapshot snapshot) {
   return LineChartData(
     gridData: FlGridData(
       show: false,
@@ -53,8 +53,8 @@ LineChartData somellierData(Color color, textColor) {
     maxY: 3,
     lineBarsData: [
       LineChartBarData(
-        spots: const [
-          FlSpot(0, 0),
+        spots: [
+          FlSpot(0, snapshot['usage'].toDouble()),
           FlSpot(2, 1),
           FlSpot(4, 0),
           FlSpot(6, 1),

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -58,9 +59,17 @@ class SomellierActivity extends StatelessWidget {
             child: SizedBox(
               height: 125,
               width: 232.26,
-              child: LineChart(somellierData(
-                  Theme.of(context).scaffoldBackgroundColor,
-                  Theme.of(context).indicatorColor)),
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('activity')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) return const Text('Loading...');
+                    return LineChart(somellierData(
+                        Theme.of(context).scaffoldBackgroundColor,
+                        Theme.of(context).indicatorColor,
+                        snapshot.data!.docs[0]));
+                  }),
             ),
           ),
         ],
