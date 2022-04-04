@@ -3,7 +3,16 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-LineChartData somellierData(Color color, textColor, DocumentSnapshot snapshot) {
+LineChartData somellierData(
+    Color color,
+    textColor,
+    DocumentSnapshot snapshot1,
+    DocumentSnapshot snapshot2,
+    DocumentSnapshot snapshot3,
+    DocumentSnapshot snapshot4,
+    DocumentSnapshot snapshot5,
+    DocumentSnapshot snapshot6,
+    DocumentSnapshot snapshot7) {
   return LineChartData(
     gridData: FlGridData(
       show: false,
@@ -54,13 +63,13 @@ LineChartData somellierData(Color color, textColor, DocumentSnapshot snapshot) {
     lineBarsData: [
       LineChartBarData(
         spots: [
-          FlSpot(0, snapshot['usage'].toDouble()),
-          FlSpot(2, 1),
-          FlSpot(4, 0),
-          FlSpot(6, 1),
-          FlSpot(8, 1),
-          FlSpot(10, 3),
-          FlSpot(12, 0)
+          FlSpot(0, snapshot1['usage'].toDouble()),
+          FlSpot(2, snapshot2['usage'].toDouble()),
+          FlSpot(4, snapshot3['usage'].toDouble()),
+          FlSpot(6, snapshot4['usage'].toDouble()),
+          FlSpot(8, snapshot5['usage'].toDouble()),
+          FlSpot(10, snapshot6['usage'].toDouble()),
+          FlSpot(12, snapshot7['usage'].toDouble())
         ],
         isCurved: true,
         curveSmoothness: 0.5,

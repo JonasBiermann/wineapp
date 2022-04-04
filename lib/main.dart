@@ -5,6 +5,7 @@ import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_1.dart';
 import 'package:wineapp/services/auth_services.dart';
+import 'package:week_of_year/week_of_year.dart';
 
 void main() async {
   await ThemeManager.initialise();

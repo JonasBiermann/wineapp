@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/data/somellier_data.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
 class SomellierActivity extends StatelessWidget {
   const SomellierActivity({
@@ -62,13 +63,24 @@ class SomellierActivity extends StatelessWidget {
               child: StreamBuilder<QuerySnapshot>(
                   stream: FirebaseFirestore.instance
                       .collection('activity')
+                      .doc('2022')
+                      .collection('week${globals.week}')
                       .snapshots(),
                   builder: (context, snapshot) {
                     if (!snapshot.hasData) return const Text('Loading...');
-                    return LineChart(somellierData(
+                    return LineChart(
+                      somellierData(
                         Theme.of(context).scaffoldBackgroundColor,
                         Theme.of(context).indicatorColor,
-                        snapshot.data!.docs[0]));
+                        snapshot.data!.docs[0],
+                        snapshot.data!.docs[1],
+                        snapshot.data!.docs[2],
+                        snapshot.data!.docs[3],
+                        snapshot.data!.docs[4],
+                        snapshot.data!.docs[5],
+                        snapshot.data!.docs[6],
+                      ),
+                    );
                   }),
             ),
           ),
