@@ -159,7 +159,7 @@ class _RegVerificationTextFieldState extends State<RegVerificationTextField> {
       return ctrl;
     });
 
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       // give the focus to the first node.
       focusNodes[0].requestFocus();
     });
@@ -172,12 +172,12 @@ class _RegVerificationTextFieldState extends State<RegVerificationTextField> {
   @override
   void dispose() {
     super.dispose();
-    focusNodes.forEach((focusNode) {
+    for (var focusNode in focusNodes) {
       focusNode.dispose();
-    });
-    controllers.forEach((controller) {
+    }
+    for (var controller in controllers) {
       controller.dispose();
-    });
+    }
   }
 
   @override

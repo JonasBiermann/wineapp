@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/ask_somellier_screens/step_1.dart';
-import 'package:wineapp/services/auth_services.dart';
 
 class AddMealButton extends StatelessWidget {
   const AddMealButton({
@@ -21,7 +19,7 @@ class AddMealButton extends StatelessWidget {
           Navigator.push(
             context,
             createRoute(
-              AskSomellierStep1Screen(),
+              const AskSomellierStep1Screen(),
             ),
           );
         },

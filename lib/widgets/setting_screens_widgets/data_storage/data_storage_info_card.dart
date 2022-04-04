@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/data_storage/data_category_amount_widget.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/data_storage/data_storage_category_wdiget.dart';
@@ -193,7 +192,7 @@ class DataStorageInfoCard extends StatelessWidget {
           topPadding: 192,
         ),
         DataCategoryAmountWidget(
-          dataAmount: '${accountAge} Days',
+          dataAmount: '$accountAge Days',
           topPadding: 220,
         ),
       ],

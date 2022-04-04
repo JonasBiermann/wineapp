@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/models/custom_icons_icons.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
@@ -26,10 +25,10 @@ class _DesignSettingScreenState extends State<DesignSettingScreen> {
     'Edit Settings',
   ];
   List<Widget> changeWidget = [
-    DesignOverview(
+    const DesignOverview(
       designName: 'Purple Drank',
     ),
-    DesignEdit(),
+    const DesignEdit(),
   ];
   List<String> dataLabel = [
     'Home',

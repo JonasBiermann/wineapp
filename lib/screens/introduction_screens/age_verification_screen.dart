@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';
@@ -9,7 +8,7 @@ import 'package:wineapp/widgets/age_verification_textfields.dart';
 import 'package:wineapp/data/globals.dart' as globals;
 
 class AgeVerificationScreen extends StatelessWidget {
-  AgeVerificationScreen({Key? key}) : super(key: key);
+  const AgeVerificationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -118,7 +117,7 @@ class AgeVerificationScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   createRoute(
-                    LoginScreen(),
+                    const LoginScreen(),
                   ),
                 );
               },
@@ -145,7 +144,7 @@ class AgeVerificationScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   createRoute(
-                    RegisterScreen(),
+                    const RegisterScreen(),
                   ),
                 );
               },

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/uprade_plan.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/general/user_info_card.dart';
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 
 class DesignOverviewColorContainer extends StatelessWidget {
   DesignOverviewColorContainer({

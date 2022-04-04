@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 
 class SettingCard extends StatelessWidget {
   const SettingCard(

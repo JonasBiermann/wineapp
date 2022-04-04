@@ -6,7 +6,7 @@ import 'package:wineapp/widgets/setting_screens_widgets/settings_edit_button.dar
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
 class DesignEdit extends StatefulWidget {
-  DesignEdit({Key? key}) : super(key: key);
+  const DesignEdit({Key? key}) : super(key: key);
 
   @override
   State<DesignEdit> createState() => _DesignEditState();
@@ -140,7 +140,7 @@ class _DesignEditState extends State<DesignEdit> {
           ],
         ),
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 256,
           ),
           child: SubmitSettingChangesButton(

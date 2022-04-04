@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/setting_cards.dart';
 import 'package:wineapp/widgets/uprade_plan.dart';
 
 class SettingsScreen extends StatelessWidget {
-  SettingsScreen({Key? key}) : super(key: key);
+  const SettingsScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

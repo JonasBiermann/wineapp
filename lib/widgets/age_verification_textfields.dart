@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const zwsp = '\u200b';
@@ -36,7 +35,7 @@ class _CodeFieldState extends State<CodeField> {
       return ctrl;
     });
 
-    WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
       // give the focus to the first node.
       focusNodes[0].requestFocus();
     });
@@ -49,12 +48,12 @@ class _CodeFieldState extends State<CodeField> {
   @override
   void dispose() {
     super.dispose();
-    focusNodes.forEach((focusNode) {
+    for (var focusNode in focusNodes) {
       focusNode.dispose();
-    });
-    controllers.forEach((controller) {
+    }
+    for (var controller in controllers) {
       controller.dispose();
-    });
+    }
   }
 
   @override

@@ -5,7 +5,6 @@ import 'package:wineapp/models/custom_icons_icons.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 
 class WineDetailScreen extends StatelessWidget {
   WineDetailScreen({Key? key, required this.wineDocument}) : super(key: key);

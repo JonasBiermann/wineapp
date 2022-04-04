@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_4.dart';
 import 'package:wineapp/screens/introduction_screens/introduction_screen_2.dart';
 import 'package:wineapp/data/globals.dart' as globals;

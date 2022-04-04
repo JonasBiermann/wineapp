@@ -2,7 +2,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:wineapp/constants.dart';
 
 class AuthService {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
@@ -37,6 +36,7 @@ class AuthService {
     } catch (e) {
       print(e);
     }
+    return null;
   }
 
   //User login
@@ -92,6 +92,7 @@ class AuthService {
         e.toString(),
       );
     }
+    return null;
   }
 
   //Sign Out function

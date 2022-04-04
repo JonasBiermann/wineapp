@@ -10,7 +10,7 @@ import 'package:wineapp/widgets/setting_screens_widgets/setting_bottom_navigatio
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
 class AskSomellierStep1Screen extends StatefulWidget {
-  AskSomellierStep1Screen({Key? key}) : super(key: key);
+  const AskSomellierStep1Screen({Key? key}) : super(key: key);
 
   @override
   State<AskSomellierStep1Screen> createState() =>
@@ -47,7 +47,7 @@ class _AskSomellierStep1ScreenState extends State<AskSomellierStep1Screen> {
             ),
           ),
           Padding(
-            padding: EdgeInsets.only(
+            padding: const EdgeInsets.only(
               left: 172,
               top: 92,
             ),

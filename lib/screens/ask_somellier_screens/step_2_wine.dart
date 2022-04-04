@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/models/custom_icons_icons.dart';
-import 'package:wineapp/screens/ask_somellier_screens/step_1.dart';
 import 'package:wineapp/screens/ask_somellier_screens/step_3.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';

@@ -1,10 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
-import 'package:stacked_themes/stacked_themes.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/screens/home/setting_screens/data_storage_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/design_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/general_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/notifications_screen.dart';
@@ -146,12 +143,12 @@ class MailClientOpenErrorDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoAlertDialog(
-      title: Text('Launch Error'),
+      title: const Text('Launch Error'),
       content: Text('We could not launch the following url:\n$url'),
       actions: <Widget>[
         CupertinoDialogAction(
           isDefaultAction: true,
-          child: Text('OK'),
+          child: const Text('OK'),
           onPressed: () {
             Navigator.of(context).pop();
           },

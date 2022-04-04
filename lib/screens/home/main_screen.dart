@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/home_screen.dart';
 import 'package:wineapp/screens/home/search_screen.dart';
 import 'package:wineapp/screens/home/settings_screen.dart';
@@ -17,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> pageList = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    SettingsScreen(),
+    const SettingsScreen(),
   ];
   List<IconData> data = [
     CustomIcons.home,

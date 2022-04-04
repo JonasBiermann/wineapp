@@ -14,9 +14,9 @@ class _NotificationEditState extends State<NotificationEdit> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        NotificationEditCard(),
+        const NotificationEditCard(),
         Padding(
-          padding: EdgeInsets.only(top: 188),
+          padding: const EdgeInsets.only(top: 188),
           child: SubmitSettingChangesButton(
             cancelOnTap: () {},
             continueOnTap: () {},

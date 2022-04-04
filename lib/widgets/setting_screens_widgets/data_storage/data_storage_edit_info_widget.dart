@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/data_storage/data_storage_category_widget.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/settings_edit_button.dart';
-import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
 class DataStorageEditInfoWidget extends StatelessWidget {
   const DataStorageEditInfoWidget({

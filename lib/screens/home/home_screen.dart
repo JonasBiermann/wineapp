@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/home_screens_widgets/add_meal_button.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/home_screens_widgets/latest_meal_card_widget.dart';
