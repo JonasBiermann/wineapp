@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/data/somellier_data.dart';
 import 'package:wineapp/data/globals.dart' as globals;
 
