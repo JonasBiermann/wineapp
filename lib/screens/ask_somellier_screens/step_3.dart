@@ -173,7 +173,7 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
                     createRoute(
                       AskSomellierStep4Screen(
                         mealVSWine: widget.mealVSWine,
-                        stepDescription: 'Search for your wine below',
+                        stepDescription: 'Search for your meal below',
                         wineOrMeal: widget.wineOrMeal,
                       ),
                     ),

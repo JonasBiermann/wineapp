@@ -52,10 +52,10 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              left: 60,
+              left: 43,
             ),
             child: Text(
-              'What Cuisine are you enjoying today?',
+              'What kind of Wine are you enjoying today?',
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
                   color: Theme.of(context).primaryColorLight,

@@ -7,6 +7,7 @@ import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/registration_verification_screen.dart';
 import 'package:wineapp/services/auth_services.dart';
 import 'package:wineapp/data/globals.dart' as globals;
+import 'package:wineapp/services/firestore_service.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -311,6 +312,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         emailPhoneController.text,
                         passwordController.text,
                         context);
+                    AuthService()
+                        .addUser(userNameController.text, 18, "English");
+                    FirestoreService().addCollection();
                     if (result != null) {
                       Navigator.pushAndRemoveUntil(
                           context,

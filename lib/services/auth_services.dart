@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -5,6 +6,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthService {
   FirebaseAuth firebaseAuth = FirebaseAuth.instance;
+  FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
 
   //Register User
 
@@ -100,5 +102,18 @@ class AuthService {
     await GoogleSignIn().signOut();
     await firebaseAuth.signOut();
     print('logged out');
+  }
+
+  Future<void> addUser(username, age, language) {
+    return firebaseFirestore
+        .collection('users')
+        .doc(firebaseAuth.currentUser!.uid.toString())
+        .set({
+          'username': username,
+          'age': age,
+          'language': language,
+        })
+        .then((value) => print("User Added"))
+        .catchError((error) => print("Failed to add user: $error"));
   }
 }

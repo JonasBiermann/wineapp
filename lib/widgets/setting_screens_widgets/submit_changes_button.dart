@@ -64,7 +64,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
                       fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

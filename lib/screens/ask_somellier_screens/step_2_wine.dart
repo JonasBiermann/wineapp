@@ -161,9 +161,9 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                   context,
                   createRoute(
                     const AskSomellierStep3Screen(
-                      stepDescription: 'Do you want to pick a specific wine?',
-                      wineOrMeal: 'wines',
-                      mealVSWine: true,
+                      stepDescription: 'Do you want to pick a specific meal?',
+                      wineOrMeal: 'meals',
+                      mealVSWine: false,
                     ),
                   ),
                 );
