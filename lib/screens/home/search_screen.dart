@@ -145,6 +145,8 @@ class _SearchScreenState extends State<SearchScreen> {
                         itemBuilder: (context, index) =>
                             PrefInformationCardWine(
                           snapShotDocument: snapshot.data!.docs[index],
+                          cardColor: Theme.of(context).primaryColor,
+                          selected: false,
                         ),
                       ),
                     ),

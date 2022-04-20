@@ -6,13 +6,34 @@ import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/screens/home/food_detail_screen.dart';
 import 'package:wineapp/screens/home/wine_detail_screen.dart';
 
-class PrefInformationCardWine extends StatelessWidget {
+class PrefInformationCardWine extends StatefulWidget {
   PrefInformationCardWine({
     Key? key,
     required this.snapShotDocument,
+    required this.cardColor,
+    required this.selected,
   }) : super(key: key);
 
   DocumentSnapshot snapShotDocument;
+  Color cardColor;
+  bool selected;
+
+  @override
+  State<PrefInformationCardWine> createState() =>
+      _PrefInformationCardWineState();
+}
+
+class _PrefInformationCardWineState extends State<PrefInformationCardWine> {
+  Color backgroundColor(context, selected) {
+    setState(() {
+      if (widget.selected == true) {
+        widget.cardColor = Theme.of(context).primaryColorLight;
+      } else {
+        widget.cardColor = Theme.of(context).primaryColor;
+      }
+    });
+    return widget.cardColor;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,150 +41,158 @@ class PrefInformationCardWine extends StatelessWidget {
       padding: const EdgeInsets.only(
         bottom: 25,
       ),
-      child: Stack(
-        children: [
-          Container(
-            height: 185,
-            width: 320,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(0, 4),
-                  color: const Color(0xff000000).withOpacity(.25),
-                ),
-              ],
-              borderRadius: BorderRadius.circular(
-                35,
-              ),
-            ),
-          ),
-          Positioned(
-            left: 15,
-            top: 15,
-            child: Container(
-              height: 155,
-              width: 138,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            widget.selected = !widget.selected;
+          });
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 185,
+              width: 320,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(35),
-                image: DecorationImage(
-                  image: NetworkImage(snapShotDocument['url']),
-                  fit: BoxFit.fitHeight,
+                color: backgroundColor(context, widget.selected),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 4),
+                    color: const Color(0xff000000).withOpacity(.25),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(
+                  35,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 15,
-            left: 170,
-            child: SizedBox(
-              height: 15,
-              width: 125,
+            Positioned(
+              left: 15,
+              top: 15,
+              child: Container(
+                height: 155,
+                width: 138,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(35),
+                  image: DecorationImage(
+                    image: NetworkImage(widget.snapShotDocument['url']),
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 15,
+              left: 170,
+              child: SizedBox(
+                height: 15,
+                width: 125,
+                child: Text(
+                  widget.snapShotDocument['name'],
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Theme.of(context).indicatorColor,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+            ),
+            Positioned(
+              left: 257,
+              top: 41,
               child: Text(
-                snapShotDocument['name'],
+                'Cuisine',
                 style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
-                    color: Theme.of(context).indicatorColor,
-                    fontSize: 10,
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 9,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                softWrap: true,
-                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.right,
               ),
             ),
-          ),
-          Positioned(
-            left: 257,
-            top: 41,
-            child: Text(
-              'Cuisine',
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 9,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              textAlign: TextAlign.right,
-            ),
-          ),
-          Positioned(
-            left: 170,
-            top: 56,
-            child: CuisineCard(
-              wineCuisine: snapShotDocument['use'][0],
-              height: 25,
-              width: 60,
-              color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 9,
-            ),
-          ),
-          Positioned(
-            left: 236,
-            top: 56,
-            child: CuisineCard(
-              wineCuisine: snapShotDocument['use'][1],
-              height: 25,
-              width: 60,
-              color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 9,
-            ),
-          ),
-          Positioned(
-            left: 271,
-            top: 91,
-            child: Text(
-              'Price',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 9,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 170,
-            top: 105,
-            child: Container(
-              height: 25,
-              width: 125,
-              decoration: BoxDecoration(
+            Positioned(
+              left: 170,
+              top: 56,
+              child: CuisineCard(
+                wineCuisine: widget.snapShotDocument['use'][0],
+                height: 25,
+                width: 60,
                 color: Theme.of(context).scaffoldBackgroundColor,
-                borderRadius: BorderRadius.circular(7),
+                fontSize: 9,
               ),
-              child: Center(
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: snapShotDocument['rating'],
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Theme.of(context).primaryColorLight,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
+            ),
+            Positioned(
+              left: 236,
+              top: 56,
+              child: CuisineCard(
+                wineCuisine: widget.snapShotDocument['use'][1],
+                height: 25,
+                width: 60,
+                color: Theme.of(context).scaffoldBackgroundColor,
+                fontSize: 9,
+              ),
+            ),
+            Positioned(
+              left: 271,
+              top: 91,
+              child: Text(
+                'Price',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    color: Theme.of(context).indicatorColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 145,
-            left: 170,
-            child: LearnMoreButton(
-              wineDocument: snapShotDocument,
-              routeWidget: WineDetailScreen(wineDocument: snapShotDocument),
+            Positioned(
+              left: 170,
+              top: 105,
+              child: Container(
+                height: 25,
+                width: 125,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  borderRadius: BorderRadius.circular(7),
+                ),
+                child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: widget.snapShotDocument['rating'],
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Theme.of(context).primaryColorLight,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
-        ],
+            Positioned(
+              top: 145,
+              left: 170,
+              child: LearnMoreButton(
+                wineDocument: widget.snapShotDocument,
+                routeWidget:
+                    WineDetailScreen(wineDocument: widget.snapShotDocument),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -271,149 +300,181 @@ class LearnMoreButton extends StatelessWidget {
   }
 }
 
-class PrefInformationCardMeal extends StatelessWidget {
-  const PrefInformationCardMeal({Key? key, required this.snapshotDocument})
+class PrefInformationCardMeal extends StatefulWidget {
+  PrefInformationCardMeal(
+      {Key? key,
+      required this.snapshotDocument,
+      required this.cardColor,
+      required this.selected})
       : super(key: key);
   final DocumentSnapshot snapshotDocument;
+  Color cardColor;
+  bool selected;
+
+  @override
+  State<PrefInformationCardMeal> createState() =>
+      _PrefInformationCardMealState();
+}
+
+class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
+  Color backgroundColor(context, selected) {
+    setState(() {
+      if (widget.selected == true) {
+        widget.cardColor = Theme.of(context).primaryColorLight;
+      } else {
+        widget.cardColor = Theme.of(context).primaryColor;
+      }
+    });
+    return widget.cardColor;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(
         bottom: 25,
       ),
-      child: Stack(
-        children: [
-          Container(
-            height: 185,
-            width: 320,
-            decoration: BoxDecoration(
-              color: Theme.of(context).primaryColor,
-              boxShadow: [
-                BoxShadow(
-                  offset: const Offset(0, 4),
-                  color: const Color(0xff000000).withOpacity(.25),
-                ),
-              ],
-              borderRadius: BorderRadius.circular(
-                35,
-              ),
-            ),
-          ),
-          Positioned(
-            left: 15,
-            top: 15,
-            child: Container(
-              height: 155,
-              width: 138,
+      child: GestureDetector(
+        onTap: () {
+          setState(() {
+            widget.selected = !widget.selected;
+          });
+        },
+        child: Stack(
+          children: [
+            Container(
+              height: 185,
+              width: 320,
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(35),
-                image: DecorationImage(
-                  image: NetworkImage(snapshotDocument['url']),
-                  fit: BoxFit.fitHeight,
+                color: backgroundColor(context, widget.selected),
+                boxShadow: [
+                  BoxShadow(
+                    offset: const Offset(0, 4),
+                    color: const Color(0xff000000).withOpacity(.25),
+                  ),
+                ],
+                borderRadius: BorderRadius.circular(
+                  35,
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 15,
-            left: 170,
-            child: SizedBox(
-              height: 15,
-              width: 125,
+            Positioned(
+              left: 15,
+              top: 15,
+              child: Container(
+                height: 155,
+                width: 138,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(35),
+                  image: DecorationImage(
+                    image: NetworkImage(widget.snapshotDocument['url']),
+                    fit: BoxFit.fitHeight,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              top: 15,
+              left: 170,
+              child: SizedBox(
+                height: 15,
+                width: 125,
+                child: Text(
+                  widget.snapshotDocument['name'],
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Theme.of(context).indicatorColor,
+                      fontSize: 10,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  softWrap: true,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.right,
+                ),
+              ),
+            ),
+            Positioned(
+              left: 257,
+              top: 41,
               child: Text(
-                snapshotDocument['name'],
+                'Cuisine',
                 style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
-                    color: Theme.of(context).indicatorColor,
-                    fontSize: 10,
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 9,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
-                softWrap: true,
-                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.right,
               ),
             ),
-          ),
-          Positioned(
-            left: 257,
-            top: 41,
-            child: Text(
-              'Cuisine',
-              style: GoogleFonts.poppins(
-                textStyle: const TextStyle(
-                  color: Colors.white,
-                  fontSize: 9,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              textAlign: TextAlign.right,
-            ),
-          ),
-          Positioned(
-            left: 170,
-            top: 56,
-            child: CuisineCard(
-              wineCuisine: snapshotDocument['type'],
-              height: 25,
-              width: 127,
-              color: Theme.of(context).scaffoldBackgroundColor,
-              fontSize: 9,
-            ),
-          ),
-          Positioned(
-            left: 271,
-            top: 91,
-            child: Text(
-              'Price',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 9,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-          ),
-          Positioned(
-            left: 170,
-            top: 105,
-            child: Container(
-              height: 25,
-              width: 125,
-              decoration: BoxDecoration(
+            Positioned(
+              left: 170,
+              top: 56,
+              child: CuisineCard(
+                wineCuisine: widget.snapshotDocument['type'],
+                height: 25,
+                width: 127,
                 color: Theme.of(context).scaffoldBackgroundColor,
-                borderRadius: BorderRadius.circular(7),
+                fontSize: 9,
               ),
-              child: Center(
-                child: RichText(
-                  text: TextSpan(
-                    children: <TextSpan>[
-                      TextSpan(
-                        text: snapshotDocument['rating'],
-                        style: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                            color: Theme.of(context).primaryColorLight,
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
-                    ],
+            ),
+            Positioned(
+              left: 271,
+              top: 91,
+              child: Text(
+                'Price',
+                style: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                    color: Theme.of(context).indicatorColor,
+                    fontSize: 9,
+                    fontWeight: FontWeight.w600,
                   ),
                 ),
               ),
             ),
-          ),
-          Positioned(
-            top: 145,
-            left: 170,
-            child: LearnMoreButton(
-              wineDocument: snapshotDocument,
-              routeWidget: FoodDetailScreen(mealDocument: snapshotDocument),
+            Positioned(
+              left: 170,
+              top: 105,
+              child: Container(
+                height: 25,
+                width: 125,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  borderRadius: BorderRadius.circular(7),
+                ),
+                child: Center(
+                  child: RichText(
+                    text: TextSpan(
+                      children: <TextSpan>[
+                        TextSpan(
+                          text: widget.snapshotDocument['rating'],
+                          style: GoogleFonts.poppins(
+                            textStyle: TextStyle(
+                              color: Theme.of(context).primaryColorLight,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
             ),
-          ),
-        ],
+            Positioned(
+              top: 145,
+              left: 170,
+              child: LearnMoreButton(
+                wineDocument: widget.snapshotDocument,
+                routeWidget:
+                    FoodDetailScreen(mealDocument: widget.snapshotDocument),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

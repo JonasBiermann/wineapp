@@ -161,9 +161,13 @@ class AskSomellierStep4Screen extends StatelessWidget {
                       itemBuilder: (context, index) => mealVSWine
                           ? PrefInformationCardWine(
                               snapShotDocument: snapshot.data!.docs[index],
+                              cardColor: Theme.of(context).primaryColor,
+                              selected: false,
                             )
                           : PrefInformationCardMeal(
                               snapshotDocument: snapshot.data!.docs[index],
+                              cardColor: Theme.of(context).primaryColor,
+                              selected: false,
                             ),
                     ),
                   ),

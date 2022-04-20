@@ -166,7 +166,7 @@ class FoodDetailScreen extends StatelessWidget {
                     width: 54,
                     child: Center(
                       child: Text(
-                        'Pick Meal',
+                        'Go Back',
                         style: GoogleFonts.poppins(
                           textStyle: TextStyle(
                             color: Theme.of(context).indicatorColor,
