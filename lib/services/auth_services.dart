@@ -104,7 +104,7 @@ class AuthService {
     print('logged out');
   }
 
-  Future<void> addUser(username, age, language) {
+  Future<void> addUser(username, age, language, DateTime dateAdded) {
     return firebaseFirestore
         .collection('users')
         .doc(firebaseAuth.currentUser!.uid.toString())
@@ -112,6 +112,7 @@ class AuthService {
           'username': username,
           'age': age,
           'language': language,
+          'dateAdded': dateAdded,
         })
         .then((value) => print("User Added"))
         .catchError((error) => print("Failed to add user: $error"));

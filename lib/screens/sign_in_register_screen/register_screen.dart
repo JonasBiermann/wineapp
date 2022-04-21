@@ -312,8 +312,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         emailPhoneController.text,
                         passwordController.text,
                         context);
-                    AuthService()
-                        .addUser(userNameController.text, 18, "English");
+                    AuthService().addUser(
+                      userNameController.text,
+                      18,
+                      "English",
+                      DateTime.now(),
+                    );
                     FirestoreService().addCollection();
                     if (result != null) {
                       Navigator.pushAndRemoveUntil(

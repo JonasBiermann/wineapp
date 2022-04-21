@@ -52,7 +52,7 @@ class GeneralEdit extends StatelessWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(
-            top: 99,
+            top: 167,
           ),
           child: SubmitSettingChangesButton(
             cancelOnTap: () {},

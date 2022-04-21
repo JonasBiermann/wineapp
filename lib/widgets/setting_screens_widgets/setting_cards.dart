@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/cupertino.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
+import 'package:wineapp/screens/home/setting_screens/data_storage_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/design_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/general_screen.dart';
 import 'package:wineapp/screens/home/setting_screens/notifications_screen.dart';
@@ -74,8 +75,8 @@ class SettingCards extends StatelessWidget {
                 Navigator.push(
                   context,
                   createRoute(
-                    GeneralSettingScreen(
-                      settingName: 'General',
+                    DataStorageSettingsScreen(
+                      settingName: 'Data & Storage',
                     ),
                   ),
                 );
