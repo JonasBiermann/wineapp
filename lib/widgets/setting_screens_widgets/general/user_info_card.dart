@@ -132,10 +132,10 @@ class _UserInfoCardState extends State<UserInfoCard> {
               ),
               UserInfoContent(
                 data: data['age'].toString(),
-                left: 293,
+                left: 155,
                 top: 118,
                 height: 18,
-                width: 12,
+                width: 150,
               ),
               const UserInfoContent(
                 data: 'Germany',
@@ -223,7 +223,7 @@ class UserInfoTitle extends StatelessWidget {
       ),
       child: Text(
         text,
-        textAlign: TextAlign.left,
+        textAlign: TextAlign.right,
         style: GoogleFonts.poppins(
           textStyle: TextStyle(
             color: Theme.of(context).indicatorColor,

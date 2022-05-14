@@ -3,7 +3,9 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/models/custom_icons_icons.dart';
+import 'package:wineapp/screens/ask_somellier_screens/finding_recommendation.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
@@ -186,7 +188,12 @@ class AskSomellierStep4Screen extends StatelessWidget {
               cancelOnTap: () {
                 Navigator.pop(context);
               },
-              continueOnTap: () {},
+              continueOnTap: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    createRoute(const FindingRecommendationScreen()),
+                    (route) => false);
+              },
             ),
           ),
           Padding(
