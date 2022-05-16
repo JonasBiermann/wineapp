@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
+import 'package:wineapp/animation/page_route_transition.dart';
+import 'package:wineapp/screens/ask_somellier_screens/somellier_result_screen.dart';
 
 class FindingRecommendationScreen extends StatefulWidget {
   const FindingRecommendationScreen({Key? key}) : super(key: key);
@@ -61,7 +63,7 @@ class _FindingRecommendationScreenState
               top: 50,
             ),
             child: CircularPercentIndicator(
-              radius: 100,
+              radius: 120,
               lineWidth: 4.0,
               circularStrokeCap: CircularStrokeCap.round,
               animation: true,
@@ -76,10 +78,20 @@ class _FindingRecommendationScreenState
               //     );
               //   },
               // ),
-              center: const Icon(
-                Icons.done_rounded,
-                color: Colors.white,
-                size: 90,
+              // center: const Icon(
+              //   Icons.done_rounded,
+              //   color: Colors.white,
+              //   size: 90,
+              // ),
+              center: Text(
+                'Finding Wine 🍷',
+                style: GoogleFonts.poppins(
+                  textStyle: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
               progressColor: Theme.of(context).indicatorColor,
             ),
@@ -91,7 +103,12 @@ class _FindingRecommendationScreenState
               top: 200,
             ),
             child: GestureDetector(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    createRoute(const SomellierResultScreen()),
+                    (route) => false);
+              },
               child: Container(
                 height: 50,
                 width: MediaQuery.of(context).size.width - 70,

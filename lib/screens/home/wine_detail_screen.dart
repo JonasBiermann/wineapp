@@ -167,8 +167,8 @@ class WineDetailScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 29,
-                  left: 171,
+                  top: 102,
+                  left: 156,
                 ),
                 child: GestureDetector(
                   onTap: () {

@@ -4,7 +4,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 
 import '../../models/custom_icons_icons.dart';
-import '../../widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
 
 class FoodDetailScreen extends StatelessWidget {
   const FoodDetailScreen({Key? key, required this.mealDocument})
@@ -154,7 +153,7 @@ class FoodDetailScreen extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 32,
+                  top: 102,
                   left: 168,
                 ),
                 child: GestureDetector(
@@ -183,11 +182,11 @@ class FoodDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: SettingBottomNavigationBar(
-        detailSetting: true,
-        data: data,
-        dataLabel: dataLabel,
-      ),
+      // bottomNavigationBar: SettingBottomNavigationBar(
+      //   detailSetting: true,
+      //   data: data,
+      //   dataLabel: dataLabel,
+      // ),
     );
   }
 }

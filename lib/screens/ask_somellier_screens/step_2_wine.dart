@@ -5,7 +5,6 @@ import 'package:wineapp/models/custom_icons_icons.dart';
 import 'package:wineapp/screens/ask_somellier_screens/step_3.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
-import 'package:wineapp/widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
 class AskSomellierStep2WineScreen extends StatelessWidget {
@@ -147,7 +146,7 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               left: 35,
-              top: 98,
+              top: 153,
             ),
             child: SubmitSettingChangesButton(
               buttonText: 'Continue',
@@ -172,7 +171,7 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 14,
+              top: 15,
               left: 171,
             ),
             child: GestureDetector(
@@ -180,7 +179,7 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
                 Navigator.pop(context);
               },
               child: SizedBox(
-                height: 16,
+                height: 17,
                 width: 47,
                 child: Center(
                   child: Text(
@@ -199,11 +198,11 @@ class AskSomellierStep2WineScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: SettingBottomNavigationBar(
-        data: data,
-        dataLabel: dataLabel,
-        detailSetting: true,
-      ),
+      // bottomNavigationBar: SettingBottomNavigationBar(
+      //   data: data,
+      //   dataLabel: dataLabel,
+      //   detailSetting: true,
+      // ),
     );
   }
 }

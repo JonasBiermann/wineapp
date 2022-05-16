@@ -6,7 +6,6 @@ import 'package:wineapp/screens/ask_somellier_screens/step_3.dart';
 import '../../animation/page_route_transition.dart';
 import '../../models/custom_icons_icons.dart';
 import '../../widgets/home_screens_widgets/home_screen_header.dart';
-import '../../widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
 import '../../widgets/setting_screens_widgets/submit_changes_button.dart';
 import '../home/main_screen.dart';
 
@@ -104,7 +103,7 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               left: 35,
-              top: 98,
+              top: 153,
             ),
             child: SubmitSettingChangesButton(
               buttonText: 'Continue',
@@ -156,11 +155,11 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: SettingBottomNavigationBar(
-        data: data,
-        dataLabel: dataLabel,
-        detailSetting: true,
-      ),
+      // bottomNavigationBar: SettingBottomNavigationBar(
+      //   data: data,
+      //   dataLabel: dataLabel,
+      //   detailSetting: true,
+      // ),
     );
   }
 }

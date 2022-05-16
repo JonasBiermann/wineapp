@@ -6,8 +6,6 @@ import 'package:wineapp/screens/ask_somellier_screens/step_4.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
-import '../../widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
-
 class AskSomellierStep3Screen extends StatefulWidget {
   const AskSomellierStep3Screen(
       {Key? key,
@@ -158,7 +156,7 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
           Padding(
             padding: const EdgeInsets.only(
               left: 35,
-              top: 91,
+              top: 146,
             ),
             child: SubmitSettingChangesButton(
               buttonText: 'Continue',
@@ -188,7 +186,7 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
           ),
           Padding(
             padding: const EdgeInsets.only(
-              top: 14,
+              top: 15,
               left: 171,
             ),
             child: GestureDetector(
@@ -215,11 +213,11 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
           ),
         ],
       ),
-      bottomNavigationBar: SettingBottomNavigationBar(
-        data: data,
-        dataLabel: dataLabel,
-        detailSetting: true,
-      ),
+      // bottomNavigationBar: SettingBottomNavigationBar(
+      //   data: data,
+      //   dataLabel: dataLabel,
+      //   detailSetting: true,
+      // ),
     );
   }
 }
