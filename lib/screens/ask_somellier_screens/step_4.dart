@@ -11,16 +11,18 @@ import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dar
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
 class AskSomellierStep4Screen extends StatelessWidget {
-  AskSomellierStep4Screen(
-      {Key? key,
-      required this.stepDescription,
-      required this.wineOrMeal,
-      required this.mealVSWine})
-      : super(key: key);
+  AskSomellierStep4Screen({
+    Key? key,
+    required this.stepDescription,
+    required this.wineOrMeal,
+    required this.mealVSWine,
+    required this.selectedCuisine,
+  }) : super(key: key);
 
   final String wineOrMeal;
   final String stepDescription;
   final bool mealVSWine;
+  final String selectedCuisine;
   List<String> dataLabel = [
     'Home',
     'Search',
@@ -31,6 +33,16 @@ class AskSomellierStep4Screen extends StatelessWidget {
     CustomIcons.search,
     CustomIcons.user,
   ];
+  TextEditingController searchController = TextEditingController();
+
+  static bool hasText(searchController) {
+    if (searchController.text == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -96,6 +108,7 @@ class AskSomellierStep4Screen extends StatelessWidget {
                     height: 21,
                     width: 300,
                     child: TextField(
+                      controller: searchController,
                       decoration: InputDecoration(
                         hintText: 'Search',
                         hintStyle: GoogleFonts.poppins(
@@ -147,11 +160,25 @@ class AskSomellierStep4Screen extends StatelessWidget {
             ),
             child: StreamBuilder<QuerySnapshot>(
               stream:
-                  FirebaseFirestore.instance.collection(wineOrMeal).snapshots(),
+
+                  // FirebaseFirestore.instance.collection(wineOrMeal).snapshots(),
+
+                  FirebaseFirestore.instance
+                      .collection(wineOrMeal)
+                      .where('type', isEqualTo: selectedCuisine)
+                      .snapshots(),
+
+              // hasText ? FirebaseFirestore.instance
+              //     .collection(wineOrMeal)
+              //     .where('type', isEqualTo: selectedCuisine).where('name', isEqualTo: searchController.text)
+              //     .snapshots() : FirebaseFirestore.instance
+              //     .collection(wineOrMeal)
+              //     .where('type', isEqualTo: selectedCuisine)
+              //     .snapshots(),
               builder: (context, snapshot) {
                 if (!snapshot.hasData) return const Text('Loading...');
                 return SizedBox(
-                  height: 330,
+                  height: 370,
                   width: 320,
                   child: Center(
                     child: ListView.builder(
@@ -197,7 +224,7 @@ class AskSomellierStep4Screen extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(
               top: 15,
-              left: 156,
+              left: 171,
             ),
             child: GestureDetector(
               onTap: () {

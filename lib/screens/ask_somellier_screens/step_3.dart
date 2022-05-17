@@ -11,11 +11,13 @@ class AskSomellierStep3Screen extends StatefulWidget {
       {Key? key,
       required this.stepDescription,
       required this.wineOrMeal,
-      required this.mealVSWine})
+      required this.mealVSWine,
+      required this.selectedCuisine})
       : super(key: key);
   final String stepDescription;
   final String wineOrMeal;
   final bool mealVSWine;
+  final String selectedCuisine;
 
   @override
   State<AskSomellierStep3Screen> createState() =>
@@ -175,6 +177,7 @@ class _AskSomellierStep3ScreenState extends State<AskSomellierStep3Screen> {
                             ? 'Search for your wine below'
                             : 'Search for your meal below',
                         wineOrMeal: widget.wineOrMeal,
+                        selectedCuisine: widget.selectedCuisine,
                       ),
                     ),
                   );

@@ -9,18 +9,36 @@ import '../../widgets/home_screens_widgets/home_screen_header.dart';
 import '../../widgets/setting_screens_widgets/submit_changes_button.dart';
 import '../home/main_screen.dart';
 
-class AskSomellierStep2FoodScreen extends StatelessWidget {
-  AskSomellierStep2FoodScreen({Key? key}) : super(key: key);
+class AskSomellierStep2FoodScreen extends StatefulWidget {
+  const AskSomellierStep2FoodScreen({Key? key}) : super(key: key);
+
+  @override
+  State<AskSomellierStep2FoodScreen> createState() =>
+      _AskSomellierStep2FoodScreenState();
+}
+
+class _AskSomellierStep2FoodScreenState
+    extends State<AskSomellierStep2FoodScreen> {
   List<String> dataLabel = [
     'Home',
     'Search',
     'Account',
   ];
+
   List<IconData> data = [
     CustomIcons.home,
     CustomIcons.search,
     CustomIcons.user,
   ];
+
+  List<bool> wineTypes = [
+    false,
+    false,
+    false,
+    false,
+    false,
+  ];
+  String selectedWine = '';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,26 +93,96 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  ChooseCuisineCard(
-                    cuisineName: 'Red Wine',
-                    width: 266,
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedWine = 'Red Wine';
+                        wineTypes[0] = true;
+                        wineTypes[1] = false;
+                        wineTypes[2] = false;
+                        wineTypes[3] = false;
+                        wineTypes[4] = false;
+                      });
+                      print(selectedWine);
+                    },
+                    child: ChooseCuisineCard(
+                      cuisineName: 'Red Wine',
+                      width: 266,
+                      selected: wineTypes[0],
+                    ),
                   ),
-                  ChooseCuisineCard(
-                    cuisineName: 'White Wine',
-                    width: 266,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedWine = 'White Wine';
+                        wineTypes[0] = false;
+                        wineTypes[1] = true;
+                        wineTypes[2] = false;
+                        wineTypes[3] = false;
+                        wineTypes[4] = false;
+                      });
+                      print(selectedWine);
+                    },
+                    child: ChooseCuisineCard(
+                      cuisineName: 'White Wine',
+                      width: 266,
+                      selected: false,
+                    ),
                   ),
-                  ChooseCuisineCard(
-                    cuisineName: 'Rosé Wine',
-                    width: 266,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedWine = 'Rosé Wine';
+                        wineTypes[0] = false;
+                        wineTypes[1] = false;
+                        wineTypes[2] = true;
+                        wineTypes[3] = false;
+                        wineTypes[4] = false;
+                      });
+                      print(selectedWine);
+                    },
+                    child: ChooseCuisineCard(
+                      cuisineName: 'Rosé Wine',
+                      width: 266,
+                      selected: false,
+                    ),
                   ),
-                  ChooseCuisineCard(
-                    cuisineName: 'Sparkling Wine',
-                    width: 266,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedWine = 'Sparkling Wine';
+                        wineTypes[0] = false;
+                        wineTypes[1] = false;
+                        wineTypes[2] = false;
+                        wineTypes[3] = true;
+                        wineTypes[4] = false;
+                      });
+                      print(selectedWine);
+                    },
+                    child: ChooseCuisineCard(
+                      cuisineName: 'Sparkling Wine',
+                      width: 266,
+                      selected: false,
+                    ),
                   ),
-                  ChooseCuisineCard(
-                    cuisineName: 'Dessert Wine',
-                    width: 266,
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectedWine = 'Dessert Wine';
+                        wineTypes[0] = false;
+                        wineTypes[1] = false;
+                        wineTypes[2] = false;
+                        wineTypes[3] = false;
+                        wineTypes[4] = true;
+                      });
+                      print(selectedWine);
+                    },
+                    child: ChooseCuisineCard(
+                      cuisineName: 'Dessert Wine',
+                      width: 266,
+                      selected: false,
+                    ),
                   ),
                 ],
               ),
@@ -116,10 +204,11 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   createRoute(
-                    const AskSomellierStep3Screen(
+                    AskSomellierStep3Screen(
                       stepDescription: 'Do you want to pick a specific wine?',
                       wineOrMeal: 'wines',
                       mealVSWine: true,
+                      selectedCuisine: selectedWine,
                     ),
                   ),
                 );
@@ -155,11 +244,6 @@ class AskSomellierStep2FoodScreen extends StatelessWidget {
           ),
         ],
       ),
-      // bottomNavigationBar: SettingBottomNavigationBar(
-      //   data: data,
-      //   dataLabel: dataLabel,
-      //   detailSetting: true,
-      // ),
     );
   }
 }
