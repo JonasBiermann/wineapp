@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
-import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import '../../widgets/search_screens_widgets/search_bar_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -136,21 +135,20 @@ class _SearchScreenState extends State<SearchScreen> {
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) return const Text('Loading...');
                   return SizedBox(
-                    width: 330,
-                    height: snapshot.data!.docs.length * 220,
-                    child: Center(
-                      child: ListView.builder(
+                      width: 330,
+                      height: snapshot.data!.docs.length * 220,
+                      child: Center(
+                          child: ListView.builder(
                         scrollDirection: Axis.vertical,
                         itemCount: snapshot.data!.docs.length,
-                        itemBuilder: (context, index) =>
-                            PrefInformationCardWine(
-                          snapShotDocument: snapshot.data!.docs[index],
-                          cardColor: Theme.of(context).primaryColor,
-                          selected: false,
-                        ),
-                      ),
-                    ),
-                  );
+                        itemBuilder: (context, index) => Container(),
+                      ))
+                      //           PrefInformationCardWine(
+                      //               snapShotDocument: snapshot.data!.docs[index],
+                      //               cardColor: Theme.of(context).primaryColor,
+                      //               selected: false,
+                      // ),
+                      );
                 },
               ),
             ),

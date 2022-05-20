@@ -11,12 +11,14 @@ class PrefInformationCardWine extends StatefulWidget {
     Key? key,
     required this.snapShotDocument,
     required this.cardColor,
-    required this.selected,
+    required this.isSelected,
+    required this.onSelected,
   }) : super(key: key);
 
   DocumentSnapshot snapShotDocument;
   Color cardColor;
-  bool selected;
+  bool isSelected;
+  VoidCallback onSelected;
 
   @override
   State<PrefInformationCardWine> createState() =>
@@ -26,7 +28,7 @@ class PrefInformationCardWine extends StatefulWidget {
 class _PrefInformationCardWineState extends State<PrefInformationCardWine> {
   Color backgroundColor(context, selected) {
     setState(() {
-      if (widget.selected == true) {
+      if (widget.isSelected == true) {
         widget.cardColor = Theme.of(context).primaryColorLight;
       } else {
         widget.cardColor = Theme.of(context).primaryColor;
@@ -42,18 +44,14 @@ class _PrefInformationCardWineState extends State<PrefInformationCardWine> {
         bottom: 25,
       ),
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            widget.selected = !widget.selected;
-          });
-        },
+        onTap: widget.onSelected,
         child: Stack(
           children: [
             Container(
               height: 185,
               width: 320,
               decoration: BoxDecoration(
-                color: backgroundColor(context, widget.selected),
+                color: backgroundColor(context, widget.isSelected),
                 boxShadow: [
                   BoxShadow(
                     offset: const Offset(0, 4),
@@ -301,25 +299,28 @@ class LearnMoreButton extends StatelessWidget {
 }
 
 class PrefInformationCardMeal extends StatefulWidget {
-  PrefInformationCardMeal(
-      {Key? key,
-      required this.snapshotDocument,
-      required this.cardColor,
-      required this.selected})
-      : super(key: key);
-  final DocumentSnapshot snapshotDocument;
+  PrefInformationCardMeal({
+    Key? key,
+    required this.snapShotDocument,
+    required this.cardColor,
+    required this.isSelected,
+    required this.onSelected,
+  }) : super(key: key);
+
+  DocumentSnapshot snapShotDocument;
   Color cardColor;
-  bool selected;
+  bool isSelected;
+  VoidCallback onSelected;
 
   @override
-  State<PrefInformationCardMeal> createState() =>
-      _PrefInformationCardMealState();
+  State<PrefInformationCardWine> createState() =>
+      _PrefInformationCardWineState();
 }
 
 class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
   Color backgroundColor(context, selected) {
     setState(() {
-      if (widget.selected == true) {
+      if (widget.isSelected == true) {
         widget.cardColor = Theme.of(context).primaryColorLight;
       } else {
         widget.cardColor = Theme.of(context).primaryColor;
@@ -335,18 +336,14 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
         bottom: 25,
       ),
       child: GestureDetector(
-        onTap: () {
-          setState(() {
-            widget.selected = !widget.selected;
-          });
-        },
+        onTap: widget.onSelected,
         child: Stack(
           children: [
             Container(
               height: 185,
               width: 320,
               decoration: BoxDecoration(
-                color: backgroundColor(context, widget.selected),
+                color: backgroundColor(context, widget.isSelected),
                 boxShadow: [
                   BoxShadow(
                     offset: const Offset(0, 4),
@@ -367,7 +364,7 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(35),
                   image: DecorationImage(
-                    image: NetworkImage(widget.snapshotDocument['url']),
+                    image: NetworkImage(widget.snapShotDocument['url']),
                     fit: BoxFit.fitHeight,
                   ),
                 ),
@@ -380,7 +377,7 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
                 height: 15,
                 width: 125,
                 child: Text(
-                  widget.snapshotDocument['name'],
+                  widget.snapShotDocument['name'],
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
@@ -413,7 +410,7 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
               left: 170,
               top: 56,
               child: CuisineCard(
-                wineCuisine: widget.snapshotDocument['type'],
+                wineCuisine: widget.snapShotDocument['type'],
                 height: 25,
                 width: 127,
                 color: Theme.of(context).scaffoldBackgroundColor,
@@ -449,7 +446,7 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
                     text: TextSpan(
                       children: <TextSpan>[
                         TextSpan(
-                          text: widget.snapshotDocument['rating'],
+                          text: widget.snapShotDocument['rating'],
                           style: GoogleFonts.poppins(
                             textStyle: TextStyle(
                               color: Theme.of(context).primaryColorLight,
@@ -468,9 +465,9 @@ class _PrefInformationCardMealState extends State<PrefInformationCardMeal> {
               top: 145,
               left: 170,
               child: LearnMoreButton(
-                wineDocument: widget.snapshotDocument,
+                wineDocument: widget.snapShotDocument,
                 routeWidget:
-                    FoodDetailScreen(mealDocument: widget.snapshotDocument),
+                    FoodDetailScreen(mealDocument: widget.snapShotDocument),
               ),
             ),
           ],

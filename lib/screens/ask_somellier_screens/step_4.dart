@@ -10,8 +10,8 @@ import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 
-class AskSomellierStep4Screen extends StatelessWidget {
-  AskSomellierStep4Screen({
+class AskSomellierStep4Screen extends StatefulWidget {
+  const AskSomellierStep4Screen({
     Key? key,
     required this.stepDescription,
     required this.wineOrMeal,
@@ -23,24 +23,87 @@ class AskSomellierStep4Screen extends StatelessWidget {
   final String stepDescription;
   final bool mealVSWine;
   final String selectedCuisine;
+
+  @override
+  State<AskSomellierStep4Screen> createState() =>
+      _AskSomellierStep4ScreenState();
+}
+
+class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
+  QueryDocumentSnapshot<Map<String, dynamic>>? _selectedSnapshot;
   List<String> dataLabel = [
     'Home',
     'Search',
     'Account',
   ];
+  late Future resultsLoaded;
   List<IconData> data = [
     CustomIcons.home,
     CustomIcons.search,
     CustomIcons.user,
   ];
+
+  getResults() async {
+    var data = await FirebaseFirestore.instance
+        .collection(widget.wineOrMeal)
+        .where('type', isEqualTo: widget.selectedCuisine)
+        .get();
+    setState(() {
+      allResults = data.docs;
+    });
+    filterResultsList();
+    return data.docs;
+  }
+
+  List allResults = [];
+
+  List filteredResults = [];
+
+  onSearchChanged() {
+    print(searchController.text);
+    filterResultsList();
+  }
+
+  filterResultsList() {
+    var showResults = [];
+
+    if (searchController.text != '') {
+      // we have a search parameter
+      for (var searchSnapshot in allResults) {
+        var name = searchSnapshot['name'].toLowerCase();
+
+        if (name.contains(searchController.text.toLowerCase())) {
+          showResults.add(searchSnapshot);
+        }
+      }
+    } else {
+      // we do not have a search parameter
+      showResults = List.from(allResults);
+    }
+    setState(() {
+      filteredResults = showResults;
+    });
+  }
+
   TextEditingController searchController = TextEditingController();
 
-  static bool hasText(searchController) {
-    if (searchController.text == null) {
-      return false;
-    } else {
-      return true;
-    }
+  @override
+  void initState() {
+    super.initState();
+    searchController.addListener(onSearchChanged);
+  }
+
+  @override
+  void dispose() {
+    searchController.removeListener(onSearchChanged);
+    searchController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    resultsLoaded = getResults();
   }
 
   @override
@@ -76,7 +139,7 @@ class AskSomellierStep4Screen extends StatelessWidget {
               left: 97,
             ),
             child: Text(
-              stepDescription,
+              widget.stepDescription,
               style: GoogleFonts.poppins(
                 textStyle: TextStyle(
                   color: Theme.of(context).primaryColorLight,
@@ -109,6 +172,11 @@ class AskSomellierStep4Screen extends StatelessWidget {
                     width: 300,
                     child: TextField(
                       controller: searchController,
+                      style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 14,
+                              fontWeight: FontWeight.bold)),
                       decoration: InputDecoration(
                         hintText: 'Search',
                         hintStyle: GoogleFonts.poppins(
@@ -154,54 +222,44 @@ class AskSomellierStep4Screen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(
-              left: 35,
-              top: 5,
-            ),
-            child: StreamBuilder<QuerySnapshot>(
-              stream:
-
-                  // FirebaseFirestore.instance.collection(wineOrMeal).snapshots(),
-
-                  FirebaseFirestore.instance
-                      .collection(wineOrMeal)
-                      .where('type', isEqualTo: selectedCuisine)
-                      .snapshots(),
-
-              // hasText ? FirebaseFirestore.instance
-              //     .collection(wineOrMeal)
-              //     .where('type', isEqualTo: selectedCuisine).where('name', isEqualTo: searchController.text)
-              //     .snapshots() : FirebaseFirestore.instance
-              //     .collection(wineOrMeal)
-              //     .where('type', isEqualTo: selectedCuisine)
-              //     .snapshots(),
-              builder: (context, snapshot) {
-                if (!snapshot.hasData) return const Text('Loading...');
-                return SizedBox(
-                  height: 370,
-                  width: 320,
-                  child: Center(
-                    child: ListView.builder(
-                      dragStartBehavior: DragStartBehavior.down,
-                      scrollDirection: Axis.vertical,
-                      itemCount: snapshot.data!.docs.length,
-                      itemBuilder: (context, index) => mealVSWine
-                          ? PrefInformationCardWine(
-                              snapShotDocument: snapshot.data!.docs[index],
-                              cardColor: Theme.of(context).primaryColor,
-                              selected: false,
-                            )
-                          : PrefInformationCardMeal(
-                              snapshotDocument: snapshot.data!.docs[index],
-                              cardColor: Theme.of(context).primaryColor,
-                              selected: false,
-                            ),
-                    ),
+              padding: const EdgeInsets.only(
+                left: 35,
+                top: 5,
+              ),
+              child: SizedBox(
+                height: 370,
+                width: 320,
+                child: Center(
+                  child: ListView.builder(
+                    dragStartBehavior: DragStartBehavior.down,
+                    scrollDirection: Axis.vertical,
+                    itemCount: filteredResults.length,
+                    itemBuilder: (context, index) => widget.mealVSWine
+                        ? PrefInformationCardWine(
+                            snapShotDocument: filteredResults[index],
+                            cardColor: Theme.of(context).primaryColor,
+                            isSelected:
+                                filteredResults[index] == _selectedSnapshot,
+                            onSelected: () {
+                              setState(() {
+                                _selectedSnapshot = filteredResults[index];
+                              });
+                            },
+                          )
+                        : PrefInformationCardMeal(
+                            snapShotDocument: filteredResults[index],
+                            cardColor: Theme.of(context).primaryColor,
+                            isSelected:
+                                filteredResults[index] == _selectedSnapshot,
+                            onSelected: () {
+                              setState(() {
+                                _selectedSnapshot = filteredResults[index];
+                              });
+                            },
+                          ),
                   ),
-                );
-              },
-            ),
-          ),
+                ),
+              )),
           Padding(
             padding: const EdgeInsets.only(
               left: 35,
@@ -214,10 +272,16 @@ class AskSomellierStep4Screen extends StatelessWidget {
                 Navigator.pop(context);
               },
               continueOnTap: () {
-                Navigator.pushAndRemoveUntil(
-                    context,
-                    createRoute(const FindingRecommendationScreen()),
-                    (route) => false);
+                _selectedSnapshot != null
+                    ? () {
+                        Navigator.pushAndRemoveUntil(
+                            context,
+                            createRoute(FindingRecommendationScreen(
+                              snapshotName: _selectedSnapshot,
+                            )),
+                            (route) => false);
+                      }
+                    : null;
               },
             ),
           ),
@@ -250,11 +314,6 @@ class AskSomellierStep4Screen extends StatelessWidget {
           ),
         ],
       ),
-      // bottomNavigationBar: SettingBottomNavigationBar(
-      //   data: data,
-      //   dataLabel: dataLabel,
-      //   detailSetting: true,
-      // ),
     );
   }
 }

@@ -127,7 +127,7 @@ class _AskSomellierStep2FoodScreenState
                     child: ChooseCuisineCard(
                       cuisineName: 'White Wine',
                       width: 266,
-                      selected: false,
+                      selected: wineTypes[1],
                     ),
                   ),
                   GestureDetector(
@@ -145,7 +145,7 @@ class _AskSomellierStep2FoodScreenState
                     child: ChooseCuisineCard(
                       cuisineName: 'Rosé Wine',
                       width: 266,
-                      selected: false,
+                      selected: wineTypes[2],
                     ),
                   ),
                   GestureDetector(
@@ -163,7 +163,7 @@ class _AskSomellierStep2FoodScreenState
                     child: ChooseCuisineCard(
                       cuisineName: 'Sparkling Wine',
                       width: 266,
-                      selected: false,
+                      selected: wineTypes[3],
                     ),
                   ),
                   GestureDetector(
@@ -181,7 +181,7 @@ class _AskSomellierStep2FoodScreenState
                     child: ChooseCuisineCard(
                       cuisineName: 'Dessert Wine',
                       width: 266,
-                      selected: false,
+                      selected: wineTypes[4],
                     ),
                   ),
                 ],
