@@ -171,12 +171,16 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
                     height: 21,
                     width: 300,
                     child: TextField(
+                      cursorColor: Colors.white,
+                      cursorRadius: const Radius.circular(90),
                       controller: searchController,
                       style: GoogleFonts.poppins(
-                          textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.bold)),
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 14,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
                       decoration: InputDecoration(
                         hintText: 'Search',
                         hintStyle: GoogleFonts.poppins(

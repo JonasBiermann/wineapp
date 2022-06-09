@@ -176,14 +176,14 @@ class _AskSomellierStep1ScreenState extends State<AskSomellierStep1Screen> {
                   Navigator.push(
                     context,
                     createRoute(
-                      AskSomellierStep2WineScreen(),
+                      const AskSomellierStep2WineScreen(),
                     ),
                   );
                 } else if (foodSelected == true) {
                   Navigator.push(
                     context,
                     createRoute(
-                      AskSomellierStep2FoodScreen(),
+                      const AskSomellierStep2FoodScreen(),
                     ),
                   );
                 } else {
