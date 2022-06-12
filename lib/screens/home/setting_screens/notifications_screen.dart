@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/notifications/notifications_edit_widget.dart';

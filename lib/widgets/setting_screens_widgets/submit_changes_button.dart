@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 
 class SubmitSettingChangesButton extends StatelessWidget {
-  const SubmitSettingChangesButton({
-    Key? key,
-  }) : super(key: key);
-
+  const SubmitSettingChangesButton(
+      {Key? key,
+      required this.cancelOnTap,
+      required this.continueOnTap,
+      required this.buttonText,
+      required this.cancelText})
+      : super(key: key);
+  final VoidCallback cancelOnTap;
+  final VoidCallback continueOnTap;
+  final String buttonText;
+  final String cancelText;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -16,7 +22,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
-            onTap: () {},
+            onTap: cancelOnTap,
             child: Container(
               height: 40,
               width: 153,
@@ -30,7 +36,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Delete Changes',
+                  cancelText,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).primaryColorLight,
@@ -43,7 +49,7 @@ class SubmitSettingChangesButton extends StatelessWidget {
             ),
           ),
           GestureDetector(
-            onTap: () {},
+            onTap: continueOnTap,
             child: Container(
               height: 40,
               width: 153,
@@ -53,12 +59,12 @@ class SubmitSettingChangesButton extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  'Submit',
+                  buttonText,
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
                       fontSize: 16,
-                      fontWeight: FontWeight.w600,
+                      fontWeight: FontWeight.bold,
                     ),
                   ),
                 ),

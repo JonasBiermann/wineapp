@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 
 class SliderWidget extends StatefulWidget {
   const SliderWidget({Key? key}) : super(key: key);
@@ -23,7 +22,7 @@ class _SliderWidgetState extends State<SliderWidget> {
         child: SliderTheme(
           data: SliderTheme.of(context).copyWith(
             trackHeight: 3,
-            trackShape: RoundedRectSliderTrackShape(),
+            trackShape: const RoundedRectSliderTrackShape(),
             thumbColor: Theme.of(context).primaryColorLight,
             activeTrackColor: Theme.of(context).primaryColorLight,
             inactiveTrackColor: Theme.of(context).scaffoldBackgroundColor,

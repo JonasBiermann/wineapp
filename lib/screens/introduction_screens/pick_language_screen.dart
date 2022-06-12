@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/introduction_screens/age_verification_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
@@ -136,7 +135,7 @@ class PickLanguageScreen extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => LoginScreen(),
+                    builder: (context) => const LoginScreen(),
                   ),
                 );
               },
@@ -163,7 +162,7 @@ class PickLanguageScreen extends StatelessWidget {
               onTap: () {
                 Navigator.of(context).push(
                   createRoute(
-                    AgeVerificationScreen(),
+                    const AgeVerificationScreen(),
                   ),
                 );
               },

@@ -13,11 +13,16 @@ class _NotificationEditState extends State<NotificationEdit> {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        NotificationEditCard(),
+      children: [
+        const NotificationEditCard(),
         Padding(
-          padding: EdgeInsets.only(top: 188),
-          child: SubmitSettingChangesButton(),
+          padding: const EdgeInsets.only(top: 188),
+          child: SubmitSettingChangesButton(
+            cancelOnTap: () {},
+            continueOnTap: () {},
+            buttonText: 'Submit',
+            cancelText: 'Delete Changes',
+          ),
         ),
       ],
     );

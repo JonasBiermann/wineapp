@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/data/chart_data.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/data_storage/data_storage_info_card.dart';
@@ -112,7 +111,7 @@ class DataStorageOverview extends StatelessWidget {
                   height: 24,
                   width: 35,
                   child: Text(
-                    '${somellierAccuracy}%',
+                    '$somellierAccuracy%',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Theme.of(context).indicatorColor,

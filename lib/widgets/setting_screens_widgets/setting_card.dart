@@ -1,28 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 
 class SettingCard extends StatelessWidget {
   const SettingCard(
       {Key? key,
       required this.settingName,
       required this.settingIcon,
-      required this.pageRoute})
+      required this.onTap})
       : super(key: key);
 
   final String settingName;
   final String settingIcon;
-  final Widget pageRoute;
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {
-        Navigator.of(context).push(
-          createRoute(pageRoute),
-        );
-      },
+      onTap: onTap,
       child: Stack(
         children: [
           Container(

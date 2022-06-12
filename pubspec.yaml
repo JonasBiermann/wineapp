@@ -27,19 +27,25 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  cached_network_image: ^3.2.0
+  cloud_firestore: ^3.1.10
   cupertino_icons: ^1.0.2
   cupertino_range_slider: ^1.0.1
   firebase_auth: ^3.3.6
   firebase_core: ^1.11.0
+  firebase_storage: ^10.2.9
   fl_chart: ^0.40.6
   flutter:
     sdk: flutter
   flutter_svg: ^1.0.0
   google_fonts: ^2.1.1
   google_sign_in: ^5.2.3
+  percent_indicator: ^4.2.2
   stacked_themes: ^0.3.8+1
   syncfusion_flutter_charts: ^19.4.41
   theme_manager: ^1.1.0
+  url_launcher: ^6.0.20
+  week_of_year: ^2.0.0
 
 dev_dependencies:
   flutter_lints: ^1.0.0

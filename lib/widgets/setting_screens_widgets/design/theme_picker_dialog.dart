@@ -19,8 +19,8 @@ Future<dynamic> ThemePickerDialogMethod(BuildContext context) {
           width: 320,
           child: Stack(
             children: [
-              Padding(
-                  padding: const EdgeInsets.only(
+              const Padding(
+                  padding: EdgeInsets.only(
                     top: 25,
                     left: 35,
                     right: 35,
@@ -49,7 +49,7 @@ Future<dynamic> ThemePickerDialogMethod(BuildContext context) {
 }
 
 class LightDarkModePicker extends StatefulWidget {
-  LightDarkModePicker({
+  const LightDarkModePicker({
     Key? key,
   }) : super(key: key);
 

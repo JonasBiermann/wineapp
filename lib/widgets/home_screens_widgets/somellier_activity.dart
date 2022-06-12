@@ -1,14 +1,20 @@
-import 'package:fl_chart/fl_chart.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/data/somellier_data.dart';
+import 'package:wineapp/data/globals.dart' as globals;
 
-class SomellierActivity extends StatelessWidget {
+class SomellierActivity extends StatefulWidget {
   const SomellierActivity({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<SomellierActivity> createState() => _SomellierActivityState();
+}
+
+class _SomellierActivityState extends State<SomellierActivity> {
   @override
   Widget build(BuildContext context) {
     return Positioned(
@@ -58,9 +64,28 @@ class SomellierActivity extends StatelessWidget {
             child: SizedBox(
               height: 125,
               width: 232.26,
-              child: LineChart(somellierData(
-                  Theme.of(context).scaffoldBackgroundColor,
-                  Theme.of(context).indicatorColor)),
+              child: StreamBuilder<QuerySnapshot>(
+                  stream: FirebaseFirestore.instance
+                      .collection('users')
+                      .doc(FirebaseAuth.instance.currentUser!.uid.toString())
+                      .collection('activity')
+                      .doc('${globals.year}')
+                      .collection('week${globals.week}')
+                      .snapshots(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return const Text('An error occurred');
+                    }
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Text('Loading...');
+                    }
+                    print(FirebaseAuth.instance.currentUser!.uid);
+                    return SomellierChart(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      textColor: Theme.of(context).indicatorColor,
+                      queryDocumentSnapshot: snapshot.data!.docs,
+                    );
+                  }),
             ),
           ),
         ],

@@ -12,19 +12,24 @@ class DataStorageEdit extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
-        DataStorageEditInfoWidget(),
-        Padding(
+      children: [
+        const DataStorageEditInfoWidget(),
+        const Padding(
           padding: EdgeInsets.only(
             top: 15,
           ),
           child: TrainSomellierWidget(),
         ),
         Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             top: 111,
           ),
-          child: SubmitSettingChangesButton(),
+          child: SubmitSettingChangesButton(
+            cancelOnTap: () {},
+            continueOnTap: () {},
+            buttonText: 'Submit',
+            cancelText: 'Delete Changes',
+          ),
         ),
       ],
     );

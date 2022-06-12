@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class DataCategoryAmountWidget extends StatelessWidget {
@@ -22,7 +21,7 @@ class DataCategoryAmountWidget extends StatelessWidget {
         height: 18,
         width: 53,
         child: Text(
-          '${dataAmount}',
+          dataAmount,
           style: GoogleFonts.poppins(
             textStyle: TextStyle(
               color: Theme.of(context).indicatorColor,

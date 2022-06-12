@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/submit_changes_button.dart';
 import 'package:wineapp/widgets/setting_screens_widgets/general/user_info_edit_widget.dart';
 
@@ -51,11 +50,16 @@ class GeneralEdit extends StatelessWidget {
           ),
           child: UserInfoEditWidget(),
         ),
-        const Padding(
-          padding: EdgeInsets.only(
-            top: 99,
+        Padding(
+          padding: const EdgeInsets.only(
+            top: 167,
           ),
-          child: SubmitSettingChangesButton(),
+          child: SubmitSettingChangesButton(
+            cancelOnTap: () {},
+            continueOnTap: () {},
+            buttonText: 'Submit',
+            cancelText: 'Delete Changes',
+          ),
         ),
       ],
     );

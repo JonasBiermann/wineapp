@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/home_screen.dart';
 import 'package:wineapp/screens/home/search_screen.dart';
 import 'package:wineapp/screens/home/settings_screen.dart';
@@ -17,7 +16,7 @@ class _MainScreenState extends State<MainScreen> {
   List<Widget> pageList = <Widget>[
     const HomeScreen(),
     const SearchScreen(),
-    SettingsScreen(),
+    const SettingsScreen(),
   ];
   List<IconData> data = [
     CustomIcons.home,
@@ -37,6 +36,41 @@ class _MainScreenState extends State<MainScreen> {
           pageList[widget.pageIndex],
         ],
       ),
+      // bottomNavigationBar: NavigationBarTheme(
+      //   data: NavigationBarThemeData(
+      //       indicatorColor: Theme.of(context).indicatorColor.withOpacity(0.5)),
+      //   child: NavigationBar(
+      //     height: 90,
+      //     backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      //     selectedIndex: widget.pageIndex,
+      //     animationDuration: const Duration(seconds: 1),
+      //     onDestinationSelected: (int newIndex) {
+      //       setState(() {
+      //         widget.pageIndex = newIndex;
+      //       });
+      //     },
+      //     destinations: const [
+      //       NavigationDestination(
+      //           selectedIcon: Icon(
+      //             Icons.home,
+      //             color: Colors.white,
+      //           ),
+      //           icon: Icon(
+      //             Icons.home_outlined,
+      //             color: Colors.white,
+      //           ),
+      //           label: 'Home'),
+      //       NavigationDestination(
+      //           selectedIcon: Icon(Icons.search, color: Colors.white),
+      //           icon: Icon(Icons.search_outlined, color: Colors.white),
+      //           label: 'Search'),
+      //       NavigationDestination(
+      //           selectedIcon: Icon(Icons.settings, color: Colors.white),
+      //           icon: Icon(Icons.settings_outlined, color: Colors.white),
+      //           label: 'Settings'),
+      //     ],
+      //   ),
+
       bottomNavigationBar: Material(
         borderRadius: BorderRadius.circular(0),
         color: Theme.of(context).scaffoldBackgroundColor,

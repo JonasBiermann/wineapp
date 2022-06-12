@@ -1,6 +1,7 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/constants.dart';
 
 class UserInfoCard extends StatefulWidget {
   UserInfoCard({
@@ -33,337 +34,204 @@ class UserInfoCard extends StatefulWidget {
 class _UserInfoCardState extends State<UserInfoCard> {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          height: 256,
-          width: 320,
-          decoration: BoxDecoration(
-            color: Theme.of(context).scaffoldBackgroundColor,
-            border: Border.all(
-              color: Theme.of(context).primaryColor,
-              width: 2,
-            ),
-            borderRadius: BorderRadius.circular(25),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 15,
-          ),
-          child: Text(
-            widget.name,
-            style: GoogleFonts.poppins(
-              textStyle: TextStyle(
-                color: Theme.of(context).indicatorColor,
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 15,
-            left: 281,
-          ),
-          child: SizedBox(
-            height: 24,
-            width: 24,
-            child: CircleAvatar(
-              backgroundImage: AssetImage(widget.imageAdress),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 52,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 64,
-            child: Text(
-              'Username',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    return FutureBuilder<DocumentSnapshot>(
+      future:
+          users.doc(FirebaseAuth.instance.currentUser!.uid.toString()).get(),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return const Text('Something went wrong');
+        }
+        if (snapshot.hasData && !snapshot.data!.exists) {
+          return const Text('Document does not exist');
+        }
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data =
+              snapshot.data!.data() as Map<String, dynamic>;
+          return Stack(
+            children: [
+              Container(
+                height: 217,
+                width: 320,
+                decoration: BoxDecoration(
+                  color: Theme.of(context).scaffoldBackgroundColor,
+                  border: Border.all(
+                    color: Theme.of(context).primaryColor,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(25),
                 ),
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 80,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 34,
-            child: Text(
-              'Email',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 15,
+                  top: 15,
+                ),
+                child: Text(
+                  widget.name,
+                  style: GoogleFonts.poppins(
+                    textStyle: TextStyle(
+                      color: Theme.of(context).indicatorColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 108,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 39,
-            child: Text(
-              'Phone',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 15,
+                  left: 281,
+                ),
+                child: SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage(widget.imageAdress),
+                  ),
                 ),
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 136,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 25,
-            child: Text(
-              'Age',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
+              const UserInfoTitle(
+                left: 15,
+                top: 52,
+                text: 'Username',
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 164,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 50,
-            child: Text(
-              'Country',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
+              const UserInfoTitle(
+                left: 15,
+                top: 85,
+                text: 'Email',
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 197,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 45,
-            child: Text(
-              'Gender',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
+              const UserInfoTitle(
+                left: 15,
+                top: 118,
+                text: 'Age',
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 15,
-            top: 225,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 79,
-            child: Text(
-              'Account Age',
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w600,
-                ),
+              const UserInfoTitle(
+                left: 15,
+                top: 151,
+                text: 'Country',
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 52,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.userName,
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              const UserInfoTitle(
+                left: 15,
+                top: 184,
+                text: 'Account Age',
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 80,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.userMail,
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              UserInfoContent(
+                data: data['username'],
+                left: 155,
+                top: 52,
+                height: 18,
+                width: 150,
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 108,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.phoneNumber,
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              UserInfoContent(
+                data: FirebaseAuth.instance.currentUser!.email.toString(),
+                left: 90,
+                top: 85,
+                height: 18,
+                width: 215,
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 136,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.userAge.toString(),
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              UserInfoContent(
+                data: data['age'].toString(),
+                left: 155,
+                top: 118,
+                height: 18,
+                width: 150,
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 164,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.userCountry,
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              const UserInfoContent(
+                data: 'Germany',
+                left: 155,
+                top: 151,
+                height: 18,
+                width: 150,
               ),
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 197,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              widget.userGneder,
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
+              UserInfoContent(
+                data:
+                    '${(DateTime.now().difference(data['dateAdded'].toDate()).inHours / 24).round()} Days',
+                left: 155,
+                top: 184,
+                height: 18,
+                width: 150,
               ),
+            ],
+          );
+        }
+        return const Text('Loading...');
+      },
+    );
+  }
+}
+
+class UserInfoContent extends StatelessWidget {
+  const UserInfoContent({
+    Key? key,
+    required this.data,
+    required this.left,
+    required this.top,
+    required this.height,
+    required this.width,
+  }) : super(key: key);
+
+  final String data;
+  final double left;
+  final double top;
+  final double height;
+  final double width;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: left,
+        top: top,
+      ),
+      child: SizedBox(
+        height: height,
+        width: width,
+        child: Text(
+          data,
+          overflow: TextOverflow.ellipsis,
+          textAlign: TextAlign.right,
+          style: GoogleFonts.poppins(
+            textStyle: TextStyle(
+              color: Theme.of(context).indicatorColor,
+              fontSize: 12,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ),
-        Padding(
-          padding: const EdgeInsets.only(
-            left: 155,
-            top: 225,
-          ),
-          child: SizedBox(
-            height: 18,
-            width: 150,
-            child: Text(
-              '${widget.accountAge} Days',
-              textAlign: TextAlign.right,
-              style: GoogleFonts.poppins(
-                textStyle: TextStyle(
-                  color: Theme.of(context).indicatorColor,
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
-                ),
-              ),
-            ),
+      ),
+    );
+  }
+}
+
+class UserInfoTitle extends StatelessWidget {
+  const UserInfoTitle(
+      {Key? key, required this.left, required this.top, required this.text})
+      : super(key: key);
+
+  final double left;
+  final double top;
+
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.only(
+        left: left,
+        top: top,
+      ),
+      child: Text(
+        text,
+        textAlign: TextAlign.right,
+        style: GoogleFonts.poppins(
+          textStyle: TextStyle(
+            color: Theme.of(context).indicatorColor,
+            fontSize: 12,
+            fontWeight: FontWeight.w600,
           ),
         ),
-      ],
+      ),
     );
   }
 }

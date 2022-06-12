@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:wineapp/constants.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class UserNotificationInfoWidget extends StatelessWidget {

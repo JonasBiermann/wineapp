@@ -1,14 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:wineapp/models/custom_icons_icons.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
-import 'package:wineapp/widgets/search_screens_widgets/pref_information_card.dart';
-import 'package:wineapp/widgets/setting_screens_widgets/setting_bottom_navigation_bar.dart';
 
-class WineDetailScreen extends StatelessWidget {
-  WineDetailScreen({Key? key, required this.wineDocument}) : super(key: key);
-  DocumentSnapshot wineDocument;
+import '../../models/custom_icons_icons.dart';
+
+class FoodDetailScreen extends StatelessWidget {
+  const FoodDetailScreen({Key? key, required this.mealDocument})
+      : super(key: key);
+  final DocumentSnapshot mealDocument;
   @override
   Widget build(BuildContext context) {
     List<String> dataLabel = [
@@ -23,14 +23,14 @@ class WineDetailScreen extends StatelessWidget {
     ];
     return Scaffold(
       body: Hero(
-        tag: wineDocument['iD'],
+        tag: mealDocument['iD'],
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               HomeScreenHeader(
-                subText: 'Wine',
-                mainText: wineDocument['type'],
+                subText: 'Food',
+                mainText: mealDocument['type'],
                 boxWidth: 161,
               ),
               Padding(
@@ -43,7 +43,7 @@ class WineDetailScreen extends StatelessWidget {
                   width: 320,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage(wineDocument['url']),
+                      image: NetworkImage(mealDocument['url']),
                       fit: BoxFit.fitHeight,
                     ),
                     borderRadius: BorderRadius.circular(35),
@@ -71,7 +71,7 @@ class WineDetailScreen extends StatelessWidget {
                   left: 35,
                 ),
                 child: Text(
-                  wineDocument['name'],
+                  mealDocument['name'],
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
@@ -104,7 +104,7 @@ class WineDetailScreen extends StatelessWidget {
                 child: SizedBox(
                   width: 320,
                   child: Text(
-                    wineDocument['description'],
+                    mealDocument['description'],
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Theme.of(context).indicatorColor,
@@ -122,7 +122,7 @@ class WineDetailScreen extends StatelessWidget {
                   top: 5,
                 ),
                 child: Text(
-                  'Use',
+                  'Cuisine',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
@@ -135,40 +135,26 @@ class WineDetailScreen extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(
                   left: 35,
-                  right: 35,
                   top: 5,
                 ),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    CuisineCard(
-                      wineCuisine: wineDocument['use'][0],
-                      height: 41,
-                      width: 98,
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 14,
+                child: Container(
+                  height: 38,
+                  width: 320,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).primaryColor,
+                    borderRadius: BorderRadius.circular(7),
+                  ),
+                  child: Center(
+                    child: Text(
+                      mealDocument['type'],
                     ),
-                    CuisineCard(
-                      wineCuisine: wineDocument['use'][1],
-                      height: 41,
-                      width: 98,
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 14,
-                    ),
-                    CuisineCard(
-                      wineCuisine: wineDocument['use'][2],
-                      height: 41,
-                      width: 98,
-                      color: Theme.of(context).primaryColor,
-                      fontSize: 14,
-                    ),
-                  ],
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(
                   top: 102,
-                  left: 156,
+                  left: 168,
                 ),
                 child: GestureDetector(
                   onTap: () {
@@ -176,7 +162,7 @@ class WineDetailScreen extends StatelessWidget {
                   },
                   child: SizedBox(
                     height: 17,
-                    width: 47,
+                    width: 54,
                     child: Center(
                       child: Text(
                         'Go Back',
@@ -196,11 +182,11 @@ class WineDetailScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: SettingBottomNavigationBar(
-        detailSetting: true,
-        data: data,
-        dataLabel: dataLabel,
-      ),
+      // bottomNavigationBar: SettingBottomNavigationBar(
+      //   detailSetting: true,
+      //   data: data,
+      //   dataLabel: dataLabel,
+      // ),
     );
   }
 }

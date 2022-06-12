@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
-import 'package:wineapp/constants.dart';
 import 'package:wineapp/screens/home/main_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/forgot_password_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';

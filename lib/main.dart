@@ -9,7 +9,7 @@ import 'package:wineapp/services/auth_services.dart';
 void main() async {
   await ThemeManager.initialise();
   await Firebase.initializeApp();
-  runApp(WineApp());
+  runApp(const WineApp());
 }
 
 class WineApp extends StatelessWidget {
