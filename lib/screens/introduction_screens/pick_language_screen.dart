@@ -69,62 +69,56 @@ class PickLanguageScreen extends StatelessWidget {
           Positioned(
             left: 38,
             top: 604,
-            child: Stack(
-              children: [
-                Container(
-                  height: 50,
-                  width: 315,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: BorderRadius.circular(20),
-                    border: Border.all(
-                      width: 1,
-                      color: Theme.of(context).primaryColor,
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 15,
-                    top: 14,
-                  ),
-                  child: SizedBox(
-                    height: 21,
-                    width: 40,
-                    child: Image.asset('assets/images/usa.png'),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 70,
-                    top: 14,
-                  ),
-                  child: Text(
-                    'US - English',
-                    style: GoogleFonts.poppins(
-                      textStyle: TextStyle(
-                        color: Theme.of(context).indicatorColor,
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
+            child: GestureDetector(
+              onTap: () {
+                LanguagePickerDialog(context);
+              },
+              child: Stack(
+                children: [
+                  Container(
+                    height: 50,
+                    width: 315,
+                    decoration: BoxDecoration(
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(
+                        width: 1,
+                        color: Theme.of(context).primaryColor,
                       ),
                     ),
                   ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 279,
-                    top: 14,
-                  ),
-                  child: SizedBox(
-                    height: 21,
-                    width: 21,
-                    child: SvgPicture.asset(
-                      'assets/icons/general/arrow-down-2.svg',
-                      color: Theme.of(context).indicatorColor,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 15,
+                      top: 14,
+                    ),
+                    child: Text(
+                      'US - English',
+                      style: GoogleFonts.poppins(
+                        textStyle: TextStyle(
+                          color: Theme.of(context).indicatorColor,
+                          fontSize: 14,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
                     ),
                   ),
-                ),
-              ],
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 279,
+                      top: 14,
+                    ),
+                    child: SizedBox(
+                      height: 21,
+                      width: 21,
+                      child: SvgPicture.asset(
+                        'assets/icons/general/arrow-down-2.svg',
+                        color: Theme.of(context).indicatorColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
           Positioned(
@@ -192,4 +186,203 @@ class PickLanguageScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+LanguagePickerDialog(BuildContext context) {
+  return showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        return Dialog(
+          insetPadding:
+              const EdgeInsets.symmetric(vertical: 213, horizontal: 25),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(25),
+          ),
+          elevation: 1,
+          backgroundColor: Theme.of(context).primaryColorLight,
+          insetAnimationCurve: Curves.decelerate,
+          child: Stack(
+            children: [
+              const SizedBox(
+                height: 304,
+                width: 320,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 25,
+                  right: 25,
+                  top: 15,
+                ),
+                child: Column(
+                  children: [
+                    Icon(
+                      Icons.translate_rounded,
+                      color: Theme.of(context).scaffoldBackgroundColor,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 25,
+                        vertical: 5,
+                      ),
+                      child: Text(
+                        'Change Language',
+                        style: GoogleFonts.poppins(
+                          textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'Here you can choose whatever language fits you best. If you can\'t find your language you can alawys contribute by helpgin to translate parts of the app!',
+                      style: GoogleFonts.poppins(
+                        textStyle: const TextStyle(
+                          color: Colors.white,
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    const Divider(
+                      color: Colors.white,
+                      thickness: 1,
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 15,
+                      ),
+                      child: AnimatedContainer(
+                        duration: const Duration(
+                          milliseconds: 750,
+                        ),
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).scaffoldBackgroundColor,
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'English',
+                            style: GoogleFonts.poppins(
+                              textStyle: const TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 15,
+                      ),
+                      child: AnimatedContainer(
+                        duration: const Duration(
+                          milliseconds: 500,
+                        ),
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Deutsch',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                        top: 15,
+                      ),
+                      child: AnimatedContainer(
+                        duration: const Duration(
+                          milliseconds: 750,
+                        ),
+                        height: 25,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(
+                            5,
+                          ),
+                        ),
+                        child: Center(
+                          child: Text(
+                            'Français',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(top: 15),
+                      child: Divider(
+                        color: Colors.white,
+                        thickness: 1,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 15),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.only(right: 25),
+                            child: Text(
+                              'Cancel',
+                              style: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                  color:
+                                      Theme.of(context).scaffoldBackgroundColor,
+                                  fontSize: 8,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Text(
+                            'Continue',
+                            style: GoogleFonts.poppins(
+                              textStyle: TextStyle(
+                                color:
+                                    Theme.of(context).scaffoldBackgroundColor,
+                                fontSize: 8,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
+        );
+      });
 }

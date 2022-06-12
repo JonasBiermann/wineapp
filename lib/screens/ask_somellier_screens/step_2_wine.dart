@@ -411,11 +411,6 @@ class _AskSomellierStep2WineScreenState
           ),
         ],
       ),
-      // bottomNavigationBar: SettingBottomNavigationBar(
-      //   data: data,
-      //   dataLabel: dataLabel,
-      //   detailSetting: true,
-      // ),
     );
   }
 }

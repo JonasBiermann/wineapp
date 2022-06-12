@@ -51,7 +51,7 @@ class IntroductionScreen4 extends StatelessWidget {
               width: 334,
               height: 42,
               child: Text(
-                'Making an account lets you track and access your wine histroy anywhere',
+                'Making an account lets you track and access your wine history anywhere',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                       color: Theme.of(context).primaryColorLight,

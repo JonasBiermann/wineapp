@@ -24,24 +24,32 @@ class AskSomellierStep4Screen extends StatefulWidget {
   final bool mealVSWine;
   final String selectedCuisine;
 
+  static bool hasText(searchController) {
+    if (searchController.text == null) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+
   @override
   State<AskSomellierStep4Screen> createState() =>
       _AskSomellierStep4ScreenState();
 }
 
 class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
-  QueryDocumentSnapshot<Map<String, dynamic>>? _selectedSnapshot;
   List<String> dataLabel = [
     'Home',
     'Search',
     'Account',
   ];
-  late Future resultsLoaded;
+
   List<IconData> data = [
     CustomIcons.home,
     CustomIcons.search,
     CustomIcons.user,
   ];
+  late Future resultsLoaded;
 
   getResults() async {
     var data = await FirebaseFirestore.instance
@@ -171,6 +179,8 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
                     height: 21,
                     width: 300,
                     child: TextField(
+                      cursorColor: Colors.white,
+                      cursorRadius: const Radius.circular(90),
                       controller: searchController,
                       style: GoogleFonts.poppins(
                           textStyle: const TextStyle(
@@ -222,44 +232,32 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
             ),
           ),
           Padding(
-              padding: const EdgeInsets.only(
-                left: 35,
-                top: 5,
-              ),
-              child: SizedBox(
-                height: 370,
-                width: 320,
-                child: Center(
-                  child: ListView.builder(
-                    dragStartBehavior: DragStartBehavior.down,
-                    scrollDirection: Axis.vertical,
-                    itemCount: filteredResults.length,
-                    itemBuilder: (context, index) => widget.mealVSWine
-                        ? PrefInformationCardWine(
-                            snapShotDocument: filteredResults[index],
-                            cardColor: Theme.of(context).primaryColor,
-                            isSelected:
-                                filteredResults[index] == _selectedSnapshot,
-                            onSelected: () {
-                              setState(() {
-                                _selectedSnapshot = filteredResults[index];
-                              });
-                            },
-                          )
-                        : PrefInformationCardMeal(
-                            snapShotDocument: filteredResults[index],
-                            cardColor: Theme.of(context).primaryColor,
-                            isSelected:
-                                filteredResults[index] == _selectedSnapshot,
-                            onSelected: () {
-                              setState(() {
-                                _selectedSnapshot = filteredResults[index];
-                              });
-                            },
-                          ),
-                  ),
+            padding: const EdgeInsets.only(
+              left: 35,
+              top: 5,
+            ),
+            child: SizedBox(
+              height: 370,
+              width: 320,
+              child: Center(
+                child: ListView.builder(
+                  dragStartBehavior: DragStartBehavior.down,
+                  scrollDirection: Axis.vertical,
+                  itemCount: filteredResults.length,
+                  itemBuilder: (context, index) => widget.mealVSWine
+                      ? PrefInformationCardWine(
+                          snapShotDocument: filteredResults[index],
+                          cardColor: Theme.of(context).primaryColor,
+                          selected: false,
+                        )
+                      : PrefInformationCardMeal(
+                          snapshotDocument: filteredResults[index],
+                          cardColor: Theme.of(context).primaryColor,
+                          selected: false),
                 ),
-              )),
+              ),
+            ),
+          ),
           Padding(
             padding: const EdgeInsets.only(
               left: 35,
@@ -272,16 +270,10 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
                 Navigator.pop(context);
               },
               continueOnTap: () {
-                _selectedSnapshot != null
-                    ? () {
-                        Navigator.pushAndRemoveUntil(
-                            context,
-                            createRoute(FindingRecommendationScreen(
-                              snapshotName: _selectedSnapshot,
-                            )),
-                            (route) => false);
-                      }
-                    : null;
+                Navigator.pushAndRemoveUntil(
+                    context,
+                    createRoute(const FindingRecommendationScreen()),
+                    (route) => false);
               },
             ),
           ),
