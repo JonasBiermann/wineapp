@@ -284,7 +284,7 @@ LanguagePickerDialog(BuildContext context) {
                       ),
                       child: AnimatedContainer(
                         duration: const Duration(
-                          milliseconds: 750,
+                          milliseconds: 500,
                         ),
                         height: 25,
                         decoration: BoxDecoration(
