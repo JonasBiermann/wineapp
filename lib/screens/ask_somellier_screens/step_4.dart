@@ -306,11 +306,6 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
           ),
         ],
       ),
-      // bottomNavigationBar: SettingBottomNavigationBar(
-      //   data: data,
-      //   dataLabel: dataLabel,
-      //   detailSetting: true,
-      // ),
     );
   }
 }
