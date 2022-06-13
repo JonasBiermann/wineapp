@@ -1,14 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:wineapp/screens/sign_in_register_screen/login_screen.dart';
 import 'package:wineapp/screens/sign_in_register_screen/register_screen.dart';
-import 'package:wineapp/widgets/age_verification_textfields.dart';
 import 'package:wineapp/data/globals.dart' as globals;
+import 'package:wineapp/services/shared_preferences_methods.dart';
 
-class AgeVerificationScreen extends StatelessWidget {
-  const AgeVerificationScreen({Key? key}) : super(key: key);
+class AgeVerificationScreen extends StatefulWidget {
+  const AgeVerificationScreen({Key? key, required this.languagePreference})
+      : super(key: key);
+  final String? languagePreference;
+
+  @override
+  State<AgeVerificationScreen> createState() => _AgeVerificationScreenState();
+}
+
+class _AgeVerificationScreenState extends State<AgeVerificationScreen> {
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
+  int age = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +66,7 @@ class AgeVerificationScreen extends StatelessWidget {
               height: 42,
               width: 334,
               child: Text(
-                'Deepnding on your region, you will have to fulfill the minimum age to consume alcohol',
+                'Depending on your region, you will have to fulfill the minimum age to consume alcohol',
                 style: GoogleFonts.poppins(
                   textStyle: TextStyle(
                     color: Theme.of(context).indicatorColor,
@@ -67,47 +79,104 @@ class AgeVerificationScreen extends StatelessWidget {
             ),
           ),
           Positioned(
-            left: 35,
-            top: 604,
-            child: Stack(
-              children: [
-                Container(
-                  height: 50,
-                  width: 320,
-                  decoration: BoxDecoration(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    borderRadius: BorderRadius.circular(15),
-                    border: Border.all(
-                      width: 1,
-                      color: Theme.of(context).primaryColor,
+            left: 137,
+            top: 600,
+            child: SizedBox(
+              height: 57,
+              width: 116,
+              child: Form(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Container(
+                      height: 57,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      child: Center(
+                        child: TextFormField(
+                          controller: controller1,
+                          cursorColor: Colors.white,
+                          cursorRadius: const Radius.circular(90),
+                          cursorWidth: 2,
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '1',
+                            hintStyle: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    color: Theme.of(context).primaryColorLight,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                        ),
+                      ),
                     ),
-                  ),
+                    Container(
+                      height: 57,
+                      width: 50,
+                      decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        borderRadius: BorderRadius.circular(7),
+                      ),
+                      child: Center(
+                        child: TextFormField(
+                          controller: controller2,
+                          cursorColor: Colors.white,
+                          cursorRadius: const Radius.circular(90),
+                          cursorWidth: 2,
+                          onChanged: (value) {
+                            if (value.length == 1) {
+                              FocusScope.of(context).nextFocus();
+                            }
+                          },
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: '8',
+                            hintStyle: GoogleFonts.poppins(
+                                textStyle: TextStyle(
+                                    color: Theme.of(context).primaryColorLight,
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w500)),
+                          ),
+                          style: GoogleFonts.poppins(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          keyboardType: TextInputType.number,
+                          textAlign: TextAlign.center,
+                          inputFormatters: [
+                            LengthLimitingTextInputFormatter(1),
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 5,
-                  ),
-                  child: CodeField(
-                    generateAmount: 2,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 88,
-                  ),
-                  child: CodeField(
-                    generateAmount: 2,
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                    left: 175,
-                  ),
-                  child: CodeField(
-                    generateAmount: 4,
-                  ),
-                ),
-              ],
+              ),
             ),
           ),
           Positioned(
@@ -142,11 +211,16 @@ class AgeVerificationScreen extends StatelessWidget {
             top: 755,
             child: InkWell(
               onTap: () {
+                setState(() {
+                  age = int.parse(controller1.text + controller2.text);
+                  SharedPreferencesOperations().setAge(age);
+                });
                 Navigator.of(context).push(
                   createRoute(
                     const RegisterScreen(),
                   ),
                 );
+                print(age);
               },
               child: Container(
                 height: 50,

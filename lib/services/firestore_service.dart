@@ -5,6 +5,9 @@ import 'package:wineapp/data/globals.dart' as globals;
 class FirestoreService {
   FirebaseFirestore firestore = FirebaseFirestore.instance;
 
+  // Future<void> addUserDocument(){
+
+  // }
   Future<void> addCollection() {
     return firestore
         .collection('users')
