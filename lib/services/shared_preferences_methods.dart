@@ -11,7 +11,7 @@ class SharedPreferencesOperations {
     } else {
       print('hi');
     }
-    return null;
+    return prefs.getString('language');
   }
 
   //set current age

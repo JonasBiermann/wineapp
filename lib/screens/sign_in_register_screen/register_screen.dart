@@ -8,6 +8,7 @@ import 'package:wineapp/screens/sign_in_register_screen/registration_verificatio
 import 'package:wineapp/services/auth_services.dart';
 import 'package:wineapp/data/globals.dart' as globals;
 import 'package:wineapp/services/firestore_service.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -24,6 +25,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController userNameController = TextEditingController();
   bool loading = false;
   bool agreed = false;
+
+  getData() async {
+    final prefs = await SharedPreferences.getInstance();
+    int? age = prefs.getInt('age');
+
+    return age;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -314,8 +323,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         context);
                     AuthService().addUser(
                       userNameController.text,
-                      18,
-                      "English",
+                      emailPhoneController.text,
+                      globals.age,
+                      globals.language,
                       DateTime.now(),
                     );
                     FirestoreService().addCollection();

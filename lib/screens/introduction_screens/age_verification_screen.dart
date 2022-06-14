@@ -214,6 +214,7 @@ class _AgeVerificationScreenState extends State<AgeVerificationScreen> {
                 setState(() {
                   age = int.parse(controller1.text + controller2.text);
                   SharedPreferencesOperations().setAge(age);
+                  globals.age = age;
                 });
                 Navigator.of(context).push(
                   createRoute(

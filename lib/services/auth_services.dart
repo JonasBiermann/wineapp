@@ -104,12 +104,13 @@ class AuthService {
     print('logged out');
   }
 
-  Future<void> addUser(username, age, language, DateTime dateAdded) {
+  Future<void> addUser(username, email, age, language, DateTime dateAdded) {
     return firebaseFirestore
         .collection('users')
         .doc(firebaseAuth.currentUser!.uid.toString())
         .set({
           'username': username,
+          'email': email,
           'age': age,
           'language': language,
           'dateAdded': dateAdded,
