@@ -49,7 +49,7 @@ class UserInfoEditWidget extends StatelessWidget {
                   top: 15,
                 ),
                 child: Text(
-                  'Aurelie Hertrampf',
+                  'General',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
@@ -57,6 +57,7 @@ class UserInfoEditWidget extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  textAlign: TextAlign.left,
                 ),
               ),
               const UserInfoTitle(
@@ -78,18 +79,6 @@ class UserInfoEditWidget extends StatelessWidget {
                 left: 15,
                 top: 151,
                 text: 'Country',
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 250,
-                  top: 15,
-                ),
-                child: SettingsEditButton(
-                  onTap: () {
-                    SettingsDialogMethod(context, 'Name', 'name', 'Jonas',
-                        TextEditingController());
-                  },
-                ),
               ),
               Padding(
                 padding: const EdgeInsets.only(

@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -5,8 +6,9 @@ import 'package:wineapp/animation/page_route_transition.dart';
 import 'package:wineapp/screens/ask_somellier_screens/somellier_result_screen.dart';
 
 class FindingRecommendationScreen extends StatefulWidget {
-  const FindingRecommendationScreen({Key? key}) : super(key: key);
-
+  const FindingRecommendationScreen({Key? key, required this.snapShotDocument})
+      : super(key: key);
+  final DocumentSnapshot snapShotDocument;
   @override
   State<FindingRecommendationScreen> createState() =>
       _FindingRecommendationScreenState();
@@ -120,7 +122,7 @@ class _FindingRecommendationScreenState
                 ),
                 child: Center(
                   child: Text(
-                    'See your result',
+                    'See your results 🥳',
                     style: GoogleFonts.poppins(
                       textStyle: TextStyle(
                         color: Theme.of(context).indicatorColor,

@@ -93,6 +93,7 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
     });
   }
 
+  int selectedIndex = 10;
   TextEditingController searchController = TextEditingController();
 
   @override
@@ -245,10 +246,18 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
                   scrollDirection: Axis.vertical,
                   itemCount: filteredResults.length,
                   itemBuilder: (context, index) => widget.mealVSWine
-                      ? PrefInformationCardWine(
-                          snapShotDocument: filteredResults[index],
-                          cardColor: Theme.of(context).primaryColor,
-                          selected: false,
+                      ? GestureDetector(
+                          onTap: (() {
+                            setState(() {
+                              selectedIndex = index;
+                            });
+                            print(selectedIndex);
+                          }),
+                          child: PrefInformationCardWine(
+                            snapShotDocument: filteredResults[index],
+                            cardColor: Theme.of(context).primaryColor,
+                            selected: false,
+                          ),
                         )
                       : PrefInformationCardMeal(
                           snapshotDocument: filteredResults[index],
@@ -272,7 +281,8 @@ class _AskSomellierStep4ScreenState extends State<AskSomellierStep4Screen> {
               continueOnTap: () {
                 Navigator.pushAndRemoveUntil(
                     context,
-                    createRoute(const FindingRecommendationScreen()),
+                    createRoute(FindingRecommendationScreen(
+                        snapShotDocument: filteredResults[selectedIndex])),
                     (route) => false);
               },
             ),

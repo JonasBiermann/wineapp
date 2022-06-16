@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:wineapp/widgets/home_screens_widgets/add_meal_button.dart';
 import 'package:wineapp/widgets/home_screens_widgets/home_screen_header.dart';
@@ -25,23 +27,43 @@ class _HomeScreenState extends State<HomeScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Container(
-              height: 750,
-              color: Theme.of(context).scaffoldBackgroundColor,
+    CollectionReference users = FirebaseFirestore.instance.collection('users');
+    return FutureBuilder<DocumentSnapshot>(
+      future:
+          users.doc(FirebaseAuth.instance.currentUser!.uid.toString()).get(),
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return const Text('Something went wrong');
+        }
+        if (snapshot.hasData && !snapshot.data!.exists) {
+          return const Text('Document does not exist');
+        }
+        if (snapshot.connectionState == ConnectionState.done) {
+          Map<String, dynamic> data =
+              snapshot.data!.data() as Map<String, dynamic>;
+          return Scaffold(
+            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+            body: SingleChildScrollView(
+              child: Stack(
+                children: [
+                  Container(
+                    height: 750,
+                    color: Theme.of(context).scaffoldBackgroundColor,
+                  ),
+                  HomeScreenHeader(
+                      subText: 'Welcome Back',
+                      mainText: data['username'],
+                      boxWidth: 161),
+                  const LatestMealCard(),
+                  const SomellierActivity(),
+                  const AddMealButton(),
+                ],
+              ),
             ),
-            HomeScreenHeader(
-                subText: 'Welcome Back', mainText: 'Aurelie', boxWidth: 161),
-            const LatestMealCard(),
-            const SomellierActivity(),
-            const AddMealButton(),
-          ],
-        ),
-      ),
+          );
+        }
+        return const Text('Hm, something went wrong');
+      },
     );
   }
 }

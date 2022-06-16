@@ -68,7 +68,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
                   top: 15,
                 ),
                 child: Text(
-                  widget.name,
+                  'General',
                   style: GoogleFonts.poppins(
                     textStyle: TextStyle(
                       color: Theme.of(context).indicatorColor,
@@ -76,6 +76,7 @@ class _UserInfoCardState extends State<UserInfoCard> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
+                  textAlign: TextAlign.left,
                 ),
               ),
               Padding(
